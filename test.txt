@@ -1,0 +1,26 @@
+```powershell
+$targetPath = 'C:\GitHub\agent-playground\test.txt'
+$fileContent = 'This is a test file.'
+
+if (Test-Path $targetPath) {
+    Write-Host "File already exists at: $targetPath"
+    Write-Host "Current contents:"
+    $existingContent = Get-Content -Path $targetPath -Raw
+    Write-Host $existingContent
+} else {
+    $tempPath = [System.IO.Path]::GetTempFileName()
+    
+    try {
+        $utf8NoBom = New-Object System.Text.UTF8Encoding $false
+        [System.IO.File]::WriteAllText($tempPath, "$fileContent`r`n", $utf8NoBom)
+        
+        Move-Item -Path $tempPath -Destination $targetPath -Force
+        Write-Host "File created successfully at: $targetPath"
+    } catch {
+        if (Test-Path $tempPath) {
+            Remove-Item -Path $tempPath -Force
+        }
+        throw "Failed to create file: $_"
+    }
+}
+```
