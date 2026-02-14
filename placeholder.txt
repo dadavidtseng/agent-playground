@@ -1,1 +1,1 @@
-placeholder: agent-artist worktree
+placeholder
