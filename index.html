@@ -3,62 +3,32 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, world!</title>
+  <title>Hello World - Centered</title>
   <style>
-    /*
-      Layout choices:
-      - Use full-viewport flexbox on the body to center the primary heading both
-        horizontally and vertically.
-      - Keep styles internal (single-file) and avoid external dependencies.
-      - Use a system sans-serif font stack for good performance and accessibility.
-    */
-
-    :root{
-      --bg: #2196F3; /* Required blue background */
-      --text: #ffffff; /* White text for strong contrast */
-      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
-    }
-
-    /* Ensure the page fills the viewport so centering works as expected */
+    /* Minimal, semantic styling to center content and ensure responsiveness */
     html, body {
       height: 100%;
     }
-
     body {
-      margin: 0; /* remove default page margins */
-      display: flex; /* flexbox used for centering */
-      align-items: center; /* vertical centering */
-      justify-content: center; /* horizontal centering */
-      background-color: var(--bg);
-      color: var(--text);
-      font-family: var(--font-stack);
-      -webkit-font-smoothing: antialiased;
-      text-rendering: optimizeLegibility;
-    }
-
-    /*
-      Responsive typography:
-      - clamp() keeps the H1 readable at small sizes while allowing it to scale up
-        on larger viewports. The values chosen ensure good legibility on mobile
-        and desktop without overflow.
-    */
-    h1 {
+      display: flex;
+      min-height: 100vh;
       margin: 0;
-      padding: 0 1rem; /* small horizontal padding for very narrow screens */
-      font-size: clamp(1.5rem, 4vw + 1rem, 6rem);
-      line-height: 1.05;
-      text-align: center;
-      font-weight: 600;
+      align-items: center;
+      justify-content: center;
+      background-color: #0000FF; /* solid blue */
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    h1 {
+      color: #FFFFFF; /* white text with sufficient contrast against blue */
+      font-size: clamp(1.5rem, 5vw, 4rem);
+      line-height: 1.1;
+      margin: 0;
     }
   </style>
 </head>
 <body>
-  <!--
-    Accessibility & semantics:
-    - lang="en" on <html> helps screen readers and browsers choose correct language.
-    - H1 is the primary heading for the page.
-    - No decorative images or scripts; pure semantic content.
-  -->
-  <h1>Hello, world!</h1>
+  <main>
+    <h1>Hello World</h1>
+  </main>
 </body>
 </html>
