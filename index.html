@@ -1,55 +1,23 @@
 <!--
-Implementation notes:
-- Single-file HTML5 document named index.html
-- Uses semantic HTML and inline CSS only (no external assets)
-- Centers an <h1> both vertically and horizontally using Flexbox
-- Background color: #007BFF, text color: white, responsive sizing
-
-Verification steps:
-1. Open index.html in desktop and mobile browsers.
-2. Confirm the H1 reads "Hello, World!" and is centered vertically and horizontally.
-3. Confirm background is solid blue (#007BFF) and text is white with sufficient contrast.
-4. Resize the viewport to ensure the title remains centered and responsive.
-5. Inspect network or view source to confirm no external resources are requested.
+  File: index.html
+  Purpose: Minimal, responsive static HTML page that displays the title 'Hello World' centered on a solid blue background.
+  Author: Programmer Agent (KĀDI multi-agent system)
+  Verification:
+    1) Open this file in a modern browser. The viewport should be filled with a solid blue background (#0000FF).
+    2) The text 'Hello World' should be centered horizontally and vertically and appear in white for good contrast.
+    3) Verify on desktop and mobile viewports that the text remains centered and readable.
 -->
-
 <!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Hello, World!</title>
-  <style>
-    /* Full-height layout and reset */
-    html, body {
-      height: 100%;
-      margin: 0;
-    }
-
-    /* Center content both vertically and horizontally */
-    body {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background-color: #007BFF; /* Solid blue background */
-      color: #ffffff; /* White text for contrast */
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
-      text-rendering: optimizeLegibility;
-      padding: 1rem; /* small padding for very small viewports */
-    }
-
-    h1 {
-      margin: 0;
-      font-weight: 600;
-      /* Responsive font size: scales with viewport but stays within readable bounds */
-      font-size: clamp(1.5rem, 5vw, 3rem);
-      text-align: center;
-    }
-  </style>
+  <title>Hello World</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <h1>Hello, World!</h1>
+  <main>
+    <h1>Hello World</h1>
+  </main>
 </body>
 </html>
