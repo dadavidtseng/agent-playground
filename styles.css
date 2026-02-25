@@ -1,0 +1,42 @@
+/*
+  File: styles.css
+  Purpose: Styles for index.html to create a full-viewport solid blue background and center the heading.
+  Author: Programmer Agent (KĀDI multi-agent system)
+  Verification:
+    - The body and html fill the viewport with background-color: #0000FF.
+    - The <main> element uses flexbox to center its content both vertically and horizontally.
+    - The <h1> text color is white (#FFFFFF) and scales responsively.
+*/
+
+:root {
+  --background-color: #0000FF; /* solid blue */
+  --text-color: #FFFFFF; /* white for contrast */
+  --font-size: clamp(1.5rem, 4vw, 3rem);
+}
+
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
+body {
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+}
+
+main {
+  min-height: 100vh; /* fill the viewport */
+  display: flex;
+  align-items: center; /* vertical center */
+  justify-content: center; /* horizontal center */
+  text-align: center;
+  padding: 1rem;
+}
+
+h1 {
+  margin: 0;
+  font-size: var(--font-size);
+  line-height: 1;
+  font-weight: 600;
+}
