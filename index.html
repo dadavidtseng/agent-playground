@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Hello, world!</title>
+  <style>
+    /* Full-viewport container centered with flexbox */
+    html, body, main {
+      height: 100%;
+      margin: 0;
+    }
+    main {
+      /* Fallback blue then preferred DodgerBlue */
+      background-color: #0000FF;
+      background-color: #1E90FF;
+      height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    h1 {
+      margin: 0; /* reset default margin */
+      color: #ffffff;
+      font-size: 3rem;
+      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+      line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Hello, world!</h1>
+  </main>
+
+  <!-- Verification instructions:
+       1) Open this file in a modern browser (Chrome / Firefox / Safari).
+          - From a file manager: double-click index.html
+          - Or open the file URL (file:///...) in the browser
+       2) Confirm the page fills the entire viewport with a blue background
+          (#1E90FF is used; #0000FF is provided as a fallback).
+       3) Confirm the text "Hello, world!" (exact casing) appears centered
+          horizontally and vertically and is white/readable.
+       4) No network requests or external resources are required — this is
+          a single self-contained HTML file.
+  -->
+</body>
+</html>
