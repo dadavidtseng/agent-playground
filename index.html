@@ -5,44 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Hello, world!</title>
   <style>
-    /* Full-viewport container centered with flexbox */
-    html, body, main {
+    /*
+      Layout choices:
+      - Use full-viewport flexbox on the body to center the primary heading both
+        horizontally and vertically.
+      - Keep styles internal (single-file) and avoid external dependencies.
+      - Use a system sans-serif font stack for good performance and accessibility.
+    */
+
+    :root{
+      --bg: #2196F3; /* Required blue background */
+      --text: #ffffff; /* White text for strong contrast */
+      --font-stack: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+    }
+
+    /* Ensure the page fills the viewport so centering works as expected */
+    html, body {
       height: 100%;
-      margin: 0;
     }
-    main {
-      /* Fallback blue then preferred DodgerBlue */
-      background-color: #0000FF;
-      background-color: #1E90FF;
-      height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
+
+    body {
+      margin: 0; /* remove default page margins */
+      display: flex; /* flexbox used for centering */
+      align-items: center; /* vertical centering */
+      justify-content: center; /* horizontal centering */
+      background-color: var(--bg);
+      color: var(--text);
+      font-family: var(--font-stack);
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
     }
+
+    /*
+      Responsive typography:
+      - clamp() keeps the H1 readable at small sizes while allowing it to scale up
+        on larger viewports. The values chosen ensure good legibility on mobile
+        and desktop without overflow.
+    */
     h1 {
-      margin: 0; /* reset default margin */
-      color: #ffffff;
-      font-size: 3rem;
-      font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-      line-height: 1;
+      margin: 0;
+      padding: 0 1rem; /* small horizontal padding for very narrow screens */
+      font-size: clamp(1.5rem, 4vw + 1rem, 6rem);
+      line-height: 1.05;
+      text-align: center;
+      font-weight: 600;
     }
   </style>
 </head>
 <body>
-  <main>
-    <h1>Hello, world!</h1>
-  </main>
-
-  <!-- Verification instructions:
-       1) Open this file in a modern browser (Chrome / Firefox / Safari).
-          - From a file manager: double-click index.html
-          - Or open the file URL (file:///...) in the browser
-       2) Confirm the page fills the entire viewport with a blue background
-          (#1E90FF is used; #0000FF is provided as a fallback).
-       3) Confirm the text "Hello, world!" (exact casing) appears centered
-          horizontally and vertically and is white/readable.
-       4) No network requests or external resources are required — this is
-          a single self-contained HTML file.
+  <!--
+    Accessibility & semantics:
+    - lang="en" on <html> helps screen readers and browsers choose correct language.
+    - H1 is the primary heading for the page.
+    - No decorative images or scripts; pure semantic content.
   -->
+  <h1>Hello, world!</h1>
 </body>
 </html>
