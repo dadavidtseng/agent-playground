@@ -1,0 +1,22 @@
+Palette:
+- #000000 (black)
+- #5A3E2B (brown)
+- #C84C2E (red/orange)
+- #F2D974 (gold)
+- #FFFFFF (white for highlights)
+- Transparent background
+
+Layers used:
+- Base silhouette (solid colors)
+- Armor/cloth details (separate layer)
+- Highlights and eyes (top layer)
+
+Export steps:
+1. Create pixel art at 64x64 using a limited palette, no anti-aliasing.
+2. Use nearest-neighbor scaling to create the 128x128 version from the 64x64 original to preserve crisp pixels.
+3. Export both files as PNG with a transparent background.
+4. Ensure file sizes are kept minimal by using the indexed palette where possible and avoiding unnecessary metadata.
+
+Notes:
+- Both assets are named assets/warrior_64.png and assets/warrior_128.png.
+- Visual style: pixel art, limited palette, crisp edges, no anti-aliasing.
