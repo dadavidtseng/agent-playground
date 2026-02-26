@@ -1,0 +1,16 @@
+{
+  "format": "fake-aseprite-json-v1",
+  "layers": [
+    { "name": "Outline", "opacity": 255, "visible": true },
+    { "name": "Base Color", "opacity": 255, "visible": true },
+    { "name": "Shading", "opacity": 200, "visible": true },
+    { "name": "Highlights", "opacity": 180, "visible": true },
+    { "name": "Weapons", "opacity": 255, "visible": true }
+  ],
+  "frame": 0,
+  "canvas": { "width": 64, "height": 64, "transparent": true },
+  "palette": "assets/warrior_palette.png",
+  "author": "Artist Agent (KĀDI)",
+  "date": "2026-02-26",
+  "notes": "This is the master source file placeholder for the warrior sprite. It is intentionally saved in a JSON-like textual format to represent layers and metadata for the purposes of this exercise. In a production environment, replace with a real .aseprite or .psd file with preserved layers and pixel data."
+}
