@@ -1,7 +1,0 @@
-Name: Rynna Ironvale
-
-Short bio (2-3 sentences):
-Rynna Ironvale is a seasoned warrior from the mountain holds, known for her steadfast defense and ornate gold-trimmed armor. She wields a broadblade and carries a small teal gem on her pauldron that is said to guide her in battle.
-
-Alt text for warrior_concept.png:
-A pixel-art warrior concept sheet showing a female warrior in gold-trimmed silver armor with deep red cloth and a teal gem on the pauldron. The sheet includes a 16-color palette swatch, three pose references (idle, attack lunge, heroic pose), and close-ups of the head and sword. Artwork uses crisp 1px black outlines, flat shading, and transparent background.
