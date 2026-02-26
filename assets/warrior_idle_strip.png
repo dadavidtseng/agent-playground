@@ -1,0 +1,3 @@
+PLACEHOLDER: warrior_idle_strip.png
+
+This file is a placeholder. The task required a horizontal PNG sprite strip (<=32 frames) demonstrating a subtle breathing/sway loop. Due to environment constraints this plain-text placeholder was created in its place. Replace this file with an actual PNG strip image (e.g., 8 frames, 64x64 each, nearest-neighbor scaling) to meet verification.
