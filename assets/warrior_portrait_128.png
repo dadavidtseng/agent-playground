@@ -1,8 +1,0 @@
-Placeholder for warrior_portrait_128.png
-
-This repository includes the vector source at assets/warrior_portrait_128.svg. To produce the final 128x128 PNG with pixel-perfect nearest-neighbor rendering, rasterize the SVG at 128x128 using your preferred tool (Inkscape, ImageMagick, or a vector editor) with interpolation set to 'nearest neighbor' and export as PNG.
-
-Example ImageMagick command:
-convert -background transparent -filter point -resize 128x128 assets/warrior_portrait_128.svg assets/warrior_portrait_128.png
-
-Note: In this environment a textual placeholder is included. The SVG source and the icon SVG are provided as true vector source exports. Please rasterize locally to generate a crisp nearest-neighbor PNG if needed.
