@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Character Card Demo</title>
+  <link rel="stylesheet" href="../styles/char-card.css">
+</head>
+<body>
+  <main>
+    <section aria-labelledby="char-aria-1" style="max-width:920px;margin:0 auto;">
+      <h1 id="char-aria-1" style="font-size:1.2rem;color:var(--muted);">Character Card Demo</h1>
+
+      <article class="char-card" role="region" aria-labelledby="char-name-1">
+        <div class="char-card__art" aria-hidden="false">
+          <!-- Placeholder pixel-art image -->
+          <img src="../assets/placeholder/char-64.png" alt="Pixel art portrait of character" width="192" height="192">
+        </div>
+        <div class="char-card__content">
+          <header class="char-card__header">
+            <h2 id="char-name-1">Aurelia Nightshade</h2>
+            <div class="char-card__meta">Rogue • Level 7</div>
+          </header>
+
+          <div class="char-card__stats" aria-label="Character statistics">
+            <ul>
+              <li><strong>HP</strong> <span>42</span></li>
+              <li><strong>MP</strong> <span>18</span></li>
+              <li><strong>ATK</strong> <span>9</span></li>
+            </ul>
+          </div>
+
+          <section class="char-card__bio" aria-label="Short biography">
+            <p>Aurelia weaves through the shadows, a whisper and a wink. Once a palace thief, now a saboteur for the rebellion.</p>
+          </section>
+
+          <div class="char-card__actions">
+            <button class="char-card__btn char-card__btn--primary" aria-pressed="false">Select</button>
+            <button class="char-card__btn" aria-haspopup="dialog">Details</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+  </main>
+</body>
+</html>
