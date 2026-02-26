@@ -1,0 +1,20 @@
+{
+  "artist": "KĀDI Artist Agent",
+  "createdAt": "2026-02-26T00:00:00Z",
+  "files": [
+    {
+      "filename": "assets/placeholder_64.png",
+      "description": "64x64 transparent placeholder pixel image"
+    },
+    {
+      "filename": "assets/placeholder_128.png",
+      "description": "128x128 nearest-neighbor upscale of placeholder_64.png"
+    }
+  ],
+  "altText": "Minimal transparent 64x64 pixel placeholder with a simple 8-color palette, upscaled to 128x128 for preview.",
+  "paletteSummary": {
+    "count": 8,
+    "colors": ["#00000000","#000000","#FFFFFF","#FF0000","#00FF00","#0000FF","#FFFF00","#FF00FF"]
+  },
+  "artistNotes": "Purpose: quick placeholder assets to unblock frontend development. The 64x64 image is a small transparent PNG intended to serve as a stand-in for real artwork. The 128x128 file is a nearest-neighbor upscale (no smoothing) to preserve crisp pixel edges when previewing. Palette: kept small (<=16 colors) to match constraints. No animation included. Use CSS image-rendering: pixelated or nearest-neighbor sampling to keep edges sharp when scaling in the browser."
+}
