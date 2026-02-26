@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Warrior Profile Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page" id="main" tabindex="-1">
+    <article class="card" aria-labelledby="warrior-name" aria-describedby="warrior-bio">
+      <header class="card__header">
+        <h1 id="warrior-name">Thorin Ironfist</h1>
+        <p class="muted" id="warrior-class" aria-hidden="false">Class: Warrior</p>
+      </header>
+
+      <div class="card__body">
+        <figure class="avatar" aria-label="Portrait of Thorin Ironfist">
+          <img id="warrior-img" class="pixel-art" src="data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='64' height='64'><rect width='100%' height='100%' fill='%232b2b2b'/><text x='50%' y='50%' dominant-baseline='middle' text-anchor='middle' font-family='monospace' font-size='10' fill='%23fff'>64px</text></svg>" alt="Pixel-art portrait of Thorin Ironfist" width="128" height="128">
+          <figcaption class="visually-hidden">Portrait of Thorin Ironfist</figcaption>
+        </figure>
+
+        <section class="stats" aria-labelledby="stats-heading">
+          <div class="controls">
+            <button id="toggle-size" aria-pressed="false" aria-controls="warrior-img">Toggle sprite size</button>
+          </div>
+
+          <h2 id="stats-heading">Stats</h2>
+          <dl class="stat-list" role="list">
+            <div class="stat-row">
+              <dt>HP</dt>
+              <dd id="stat-hp">—</dd>
+            </div>
+            <div class="stat-row">
+              <dt>Attack</dt>
+              <dd id="stat-attack">—</dd>
+            </div>
+            <div class="stat-row">
+              <dt>Defense</dt>
+              <dd id="stat-defense">—</dd>
+            </div>
+            <div class="stat-row">
+              <dt>Level</dt>
+              <dd id="stat-level">—</dd>
+            </div>
+          </dl>
+
+          <section class="bio">
+            <h3 id="bio-heading">Biography</h3>
+            <p id="warrior-bio">Thorin is a battle-hardened warrior from the Iron Hills. He fights with courage and a mighty greataxe, protecting his allies and standing against chaos.</p>
+          </section>
+        </section>
+      </div>
+
+      <footer class="card__footer">
+        <p class="muted">Sprites: assets/warrior_64.png, assets/warrior_128.png (if available)</p>
+      </footer>
+    </article>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>

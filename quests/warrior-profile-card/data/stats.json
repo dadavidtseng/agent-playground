@@ -1,0 +1,13 @@
+{
+  "name": "Thorin Ironfist",
+  "class": "Warrior",
+  "hp": 142,
+  "attack": 21,
+  "defense": 16,
+  "level": 7,
+  "bio": "Thorin is a battle-hardened warrior from the Iron Hills. He fights with a greataxe and stands as a stalwart defender of his clan.",
+  "assets": {
+    "small": "assets/warrior_64.png",
+    "large": "assets/warrior_128.png"
+  }
+}
