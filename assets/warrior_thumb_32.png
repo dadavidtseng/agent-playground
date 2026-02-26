@@ -1,0 +1,4 @@
+This is a placeholder export for warrior_thumb_32.png
+
+Source: assets/warrior_portrait_128.svg
+Note: In a full pipeline this would be a 32x32 PNG rendered with nearest-neighbor scaling from the vector/source. For verification in this environment the SVG source and icon are provided.

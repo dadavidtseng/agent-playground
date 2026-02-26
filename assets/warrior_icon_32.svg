@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simplified silhouette icon 32x32 for warrior -->
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 32 32">
+  <rect width="32" height="32" fill="none"/>
+  <g fill="#111" stroke="none">
+    <!-- helmet and shoulders silhouette -->
+    <path d="M6 24 C10 18, 22 18, 26 24 L26 28 L6 28 Z" />
+    <path d="M10 8 C12 6, 20 6, 22 8 C23 10, 21 14, 16 14 C11 14,9 10,10 8 Z" />
+    <!-- plume -->
+    <path d="M16 2 C18 2,20 4,20 6 C18 6,16 4,16 2 Z" />
+  </g>
+</svg>
