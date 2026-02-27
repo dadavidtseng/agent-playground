@@ -1,0 +1,152 @@
+/* WarriorProfileCard styles
+   File: src/components/WarriorProfileCard.css
+   Naming: .wpc- prefix to avoid conflicts with project styles.
+*/
+
+.wpc-card{
+  display: flex;
+  gap: 1rem;
+  align-items: stretch;
+  background: linear-gradient(180deg, #0f1724 0%, #0b1220 100%);
+  color: #e6eef8;
+  border-radius: 12px;
+  padding: 1rem;
+  max-width: 880px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.6);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+
+.wpc-card:focus-within,
+.wpc-card:hover{
+  transform: translateY(-4px);
+  box-shadow: 0 12px 26px rgba(2,6,23,0.75);
+}
+
+.wpc-media{
+  flex: 0 0 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.wpc-media picture,
+.wpc-media img{
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.wpc-avatar{
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: contain;
+  background: linear-gradient(180deg, #081021, #0b2233);
+  padding: 6px;
+}
+
+.wpc-body{
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.wpc-header{
+  display: flex;
+  flex-direction: column;
+}
+
+.wpc-name{
+  margin: 0;
+  font-size: 1.15rem;
+  line-height: 1.1;
+}
+
+.wpc-title{
+  margin: 0.15rem 0 0 0;
+  color: #a9bdd8;
+  font-size: 0.9rem;
+}
+
+.wpc-bio{
+  color: #cfe6ff;
+  font-size: 0.95rem;
+}
+
+.wpc-stats{
+  display: flex;
+  gap: 0.75rem;
+}
+
+.wpc-stat{
+  display: flex;
+  flex-direction: column;
+  background: rgba(255,255,255,0.03);
+  padding: 0.5rem 0.75rem;
+  border-radius: 8px;
+  min-width: 64px;
+  text-align: center;
+}
+
+.wpc-stat-value{
+  font-weight: 700;
+  font-size: 1.05rem;
+}
+
+.wpc-stat-label{
+  font-size: 0.75rem;
+  color: #9fb6d7;
+}
+
+.wpc-actions{
+  margin-top: auto;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.wpc-btn{
+  appearance: none;
+  border: 1px solid rgba(255,255,255,0.08);
+  background: transparent;
+  color: inherit;
+  padding: 0.5rem 0.85rem;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 0.95rem;
+}
+
+.wpc-btn:focus{
+  outline: 3px solid rgba(88,142,255,0.15);
+  outline-offset: 2px;
+}
+
+.wpc-btn-primary{
+  background: linear-gradient(90deg,#3b82f6,#06b6d4);
+  color: #06202b;
+  border: none;
+}
+
+/* Responsive breakpoints */
+@media (max-width: 640px){
+  .wpc-card{
+    flex-direction: column;
+    gap: 0.75rem;
+    padding: 0.75rem;
+  }
+
+  .wpc-media{
+    flex: 0 0 auto;
+    width: 44%;
+    margin: 0 auto;
+  }
+
+  .wpc-stats{
+    justify-content: space-between;
+  }
+}
+
+@media (min-width: 1024px){
+  .wpc-media{ flex: 0 0 160px; }
+  .wpc-name{ font-size: 1.3rem; }
+}
