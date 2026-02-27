@@ -1,0 +1,14 @@
+{
+  "name": "Kāri, the Bronze Warrior",
+  "bio": "A battle-hardened gladiator from the roaring coasts, known for swift strikes and an unbreakable shield.",
+  "stats": {
+    "attack": 82,
+    "defense": 91,
+    "speed": 67
+  },
+  "images": {
+    "front": "warrior_front.png",
+    "back": "warrior_back.png",
+    "icon": "warrior_icon.png"
+  }
+}
