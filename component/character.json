@@ -1,0 +1,10 @@
+{
+  "name": "Thorn",
+  "class": "Warrior",
+  "level": 6,
+  "hp": 48,
+  "attack": 12,
+  "defense": 10,
+  "bio": "A battle-hardened warrior from the northern marches. Fiercely loyal, Thorn wields a heavy blade and wears a dented helm. He has a knack for surviving impossible odds.",
+  "image": "./warrior.png"
+}
