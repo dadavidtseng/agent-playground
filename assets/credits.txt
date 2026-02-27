@@ -1,7 +1,0 @@
-Warrior sprite
-Description: Front-facing pixel-art warrior sprite, 32x32 native resolution. Clean silhouette, limited 12-color palette, transparent background.
-License: CC0 - No rights reserved. Use freely in any project.
-
-Source: assets/source.aseprite
-Exports: assets/warrior-32.png, assets/warrior-64.png, assets/warrior-128.png
-Demo: assets/demo-screenshot.png
