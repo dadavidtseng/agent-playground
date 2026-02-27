@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 128x128 pixel-art rendition of the warrior. Provided as an SVG for crisp scaling and transparency. Filename kept as warrior@2x.png per task requirements. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 256 256" role="img" aria-labelledby="title desc" preserveAspectRatio="xMidYMid meet" shape-rendering="crispEdges">
+  <title id="title">Warrior Icon @2x (128x128)</title>
+  <desc id="desc">Scaled 128x128 rendition of the warrior icon. Vector rectangles, transparent background, sRGB.</desc>
+  <defs>
+    <style><![CDATA[
+      .o{fill:#0B0F14}
+      .skin{fill:#F2D6B3}
+      .cloth{fill:#C0392B}
+      .metalL{fill:#7F8C8D}
+      .metalD{fill:#34495E}
+      .accent{fill:#E67E22}
+    ]]></style>
+  </defs>
+  <g transform="translate(24,16)">
+    <rect x="48" y="24" width="16" height="16" class="metalD"/>
+    <rect x="64" y="24" width="16" height="16" class="metalL"/>
+    <rect x="80" y="24" width="16" height="16" class="metalL"/>
+    <rect x="96" y="24" width="16" height="16" class="metalD"/>
+    <rect x="40" y="40" width="16" height="16" class="metalD"/>
+    <rect x="112" y="40" width="16" height="16" class="metalD"/>
+    <rect x="56" y="40" width="16" height="16" class="skin"/>
+    <rect x="72" y="40" width="16" height="16" class="skin"/>
+    <rect x="88" y="40" width="16" height="16" class="skin"/>
+    <rect x="104" y="40" width="16" height="16" class="skin"/>
+    <rect x="32" y="56" width="16" height="16" class="metalD"/>
+    <rect x="48" y="56" width="16" height="16" class="metalL"/>
+    <rect x="64" y="56" width="16" height="16" class="metalL"/>
+    <rect x="80" y="56" width="16" height="16" class="metalL"/>
+    <rect x="96" y="56" width="16" height="16" class="metalL"/>
+    <rect x="112" y="56" width="16" height="16" class="metalD"/>
+
+    <rect x="64" y="40" width="8" height="8" class="o"/>
+    <rect x="96" y="40" width="8" height="8" class="o"/>
+    <rect x="80" y="56" width="16" height="8" class="o"/>
+
+    <rect x="40" y="88" width="96" height="16" class="cloth"/>
+    <rect x="32" y="104" width="16" height="24" class="cloth"/>
+    <rect x="112" y="104" width="16" height="24" class="cloth"/>
+    <rect x="56" y="128" width="48" height="24" class="metalL"/>
+    <rect x="56" y="120" width="48" height="8" class="accent"/>
+
+    <rect x="136" y="80" width="8" height="56" class="metalD"/>
+    <rect x="132" y="76" width="16" height="8" class="metalL"/>
+    <rect x="128" y="68" width="24" height="8" class="metalD"/>
+
+    <rect x="48" y="24" width="80" height="8" class="o"/>
+    <rect x="40" y="40" width="96" height="8" class="o"/>
+    <rect x="32" y="56" width="112" height="8" class="o"/>
+    <rect x="40" y="88" width="96" height="8" class="o"/>
+  </g>
+</svg>

@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Master vector artwork: Warrior (256x256). Editable SVG made from rect pixels. Palette <=16 colors. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 256 256" role="img" aria-labelledby="title desc">
+  <title id="title">Warrior Icon</title>
+  <desc id="desc">Pixel-style warrior icon at 256x256, vector rectangles, transparent background. Editable groups for helmet, face, body, and weapon.</desc>
+  <!-- Palette (sRGB): #0B0F14 (outline), #F2D6B3 (skin), #C0392B (cloth), #7F8C8D (metal light), #34495E (metal dark), #E67E22 (accent) -->
+  <defs>
+    <style type="text/css"><![CDATA[
+      .o{fill:#0B0F14}
+      .skin{fill:#F2D6B3}
+      .cloth{fill:#C0392B}
+      .metalL{fill:#7F8C8D}
+      .metalD{fill:#34495E}
+      .accent{fill:#E67E22}
+    ]]></style>
+  </defs>
+
+  <!-- Transparent background (no rect) -->
+  <g id="helmet" transform="translate(24,16)">
+    <!-- Helmet outline and shading: built from 8x8 pixel blocks scaled to 8 -->
+    <!-- Using a 8x8 pixel grid where each pixel is 8x8 -> total 64px, then scaled by viewBox -> but we design directly on 256 canvas -->
+    <!-- We'll draw using 8x8 rectangles sized 8*2 =16 to make blocky pixel art but scaled for 256 canvas -->
+    <!-- Helmet top -->
+    <rect x="48" y="24" width="16" height="16" class="metalD"/>
+    <rect x="64" y="24" width="16" height="16" class="metalL"/>
+    <rect x="80" y="24" width="16" height="16" class="metalL"/>
+    <rect x="96" y="24" width="16" height="16" class="metalD"/>
+    <!-- Helmet sides -->
+    <rect x="40" y="40" width="16" height="16" class="metalD"/>
+    <rect x="112" y="40" width="16" height="16" class="metalD"/>
+    <!-- Face opening (skin) -->
+    <rect x="56" y="40" width="16" height="16" class="skin"/>
+    <rect x="72" y="40" width="16" height="16" class="skin"/>
+    <rect x="88" y="40" width="16" height="16" class="skin"/>
+    <rect x="104" y="40" width="16" height="16" class="skin"/>
+    <!-- Helmet rim -->
+    <rect x="32" y="56" width="16" height="16" class="metalD"/>
+    <rect x="48" y="56" width="16" height="16" class="metalL"/>
+    <rect x="64" y="56" width="16" height="16" class="metalL"/>
+    <rect x="80" y="56" width="16" height="16" class="metalL"/>
+    <rect x="96" y="56" width="16" height="16" class="metalL"/>
+    <rect x="112" y="56" width="16" height="16" class="metalD"/>
+  </g>
+
+  <g id="face" transform="translate(24,16)">
+    <!-- Eyes and mouth -->
+    <rect x="64" y="40" width="8" height="8" class="o"/>
+    <rect x="96" y="40" width="8" height="8" class="o"/>
+    <rect x="80" y="56" width="16" height="8" class="o"/>
+  </g>
+
+  <g id="body" transform="translate(24,16)">
+    <!-- Body/armor -->
+    <rect x="40" y="88" width="96" height="16" class="cloth"/>
+    <rect x="32" y="104" width="16" height="24" class="cloth"/>
+    <rect x="112" y="104" width="16" height="24" class="cloth"/>
+    <rect x="56" y="128" width="48" height="24" class="metalL"/>
+    <!-- Accent belt -->
+    <rect x="56" y="120" width="48" height="8" class="accent"/>
+  </g>
+
+  <g id="weapon" transform="translate(24,16)">
+    <!-- Sword to the right -->
+    <rect x="136" y="80" width="8" height="56" class="metalD"/>
+    <rect x="132" y="76" width="16" height="8" class="metalL"/>
+    <rect x="128" y="68" width="24" height="8" class="metalD"/>
+  </g>
+
+  <!-- Outline details -->
+  <g id="outline" transform="translate(24,16)">
+    <rect x="48" y="24" width="80" height="8" class="o"/>
+    <rect x="40" y="40" width="96" height="8" class="o"/>
+    <rect x="32" y="56" width="112" height="8" class="o"/>
+    <rect x="40" y="88" width="96" height="8" class="o"/>
+  </g>
+
+</svg>
