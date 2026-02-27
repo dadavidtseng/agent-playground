@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- 16x16 pixel art scaled to 64x64 (pixel size = 4) -->
+  <!-- Palette:
+       skin: #F5C6A5
+       hair: #2B1B0B
+       armor: #B0C4C9
+       blade: #E8E8E8
+       hilt: #6B4A2C
+       shield: #8A4B2B
+       cloak: #7B1F1F
+       boots: #3B2A1A
+       outline: #000000
+  -->
+  <rect width="100%" height="100%" fill="none" />
+
+  <!-- Hair (dark) -->
+  <rect x="24" y="8" width="16" height="4" fill="#2B1B0B" />
+  <rect x="20" y="12" width="4" height="4" fill="#2B1B0B" />
+  <rect x="44" y="12" width="4" height="4" fill="#2B1B0B" />
+
+  <!-- Face / skin -->
+  <rect x="24" y="12" width="16" height="8" fill="#F5C6A5" />
+
+  <!-- Helmet/shoulder (armor) -->
+  <rect x="20" y="20" width="24" height="8" fill="#B0C4C9" />
+  <rect x="20" y="28" width="24" height="16" fill="#B0C4C9" />
+
+  <!-- Cloak (back) -->
+  <rect x="28" y="20" width="8" height="28" fill="#7B1F1F" opacity="0.9" />
+
+  <!-- Left arm (holding shield) -->
+  <rect x="20" y="24" width="4" height="8" fill="#B0C4C9" />
+  <rect x="24" y="24" width="4" height="4" fill="#B0C4C9" />
+
+  <!-- Right arm (holding sword) -->
+  <rect x="44" y="24" width="4" height="8" fill="#B0C4C9" />
+  <rect x="40" y="28" width="4" height="4" fill="#B0C4C9" />
+
+  <!-- Shield (wooden) -->
+  <rect x="8" y="24" width="12" height="20" fill="#8A4B2B" />
+  <rect x="14" y="28" width="4" height="12" fill="#6B4A2C" opacity="0.7" />
+
+  <!-- Sword blade -->
+  <rect x="48" y="12" width="4" height="28" fill="#E8E8E8" />
+  <rect x="48" y="8" width="4" height="4" fill="#E8E8E8" />
+  <!-- Sword hilt -->
+  <rect x="44" y="40" width="8" height="4" fill="#6B4A2C" />
+
+  <!-- Boots -->
+  <rect x="24" y="44" width="8" height="12" fill="#3B2A1A" />
+  <rect x="32" y="44" width="8" height="12" fill="#3B2A1A" />
+
+  <!-- Simple outline accents -->
+  <rect x="20" y="20" width="4" height="4" fill="#000000" opacity="0.25" />
+  <rect x="40" y="20" width="4" height="4" fill="#000000" opacity="0.25" />
+
+</svg>

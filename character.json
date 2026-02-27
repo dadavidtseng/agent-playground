@@ -1,0 +1,20 @@
+{
+  "name": "Arcelyn",
+  "class": "Cosmic Oracle",
+  "hp": 78,
+  "atk": 24,
+  "def": 18,
+  "agi": 30,
+  "abilities": [
+    {
+      "name": "Stellar Veil",
+      "description": "Envelops Arcelyn in a shimmering shield that absorbs a portion of incoming damage for 2 turns."
+    },
+    {
+      "name": "Comet's Grace",
+      "description": "Calls down a brief burst of celestial energy that increases Arcelyn's agility and grants a chance to strike twice on the next attack."
+    }
+  ],
+  "bio": "Arcelyn walks the space between fading stars, reading destinies written in cosmic dust. Once a scholar of forgotten nebulae, she now guides lost travelers with gentle foresight and meteor-lit signs.",
+  "artPath": "assets/art/arcelyn_128.svg"
+}
