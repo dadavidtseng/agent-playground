@@ -1,0 +1,74 @@
+<!--
+Palette (max 12 colors) - pixel palette for warrior_placeholder.svg
+Frame size: 64x64 (viewport units = pixels)
+
+#000000  (black - accents)
+#F2C9A0  (skin)
+#6A4C24  (hair/brown)
+#8FA6B2  (armor light)
+#5F6E73  (armor dark)
+#D9E3E8  (blade/highlight)
+#BFA06A  (weapon hilt/gold)
+#7C2F2F  (cape/cloth red)
+#2B2B2B  (shadow/boots)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-labelledby="title desc" style="shape-rendering:crispEdges; image-rendering:pixelated;">
+  <title id="title">Pixel-art warrior placeholder</title>
+  <desc id="desc">A small pixel-art warrior composed of integer-aligned rectangles grouped as body, armor, weapon, and accessories. Designed to rasterize crisply at 64x64 and 128x128 using nearest-neighbor scaling.</desc>
+  <!-- Use 1x1 rects as pixels on a 64x64 grid. No strokes. -->
+  <g id="body" fill="#F2C9A0">
+    <!-- Head (6x6) centered at x=29..34, y=14..19 -->
+    <rect x="29" y="14" width="6" height="6" />
+    <!-- Neck -->
+    <rect x="30" y="20" width="4" height="1" />
+    <!-- Torso base -->
+    <rect x="27" y="21" width="10" height="8" />
+    <!-- Legs (split) -->
+    <rect x="27" y="29" width="4" height="6" fill="#2B2B2B" />
+    <rect x="33" y="29" width="4" height="6" fill="#2B2B2B" />
+  </g>
+
+  <g id="armor" fill="#8FA6B2">
+    <!-- Helmet overlay (eyes opening) - using darker for visor -->
+    <rect x="29" y="14" width="6" height="2" />
+    <rect x="28" y="15" width="1" height="1" fill="#5F6E73" />
+    <rect x="35" y="15" width="1" height="1" fill="#5F6E73" />
+    <!-- Chest plate -->
+    <rect x="28" y="21" width="8" height="5" />
+    <!-- Shoulder pads -->
+    <rect x="26" y="21" width="2" height="3" />
+    <rect x="36" y="21" width="2" height="3" />
+    <!-- Armor shading -->
+    <rect x="30" y="23" width="4" height="1" fill="#5F6E73" />
+  </g>
+
+  <g id="weapon">
+    <!-- Sword held to the right: handle + blade -->
+    <!-- Handle/hilt -->
+    <rect x="37" y="23" width="1" height="2" fill="#BFA06A" />
+    <rect x="38" y="22" width="1" height="1" fill="#BFA06A" />
+    <!-- Blade (vertical) -->
+    <rect x="38" y="18" width="1" height="4" fill="#D9E3E8" />
+    <rect x="38" y="14" width="1" height="3" fill="#D9E3E8" />
+    <!-- Sword tip -->
+    <rect x="38" y="13" width="1" height="1" fill="#D9E3E8" />
+  </g>
+
+  <g id="accessories">
+    <!-- Hair (top/back of head) -->
+    <rect x="28" y="13" width="2" height="1" fill="#6A4C24" />
+    <rect x="34" y="13" width="2" height="1" fill="#6A4C24" />
+
+    <!-- Cape (left side, red) -->
+    <rect x="23" y="21" width="4" height="8" fill="#7C2F2F" />
+    <rect x="25" y="29" width="2" height="3" fill="#7C2F2F" />
+
+    <!-- Boots shadow accents already in legs, add small belt -->
+    <rect x="29" y="25" width="6" height="1" fill="#2B2B2B" />
+
+    <!-- Eyes (simple pixels) -->
+    <rect x="30" y="16" width="1" height="1" fill="#000000" />
+    <rect x="33" y="16" width="1" height="1" fill="#000000" />
+  </g>
+
+</svg>
