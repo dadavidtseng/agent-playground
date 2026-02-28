@@ -1,0 +1,153 @@
+/* Design tokens — exportable CSS variables
+   Units: rem where applicable. Root font size assumed 16px (1rem = 16px)
+   File: design/tokens.css
+*/
+:root{
+  /* Typography */
+  --font-family-base: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+
+  --fs-xl: 1.5rem; /* 24px */
+  --fs-lg: 1.25rem; /* 20px */
+  --fs-md: 1rem; /* 16px */
+  --fs-sm: 0.875rem; /* 14px */
+  --fs-xs: 0.75rem; /* 12px */
+
+  --lh-tight: 1.1;
+  --lh-normal: 1.4;
+  --lh-relaxed: 1.6;
+
+  --fw-regular: 400;
+  --fw-medium: 500;
+  --fw-bold: 700;
+
+  /* Spacing scale (rem) */
+  --space-0: 0.25rem;
+  --space-1: 0.5rem;
+  --space-2: 0.75rem;
+  --space-3: 1rem;
+  --space-4: 1.5rem;
+  --space-5: 2rem;
+  --space-6: 3rem;
+  --space-7: 4rem;
+
+  /* Radii */
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 1rem;
+
+  /* Elevation / shadows */
+  --elev-1: 0 0.125rem 0.25rem rgba(0,0,0,0.06);
+  --elev-2: 0 0.25rem 0.6rem rgba(0,0,0,0.12);
+
+  /* Motion */
+  --motion-duration-fast: 120ms;
+  --motion-duration-normal: 200ms;
+  --motion-duration-slow: 320ms;
+  --motion-ease: cubic-bezier(.2,.9,.2,1);
+  --motion-ease-out: ease-out;
+
+  /* Color tokens (light theme default values) */
+  --color-bg: #f7f7fb; /* app background */
+  --color-surface: #ffffff; /* card surface */
+  --color-primary: #5b6bff; /* brand */
+  --color-primary-600: #4656e6;
+  --color-text: #0f1724; /* high contrast */
+  --color-muted: #6b7280; /* subdued text */
+  --color-border: #e6e9ef;
+  --color-success: #16a34a;
+  --color-warn: #f59e0b;
+  --color-danger: #ef4444;
+  --color-focus: rgba(91,107,255,0.35);
+
+  /* Semantic tokens derived */
+  --card-padding-mobile: var(--space-3);
+  --card-padding-tablet: var(--space-4);
+  --card-padding-desktop: var(--space-5);
+
+  --avatar-size-mobile: 4rem;
+  --avatar-size-tablet: 5rem;
+  --avatar-size-desktop: 6rem;
+}
+
+/* Dark theme override example
+:root[data-theme="dark"]{
+  --color-bg: #0b1020;
+  --color-surface: #0f1724;
+  --color-text: #f8fafc;
+  --color-muted: #94a3b8;
+  --color-border: #1f2937;
+  --color-focus: rgba(91,107,255,0.18);
+}
+*/
+
+/* Basic usage examples for a CharacterProfileCard component
+   These are minimal, framework-agnostic styles to help developers reference tokens.
+*/
+.card{
+  background: var(--color-surface);
+  color: var(--color-text);
+  border-radius: var(--radius-md);
+  box-shadow: var(--elev-1);
+  padding: var(--card-padding-mobile);
+  border: 1px solid var(--color-border);
+  font-family: var(--font-family-base);
+  transition: transform var(--motion-duration-normal) var(--motion-ease), box-shadow var(--motion-duration-normal) var(--motion-ease);
+}
+
+.card:focus-within{ outline: none; box-shadow: var(--elev-2); }
+
+.card--actionable{
+  cursor: pointer;
+}
+
+.card:hover{
+  transform: translateY(-0.125rem);
+  box-shadow: var(--elev-2);
+}
+
+.card__media{ display: flex; align-items: center; justify-content: center; margin-bottom: var(--space-3); }
+.card__media .avatar{
+  width: var(--avatar-size-mobile);
+  height: var(--avatar-size-mobile);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.card__content{ text-align: left; }
+.card__title{ font-size: var(--fs-lg); line-height: var(--lh-tight); margin: 0 0 var(--space-1) 0; font-weight: var(--fw-medium); }
+.card__subtitle{ font-size: var(--fs-sm); margin: 0 0 var(--space-2) 0; color: var(--color-muted); }
+.card__tagline{ font-size: var(--fs-md); margin: 0 0 var(--space-3) 0; line-height: var(--lh-normal); color: var(--color-text); }
+
+.card__stats{ display: flex; gap: var(--space-2); list-style: none; padding: 0; margin: 0 0 var(--space-3) 0; }
+.card__stats .stat{ background: rgba(15,23,36,0.03); padding: calc(var(--space-0) + var(--space-1)); border-radius: var(--radius-sm); font-size: var(--fs-xs); color: var(--color-muted); }
+
+.card__actions{ display: flex; gap: var(--space-2); }
+.btn{ font-family: inherit; border: none; cursor: pointer; border-radius: var(--radius-sm); padding: calc(var(--space-1) + 0.125rem) var(--space-3); font-size: var(--fs-sm); }
+.btn--primary{ background: var(--color-primary); color: #fff; box-shadow: none; transition: transform var(--motion-duration-fast) var(--motion-ease); }
+.btn--primary:hover{ background: var(--color-primary-600); transform: translateY(-0.05rem); }
+.btn--primary:active{ transform: scale(.98); }
+.btn--icon{ background: transparent; color: var(--color-muted); padding: var(--space-1); font-size: var(--fs-md); }
+.btn--icon[aria-pressed="true"]{ color: var(--color-warn); }
+
+/* Focus-visible styling (keyboard focus only) */
+:where(.btn, .card):focus-visible{ outline: 3px solid var(--color-focus); outline-offset: 2px; }
+
+/* Responsive adjustments */
+@media (min-width: 37.5rem){ /* Tablet up */
+  .card{ display: grid; grid-template-columns: auto 1fr; gap: var(--space-4); padding: var(--card-padding-tablet); align-items: center; }
+  .card__media{ margin: 0; justify-content: flex-start; }
+  .card__media .avatar{ width: var(--avatar-size-tablet); height: var(--avatar-size-tablet); }
+  .card__content{ text-align: left; }
+}
+
+@media (min-width: 64rem){ /* Desktop up */
+  .card{ padding: var(--card-padding-desktop); gap: var(--space-5); }
+  .card__media .avatar{ width: var(--avatar-size-desktop); height: var(--avatar-size-desktop); }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .card, .btn{ transition: none !important; }
+}
+
+/* End of tokens.css */
