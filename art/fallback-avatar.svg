@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="128" height="128" role="img" aria-labelledby="title desc" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <title id="title">Fallback avatar</title>
+  <desc id="desc">Neutral pixel-avatar silhouette for use as a fallback or placeholder.</desc>
+  <!-- Palette: #000000 (silhouette), #D0D0D0 (background subtle) -->
+  <rect x="0" y="0" width="16" height="16" fill="#FFFFFF"/>
+
+  <!-- Head (8x6) centered -->
+  <rect x="4" y="2" width="8" height="6" fill="#000000"/>
+  <!-- Neck -->
+  <rect x="7" y="8" width="2" height="1" fill="#000000"/>
+  <!-- Shoulders / torso simple block -->
+  <rect x="2" y="9" width="12" height="5" fill="#000000"/>
+
+  <!-- Accent: subtle border pixels to read at small sizes -->
+  <rect x="3" y="3" width="1" height="1" fill="#000000"/> 
+  <rect x="12" y="3" width="1" height="1" fill="#000000"/>
+  <rect x="2" y="9" width="1" height="1" fill="#000000"/>
+  <rect x="13" y="9" width="1" height="1" fill="#000000"/>
+
+  <style> svg { image-rendering: pixelated; } </style>
+</svg>
