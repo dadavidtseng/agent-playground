@@ -1,0 +1,57 @@
+/* Example token and component styles for visual QA */
+:root{
+  /* tokens */
+  --color-surface: #ffffff;
+  --color-muted-bg: #f5f6f7;
+  --color-text: #111827;
+  --color-muted-text: #6b7280; /* this is the muted token found in QA (contrast low) */
+  --color-accent: #0ea5e9;
+  --color-success: #16a34a;
+  --color-danger: #dc2626;
+
+  --radius: 8px;
+  --space-1: 8px;
+  --space-2: 12px;
+  --space-3: 16px;
+}
+
+*{box-sizing:border-box}
+body{font-family:Inter,Segoe UI,system-ui,Arial,sans-serif;background:var(--color-surface);color:var(--color-text);margin:0;padding:24px}
+.demo{max-width:1100px;margin:0 auto}
+.demo__header h1{margin:0 0 4px 0}
+.muted{color:var(--color-muted-text)}
+
+.example-group{margin-top:28px}
+.row{display:flex;gap:12px;flex-wrap:wrap;align-items:center}
+.row.small{gap:8px}
+
+/* Buttons */
+.btn{padding:10px 14px;border-radius:6px;border:1px solid transparent;background:#eee;cursor:pointer;font-weight:600}
+.btn--primary{background:var(--color-accent);color:#fff;border-color:rgba(0,0,0,0.04)}
+.btn--secondary{background:#fff;border-color:rgba(0,0,0,0.08);color:var(--color-text)}
+.btn--ghost{background:transparent;border-color:transparent;color:var(--color-accent)}
+.btn--icon{background:transparent;border:1px solid transparent;padding:8px}
+.btn:focus{outline:3px solid rgba(14,165,233,0.2);outline-offset:2px}
+.btn--sm{padding:6px 10px;font-size:13px}
+
+/* Badges */
+.badge{display:inline-block;padding:6px 8px;border-radius:999px;background:var(--color-muted-bg);color:var(--color-text);font-weight:600}
+.badge--muted{background:transparent;color:var(--color-muted-text);border:1px solid var(--color-muted-bg);padding:4px 8px}
+.badge--success{background:var(--color-success);color:#fff}
+.badge--danger{background:var(--color-danger);color:#fff}
+
+/* Cards */
+.cards{gap:16px}
+.card{background:#fff;border-radius:var(--radius);padding:16px;border:1px solid rgba(0,0,0,0.04);width:320px}
+.card--alt{background:var(--color-muted-bg)}
+.card__actions{margin-top:12px;display:flex;gap:8px}
+
+/* Tokens */
+.tokens{gap:12px}
+.swatch{width:140px;height:60px;border-radius:8px;display:flex;align-items:center;justify-content:center;color:var(--color-text);background:var(--bg);border:1px solid rgba(0,0,0,0.04)}
+
+/* Responsive adjustments */
+@media (max-width:768px){
+  .card{width:100%}
+  .demo{padding:16px}
+}

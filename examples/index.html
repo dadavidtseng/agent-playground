@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Component Examples — Tokens & Variants</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="demo">
+    <header class="demo__header">
+      <h1>Component Examples — Tokens & Variants</h1>
+      <p class="muted">A small static demo showing token variations and component variants for visual QA.</p>
+    </header>
+
+    <section class="example-group">
+      <h2>Buttons</h2>
+      <div class="row">
+        <button class="btn btn--primary">Primary</button>
+        <button class="btn btn--secondary">Secondary</button>
+        <button class="btn btn--ghost">Ghost</button>
+        <button class="btn btn--icon" aria-label="Search"><span class="icon">🔍</span></button>
+      </div>
+      <div class="row small">
+        <button class="btn btn--primary btn--sm">Primary small</button>
+        <button class="btn btn--secondary btn--sm">Secondary sm</button>
+      </div>
+    </section>
+
+    <section class="example-group">
+      <h2>Badges</h2>
+      <div class="row">
+        <span class="badge">Default</span>
+        <span class="badge badge--muted">Muted</span>
+        <span class="badge badge--success">Success</span>
+        <span class="badge badge--danger">Danger</span>
+      </div>
+    </section>
+
+    <section class="example-group">
+      <h2>Cards</h2>
+      <div class="row cards">
+        <article class="card">
+          <h3>Card Title</h3>
+          <p class="muted">A short description for this card. Resize window to test wrapping.</p>
+          <div class="card__actions">
+            <button class="btn btn--primary">Action</button>
+            <button class="btn btn--ghost">Learn</button>
+          </div>
+        </article>
+
+        <article class="card card--alt">
+          <h3>Alt Card</h3>
+          <p class="muted">Alternate style for contrast testing and spacing checks.</p>
+          <div class="card__actions">
+            <button class="btn btn--secondary">Action</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="example-group">
+      <h2>Token Variations</h2>
+      <p class="muted">Examples showing color token variations applied via utility classes.</p>
+      <div class="row tokens">
+        <div class="swatch" style="--bg:var(--color-surface);">Surface</div>
+        <div class="swatch" style="--bg:var(--color-muted-bg);">Muted Surface</div>
+        <div class="swatch" style="--bg:var(--color-accent);">Accent</div>
+        <div class="swatch" style="--bg:var(--color-success);">Success</div>
+      </div>
+    </section>
+
+  </main>
+</body>
+</html>

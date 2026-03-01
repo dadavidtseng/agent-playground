@@ -1,0 +1,226 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Game Character Profile Card — Demo</title>
+  <link rel="stylesheet" href="./styles.css">
+</head>
+<body>
+  <main class="demo-root">
+    <h1>Game Character Profile Card — Demo</h1>
+    <p class="lead">Shows variants, responsive layout, animated stat bars, keyboard accessible and respects prefers-reduced-motion.</p>
+
+    <section class="cards">
+      <!-- Variant 1: default warrior -->
+      <article class="profile-card" tabindex="0" aria-label="Warrior profile card">
+        <div class="card-media">
+          <!-- Inline warrior SVG (simple stylized character) -->
+          <svg class="avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatar1Title">
+            <title id="avatar1Title">Warrior avatar</title>
+            <defs>
+              <linearGradient id="grad-armor" x1="0" x2="1">
+                <stop offset="0%" stop-color="#9fb4ff" />
+                <stop offset="100%" stop-color="#6b8cff" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="200" height="200" rx="20" fill="#0b1220" />
+            <g transform="translate(30,20)">
+              <!-- helmet -->
+              <ellipse cx="70" cy="40" rx="44" ry="26" fill="#c9d6e8" />
+              <rect x="28" y="40" width="84" height="28" rx="12" fill="url(#grad-armor)" />
+              <!-- face -->
+              <circle cx="70" cy="36" r="12" fill="#f1d0b5" />
+              <rect x="58" y="44" width="24" height="10" rx="4" fill="#3a3f4a" />
+              <!-- body / armor -->
+              <path d="M10 90 L130 90 L110 150 L30 150 Z" fill="url(#grad-armor)" />
+              <!-- sword -->
+              <rect x="108" y="60" width="6" height="70" rx="3" fill="#8b8b8b" transform="rotate(15 108 60)" />
+              <rect x="104" y="50" width="14" height="12" rx="2" fill="#5a5a5a" transform="rotate(15 108 50)" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="card-content">
+          <h2 class="character-name">Tharak Ironhelm</h2>
+          <p class="character-desc">Veteran melee warrior from the northern holds. Resilient, steady, and fearsome in close combat.</p>
+
+          <dl class="stats" aria-label="Character stats">
+            <div class="stat-row">
+              <dt>Health</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78" data-value="78" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">78</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Strength</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="85" data-value="85" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">85</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Defense</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="64" data-value="64" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">64</span>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="card-actions">
+            <button class="btn update" type="button" aria-label="Randomize stats">Randomize</button>
+            <button class="btn small" type="button" aria-label="View details">Details</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Variant 2: compact / avatar-only -->
+      <article class="profile-card variant-compact" tabindex="0" aria-label="Rogue profile card">
+        <div class="card-media">
+          <!-- Another inline avatar with minor color changes -->
+          <svg class="avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatar2Title">
+            <title id="avatar2Title">Rogue avatar</title>
+            <defs>
+              <linearGradient id="grad-rogue" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffd6a5" />
+                <stop offset="100%" stop-color="#ffb86b" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="200" height="200" rx="20" fill="#07111a" />
+            <g transform="translate(30,20)">
+              <ellipse cx="70" cy="40" rx="44" ry="26" fill="#d9c2a6" />
+              <rect x="28" y="40" width="84" height="28" rx="12" fill="url(#grad-rogue)" />
+              <circle cx="70" cy="36" r="12" fill="#e9d4bd" />
+              <rect x="58" y="44" width="24" height="10" rx="4" fill="#2b2d33" />
+              <path d="M10 90 L130 90 L110 150 L30 150 Z" fill="url(#grad-rogue)" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="card-content">
+          <h2 class="character-name">Lyra Nightwind</h2>
+          <p class="character-desc">Agile rogue with a penchant for shadowwork. Quick, elusive, and precise.</p>
+
+          <dl class="stats">
+            <div class="stat-row">
+              <dt>Health</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="60" data-value="60" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">60</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Agility</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="92" data-value="92" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">92</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Stealth</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88" data-value="88" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">88</span>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="card-actions">
+            <button class="btn update" type="button">Randomize</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Variant 3: stacked / narrow -->
+      <article class="profile-card variant-stacked" tabindex="0" aria-label="Mage profile card">
+        <div class="card-media">
+          <svg class="avatar" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatar3Title">
+            <title id="avatar3Title">Mage avatar</title>
+            <defs>
+              <linearGradient id="grad-mage" x1="0" x2="1">
+                <stop offset="0%" stop-color="#ffd6ff" />
+                <stop offset="100%" stop-color="#ff9bff" />
+              </linearGradient>
+            </defs>
+            <rect x="0" y="0" width="200" height="200" rx="20" fill="#10071a" />
+            <g transform="translate(30,20)">
+              <ellipse cx="70" cy="40" rx="44" ry="26" fill="#eac8ff" />
+              <rect x="28" y="40" width="84" height="28" rx="12" fill="url(#grad-mage)" />
+              <circle cx="70" cy="36" r="12" fill="#fde9ff" />
+              <rect x="58" y="44" width="24" height="10" rx="4" fill="#2a2230" />
+              <path d="M10 90 L130 90 L110 150 L30 150 Z" fill="url(#grad-mage)" />
+            </g>
+          </svg>
+        </div>
+
+        <div class="card-content">
+          <h2 class="character-name">Elyra Moonweave</h2>
+          <p class="character-desc">Arcane mage specializing in battlefield control and area magic.</p>
+
+          <dl class="stats">
+            <div class="stat-row">
+              <dt>Health</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="52" data-value="52" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">52</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Intelligence</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="96" data-value="96" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">96</span>
+              </dd>
+            </div>
+
+            <div class="stat-row">
+              <dt>Mana</dt>
+              <dd>
+                <div class="stat-shell">
+                  <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88" data-value="88" data-anim-duration="600"></div>
+                </div>
+                <span class="stat-value">88</span>
+              </dd>
+            </div>
+          </dl>
+
+          <div class="card-actions">
+            <button class="btn update" type="button">Randomize</button>
+            <button class="btn small" type="button">Equip</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="demo-footer">
+      <p>Resize the window to see responsive behavior. Use Tab to focus cards. Press the Randomize button to animate stat updates.</p>
+    </footer>
+  </main>
+
+  <script src="./component.js" type="module"></script>
+</body>
+</html>
