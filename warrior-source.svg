@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Pixel-art warrior (editable source)
+  Design tokens (palette):
+    --color-skin:      #F2C38F  (light skin)
+    --color-dark-skin: #C79263  (skin shadow)
+    --color-hair:      #332B26  (hair)
+    --color-armor:     #8DA4B6  (armor)
+    --color-armor-dark:#6B8593  (armor shadow)
+    --color-cloth:     #6A2E2E  (cloth / tunic)
+    --color-metal:     #D8D8D8  (steel)
+    --color-gold:      #C89B3A  (gold trim)
+    --color-shield-wood:#8B5A2B (shield wood)
+    --color-black:     #000000
+    --color-white:     #FFFFFF
+  Grid: 16x16 pixel grid on a 64x64 viewBox (cell = 4 units)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="256" height="256" role="img" aria-labelledby="title desc">
+  <title id="title">Pixel warrior character</title>
+  <desc id="desc">A layered vector pixel-art warrior designed for animation. Parts with IDs are animatable.</desc>
+  <defs>
+    <style><![CDATA[
+      /* preserve crisp pixel look */
+      svg { shape-rendering: crispEdges; }
+    ]]></style>
+  </defs>
+
+  <!-- Layer: shadow/background (transparent) -->
+  <g id="layer-background" fill="none" />
+
+  <!-- Layer: shield (held left) -->
+  <g id="shield" class="anim-shield">
+    <!-- shield body (wood) -->
+    <rect x="8" y="28" width="12" height="20" fill="#8B5A2B" rx="1" />
+    <!-- shield rim (gold) -->
+    <rect x="8" y="28" width="12" height="4" fill="#C89B3A" />
+    <!-- shield boss (metal) -->
+    <rect x="12" y="36" width="4" height="4" fill="#D8D8D8" />
+  </g>
+
+  <!-- Layer: warrior group -->
+  <g id="warrior">
+    <!-- Head -->
+    <g id="head">
+      <!-- hair -->
+      <rect x="20" y="8" width="16" height="4" fill="#332B26" />
+      <rect x="18" y="12" width="20" height="4" fill="#332B26" />
+      <!-- face -->
+      <rect x="18" y="16" width="20" height="8" fill="#F2C38F" />
+      <!-- eyes -->
+      <rect id="eye-left" x="24" y="20" width="2" height="2" fill="#000000" />
+      <rect id="eye-right" x="30" y="20" width="2" height="2" fill="#000000" />
+      <!-- mouth (shadow) -->
+      <rect x="26" y="24" width="4" height="1" fill="#C79263" />
+    </g>
+
+    <!-- Body / Armor -->
+    <g id="body">
+      <!-- shoulder pad left -->
+      <rect x="16" y="24" width="6" height="4" fill="#8DA4B6" />
+      <!-- shoulder pad right -->
+      <rect x="34" y="24" width="6" height="4" fill="#8DA4B6" />
+      <!-- chest -->
+      <rect x="20" y="28" width="16" height="12" fill="#8DA4B6" />
+      <!-- chest shadow -->
+      <rect x="20" y="34" width="16" height="4" fill="#6B8593" />
+      <!-- tunic / cloth under armor -->
+      <rect x="24" y="40" width="8" height="6" fill="#6A2E2E" />
+    </g>
+
+    <!-- Left arm holding shield (grouped for animation) -->
+    <g id="arm-left" class="anim-arm-left">
+      <rect x="12" y="28" width="4" height="10" fill="#8DA4B6" />
+      <rect x="12" y="38" width="4" height="6" fill="#6B8593" />
+    </g>
+
+    <!-- Right arm holding sword -->
+    <g id="arm-right" class="anim-arm-right">
+      <rect x="40" y="28" width="4" height="10" fill="#8DA4B6" />
+      <rect x="40" y="38" width="4" height="6" fill="#6B8593" />
+    </g>
+
+    <!-- Sword (held to the right) -->
+    <g id="sword" class="anim-sword" transform="translate(44,24)">
+      <!-- blade -->
+      <rect x="0" y="0" width="4" height="20" fill="#D8D8D8" />
+      <!-- hilt -->
+      <rect x="-2" y="8" width="8" height="2" fill="#C89B3A" />
+      <rect x="0" y="18" width="4" height="2" fill="#332B26" />
+    </g>
+
+    <!-- Legs -->
+    <g id="legs">
+      <rect x="22" y="46" width="4" height="10" fill="#6A2E2E" />
+      <rect x="28" y="46" width="4" height="10" fill="#6A2E2E" />
+      <!-- boots -->
+      <rect x="22" y="56" width="4" height="4" fill="#332B26" />
+      <rect x="28" y="56" width="4" height="4" fill="#332B26" />
+    </g>
+  </g>
+
+  <!-- Notes: IDs available for animation: #eye-left, #eye-right, #shield, #sword, #arm-left, #arm-right -->
+</svg>

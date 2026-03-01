@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Character Profile Card — Examples</title>
+  <link rel="stylesheet" href="../styles/char-card.css">
+  <style>
+    /* Inline helper for the example page only */
+    .demo-controls { margin-bottom: 18px; color: var(--color-muted); }
+    .demo-controls label { margin-right: 12px; }
+  </style>
+</head>
+<body class="example-root">
+  <header style="max-width:1200px;margin:0 auto 18px;">
+    <h1 style="margin:0 0 8px 0;">Character Profile Card — Examples</h1>
+    <p style="margin:0;color:var(--color-muted);">Resize the viewport to test mobile (320px), tablet (768px), and desktop (1024px) layouts.</p>
+  </header>
+
+  <div class="card-grid" role="list">
+
+    <!-- Single card (list item) -->
+    <article class="char-card" role="listitem" aria-labelledby="char-1-name">
+      <header class="char-card__header">
+        <div class="char-card__avatar" aria-hidden="true">
+          <!-- Integration point: inline SVG or <img> may be inserted here -->
+          <img src="https://images.unsplash.com/photo-1544005313-94ddf0286df2?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Portrait of Aria" />
+        </div>
+        <div class="char-card__meta">
+          <h2 id="char-1-name" class="char-card__title">Aria Nightingale</h2>
+          <p class="char-card__subtitle">Rogue — Shadow Syndicate</p>
+        </div>
+      </header>
+
+      <div class="char-card__body">
+        <p class="char-card__bio">A deft infiltrator with a knack for getting in and out unseen. Quick with a blade and quicker with a wit. Prefers moonlit rooftops to crowded taverns.</p>
+
+        <section class="char-card__stats" aria-label="Character stats">
+          <!-- Data-attribute schema documented below -->
+          <div class="char-card__stat" data-stat-type="level" data-stat-value="12">
+            <span class="char-card__stat--label">Level</span>
+            <span class="char-card__stat--value">12</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="hp" data-stat-value="84">
+            <span class="char-card__stat--label">HP</span>
+            <span class="char-card__stat--value">84</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="atk" data-stat-value="28">
+            <span class="char-card__stat--label">ATK</span>
+            <span class="char-card__stat--value">28</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="def" data-stat-value="15">
+            <span class="char-card__stat--label">DEF</span>
+            <span class="char-card__stat--value">15</span>
+          </div>
+        </section>
+      </div>
+
+      <footer class="char-card__footer">
+        <div>
+          <span style="font-size:12px;color:var(--color-muted);">Last seen: 2h ago</span>
+        </div>
+        <div class="char-card__actions">
+          <button class="button" aria-label="Message Aria">Message</button>
+          <button class="button button--primary" aria-label="View profile for Aria">View</button>
+        </div>
+      </footer>
+    </article>
+
+    <!-- Additional cards to show grid layout responsiveness -->
+    <article class="char-card" role="listitem" aria-labelledby="char-2-name">
+      <header class="char-card__header">
+        <div class="char-card__avatar">
+          <!-- Inline SVG integration example (icon placeholder) -->
+          <svg width="72" height="72" viewBox="0 0 24 24" fill="none" aria-hidden="true" xmlns="http://www.w3.org/2000/svg">
+            <rect width="24" height="24" rx="4" fill="url(#g)" />
+            <defs>
+              <linearGradient id="g" x1="0" x2="1">
+                <stop offset="0" stop-color="#FF7A7A" />
+                <stop offset="1" stop-color="#FFB86B" />
+              </linearGradient>
+            </defs>
+          </svg>
+        </div>
+        <div class="char-card__meta">
+          <h2 id="char-2-name" class="char-card__title">Borin Stonehelm</h2>
+          <p class="char-card__subtitle">Warrior — Iron Hold</p>
+        </div>
+      </header>
+      <div class="char-card__body">
+        <p class="char-card__bio">A battle-hardened veteran with a shield as broad as his resolve. Speaks little but every strike tells a story.</p>
+        <section class="char-card__stats" aria-label="Character stats">
+          <div class="char-card__stat" data-stat-type="level" data-stat-value="18">
+            <span class="char-card__stat--label">Level</span>
+            <span class="char-card__stat--value">18</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="hp" data-stat-value="132">
+            <span class="char-card__stat--label">HP</span>
+            <span class="char-card__stat--value">132</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="atk" data-stat-value="42">
+            <span class="char-card__stat--label">ATK</span>
+            <span class="char-card__stat--value">42</span>
+          </div>
+        </section>
+      </div>
+      <footer class="char-card__footer">
+        <div>
+          <span style="font-size:12px;color:var(--color-muted);">Last seen: 1d ago</span>
+        </div>
+        <div class="char-card__actions">
+          <button class="button">Message</button>
+          <button class="button button--primary">View</button>
+        </div>
+      </footer>
+    </article>
+
+    <article class="char-card" role="listitem" aria-labelledby="char-3-name">
+      <header class="char-card__header">
+        <div class="char-card__avatar">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?ixlib=rb-4.0.3&auto=format&fit=crop&w=256&q=80" alt="Portrait of Lira" />
+        </div>
+        <div class="char-card__meta">
+          <h2 id="char-3-name" class="char-card__title">Lira Windwhisper</h2>
+          <p class="char-card__subtitle">Mage — Arcane Collegium</p>
+        </div>
+      </header>
+      <div class="char-card__body">
+        <p class="char-card__bio">A scholar of the old ways, Lira bends the subtle currents of magic with graceful precision. Her focus is unmatched in the halls of learning.</p>
+        <section class="char-card__stats" aria-label="Character stats">
+          <div class="char-card__stat" data-stat-type="level" data-stat-value="22">
+            <span class="char-card__stat--label">Level</span>
+            <span class="char-card__stat--value">22</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="hp" data-stat-value="98">
+            <span class="char-card__stat--label">HP</span>
+            <span class="char-card__stat--value">98</span>
+          </div>
+          <div class="char-card__stat" data-stat-type="mp" data-stat-value="220">
+            <span class="char-card__stat--label">MP</span>
+            <span class="char-card__stat--value">220</span>
+          </div>
+        </section>
+      </div>
+      <footer class="char-card__footer">
+        <div>
+          <span style="font-size:12px;color:var(--color-muted);">Last seen: 3h ago</span>
+        </div>
+        <div class="char-card__actions">
+          <button class="button">Message</button>
+          <button class="button button--primary">View</button>
+        </div>
+      </footer>
+    </article>
+
+  </div>
+
+  <!-- Integration notes for consumers -->
+  <section style="max-width:1200px;margin:24px auto;color:var(--color-muted);">
+    <h3 style="color:var(--color-text);">Integration Notes</h3>
+    <ul style="color:var(--color-muted);">
+      <li>Inline SVG: Insert inline SVG markup inside the .char-card__avatar element to ensure it inherits size and can be styled via CSS. Example shown for card 2.</li>
+      <li>Image: Use &lt;img&gt; inside .char-card__avatar for raster portraits. Ensure alt text is provided for accessibility. Set aria-hidden="true" on avatar wrappers if alt text duplicates visible text.</li>
+      <li>Data attributes: Stats expose a simple schema: data-stat-type (string) and data-stat-value (number). Example: <code>data-stat-type="hp" data-stat-value="84"</code>. JavaScript can query these for dynamic updates.</li>
+      <li>ARIA: The card uses semantic elements (article, header, footer). Use role="list" on the container if cards are purely presentational items within a list.</li>
+    </ul>
+  </section>
+
+</body>
+</html>

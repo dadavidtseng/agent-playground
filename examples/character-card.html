@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Character Card Examples</title>
+  <link rel="stylesheet" href="../tokens.css">
+  <link rel="stylesheet" href="character-card.css">
+  <style>
+    body { background: var(--color-bg); padding: 32px; font-family: var(--font-family-sans); }
+    .grid { display: grid; gap: 16px; }
+    @media (min-width: 1024px) { .grid { grid-template-columns: repeat(3, 1fr); } }
+    @media (min-width: 600px) and (max-width: 1023px) { .grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 599px) { .grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <h2 style="font-size:var(--type-xl);">Character Card — Single (mobile)</h2>
+
+  <div class="char-card" tabindex="0" role="group" data-hp="82" data-attack="64" data-defense="48" data-speed="95">
+    <div class="char-card__header">
+      <div class="char-avatar" aria-hidden="true">
+        <!-- Inline SVG placeholder (no raster) -->
+        <svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" fill="white"/><path d="M3 21c0-4 4-6 9-6s9 2 9 6" fill="rgba(255,255,255,0.18)"/></svg>
+      </div>
+      <div>
+        <div class="char-name">Amara Tideborn</div>
+        <div class="char-role">Sea Ranger • Level 27</div>
+      </div>
+    </div>
+
+    <div class="char-stats">
+      <div class="char-stat char-stat--hp" role="group" aria-label="HP">
+        <div class="char-stat__row">
+          <div class="char-stat__label">HP</div>
+          <div class="char-stat__bar"><div class="char-stat__fill" style="width:82%"></div></div>
+          <div class="char-stat__value">82</div>
+        </div>
+      </div>
+
+      <div class="char-stat char-stat--attack" role="group" aria-label="Attack">
+        <div class="char-stat__row">
+          <div class="char-stat__label">ATK</div>
+          <div class="char-stat__bar"><div class="char-stat__fill" style="width:64%"></div></div>
+          <div class="char-stat__value">64</div>
+        </div>
+      </div>
+
+      <div class="char-stat char-stat--defense" role="group" aria-label="Defense">
+        <div class="char-stat__row">
+          <div class="char-stat__label">DEF</div>
+          <div class="char-stat__bar"><div class="char-stat__fill" style="width:48%"></div></div>
+          <div class="char-stat__value">48</div>
+        </div>
+      </div>
+
+      <div class="char-stat char-stat--speed" role="group" aria-label="Speed">
+        <div class="char-stat__row">
+          <div class="char-stat__label">SPD</div>
+          <div class="char-stat__bar"><div class="char-stat__fill" style="width:95%"></div></div>
+          <div class="char-stat__value">95</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-desc">A lithe ranger of the coast, Amara moves like the tide — fast, patient, precise. Skilled with harpoons and coastal tracking.</div>
+
+    <div class="char-actions">
+      <button class="button button--primary">Select</button>
+      <button class="button button--tertiary">Details</button>
+    </div>
+  </div>
+
+  <hr style="margin:24px 0;">
+
+  <h2 style="font-size:var(--type-xl);">Responsive Grid</h2>
+  <div class="grid">
+    <!-- Reuse card markup with different data attributes -->
+    <div class="char-card" tabindex="0" role="group" data-hp="100" data-attack="80" data-defense="70" data-speed="55">
+      <div class="char-card__header">
+        <div class="char-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" fill="white"/><path d="M3 21c0-4 4-6 9-6s9 2 9 6" fill="rgba(255,255,255,0.18)"/></svg></div>
+        <div><div class="char-name">Thorn Barkhand</div><div class="char-role">Guardian • Level 34</div></div>
+      </div>
+      <div class="char-stats">
+        <div class="char-stat char-stat--hp"><div class="char-stat__row"><div class="char-stat__label">HP</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:100%"></div></div><div class="char-stat__value">100</div></div></div>
+        <div class="char-stat char-stat--attack"><div class="char-stat__row"><div class="char-stat__label">ATK</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:80%"></div></div><div class="char-stat__value">80</div></div></div>
+        <div class="char-stat char-stat--defense"><div class="char-stat__row"><div class="char-stat__label">DEF</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:70%"></div></div><div class="char-stat__value">70</div></div></div>
+        <div class="char-stat char-stat--speed"><div class="char-stat__row"><div class="char-stat__label">SPD</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:55%"></div></div><div class="char-stat__value">55</div></div></div>
+      </div>
+      <div class="char-desc">A mountain guardian with an unbreakable will. Thorn shields allies and draws enemy focus.</div>
+      <div class="char-actions"><button class="button button--primary">Select</button><button class="button button--tertiary">Details</button></div>
+    </div>
+
+    <div class="char-card" tabindex="0" role="group" data-hp="64" data-attack="92" data-defense="40" data-speed="88">
+      <div class="char-card__header">
+        <div class="char-avatar" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="3" fill="white"/><path d="M3 21c0-4 4-6 9-6s9 2 9 6" fill="rgba(255,255,255,0.18)"/></svg></div>
+        <div><div class="char-name">Rex Quickclaw</div><div class="char-role">Assassin • Level 29</div></div>
+      </div>
+      <div class="char-stats">
+        <div class="char-stat char-stat--hp"><div class="char-stat__row"><div class="char-stat__label">HP</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:64%"></div></div><div class="char-stat__value">64</div></div></div>
+        <div class="char-stat char-stat--attack"><div class="char-stat__row"><div class="char-stat__label">ATK</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:92%"></div></div><div class="char-stat__value">92</div></div></div>
+        <div class="char-stat char-stat--defense"><div class="char-stat__row"><div class="char-stat__label">DEF</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:40%"></div></div><div class="char-stat__value">40</div></div></div>
+        <div class="char-stat char-stat--speed"><div class="char-stat__row"><div class="char-stat__label">SPD</div><div class="char-stat__bar"><div class="char-stat__fill" style="width:88%"></div></div><div class="char-stat__value">88</div></div></div>
+      </div>
+      <div class="char-desc">A shadow in the crowd, Rex thrives in chaos. High burst, fragile sustain.</div>
+      <div class="char-actions"><button class="button button--primary">Select</button><button class="button button--tertiary">Details</button></div>
+    </div>
+  </div>
+
+</body>
+</html>

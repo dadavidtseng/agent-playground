@@ -1,0 +1,111 @@
+@import "../tokens.css"; /* note: for local reference in examples only; tokens live at project root */
+
+/* Basic reset for example */
+* { box-sizing: border-box; }
+
+.char-card {
+  font-family: var(--font-family-sans);
+  background: var(--color-surface);
+  color: var(--color-text);
+  border: 1px solid var(--color-border);
+  border-radius: var(--radius-md);
+  padding: var(--card-padding);
+  max-width: var(--card-max-width);
+  box-shadow: var(--elevation-1);
+  transition: transform var(--motion-fast) var(--motion-spring), box-shadow var(--motion-fast) linear, border-color var(--motion-fast) linear;
+  display: grid;
+  gap: var(--card-gap);
+}
+
+.char-card:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--elevation-2);
+  border-color: var(--color-accent-300);
+}
+
+.char-card:focus-within {
+  outline: none;
+  box-shadow: 0 0 0 4px rgba(0,102,255,0.12), var(--elevation-2);
+}
+
+.char-card--disabled {
+  opacity: 0.6;
+  pointer-events: none;
+  border-color: var(--color-disabled);
+  background: var(--color-muted);
+}
+
+/* Header */
+.char-card__header {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.char-avatar {
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  border-radius: 999px;
+  overflow: hidden;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: linear-gradient(135deg, var(--color-accent-300), var(--color-accent));
+  box-shadow: inset 0 -6px 18px rgba(11,26,42,0.06);
+}
+
+.char-avatar svg { width: 70%; height: 70%; display: block; }
+
+.char-name {
+  font-size: var(--type-lg);
+  font-weight: var(--font-weight-bold);
+  line-height: 1;
+}
+
+.char-role {
+  font-size: var(--type-sm);
+  color: var(--color-text-muted);
+}
+
+/* Stats */
+.char-stats { display: grid; gap: var(--space-2); }
+.char-stat { display: grid; gap: var(--space-1); }
+.char-stat__row { display: flex; align-items: center; gap: var(--space-3); }
+.char-stat__label { font-size: var(--type-xs); color: var(--color-text-muted); width: 64px; }
+.char-stat__value { font-size: var(--type-sm); font-weight: var(--font-weight-medium); min-width: 36px; text-align: right; }
+.char-stat__bar { flex: 1; background: var(--color-muted); height: var(--stat-height); border-radius: var(--stat-radius); overflow: hidden; }
+.char-stat__fill { height: 100%; width: 0; background: var(--color-hp); transition: width var(--motion-medium) var(--motion-spring), background-color var(--motion-medium); }
+
+/* Specific stat colors via modifier classes */
+.char-stat--hp .char-stat__fill { background: var(--color-hp); }
+.char-stat--attack .char-stat__fill { background: var(--color-attack); }
+.char-stat--defense .char-stat__fill { background: var(--color-defense); }
+.char-stat--speed .char-stat__fill { background: var(--color-speed); }
+
+/* Description */
+.char-desc { font-size: var(--type-sm); color: var(--color-text-muted); }
+
+/* Actions */
+.char-actions { display: flex; gap: var(--space-3); }
+.button { padding: 8px 12px; border-radius: 8px; font-size: var(--type-sm); cursor: pointer; border: none; }
+.button--primary { background: var(--color-accent); color: white; }
+.button--primary:hover { background: var(--color-accent-600); }
+.button--tertiary { background: transparent; color: var(--color-text); border: 1px solid var(--color-border); }
+
+/* Responsive layout rules */
+@media (max-width: 599px) {
+  .char-card { width: 100%; padding: var(--space-4); }
+  .char-avatar { width: var(--avatar-size-sm); height: var(--avatar-size-sm); margin: 0 auto; }
+  .char-card__header { flex-direction: column; align-items: center; text-align: center; }
+}
+
+@media (min-width: 600px) and (max-width: 1023px) {
+  .char-card { grid-template-columns: auto 1fr; align-items: start; }
+  .char-avatar { width: var(--avatar-size-md); height: var(--avatar-size-md); }
+  .char-card__header { align-items: center; }
+}
+
+@media (min-width: 1024px) {
+  .char-card { grid-template-columns: auto 1fr; gap: var(--space-4); }
+  .char-avatar { width: var(--avatar-size-lg); height: var(--avatar-size-lg); }
+}
