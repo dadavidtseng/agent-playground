@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" shape-rendering="crispEdges" width="16" height="16" role="img" aria-labelledby="title desc">
+  <title id="title">Warrior Pixel Character</title>
+  <desc id="desc">Scalable 16x16 pixel-art warrior. Includes symbol variants for 32px and 64px nominal sizes and a monochrome outline version. Layer groups: .skin, .armor, .weapon for recoloring.</desc>
+  <style> .skin{fill:#f2c98f} .armor{fill:#5b6f88} .weapon{fill:#b08a57} .accent{fill:#3b4652} </style>
+  <!-- Base sprite at 16x16 designed with rects for crisp pixel-art -->
+  <symbol id="warrior-base" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
+    <g class="armor">
+      <rect x="3" y="1" width="10" height="1"/>
+      <rect x="2" y="2" width="12" height="1"/>
+      <rect x="2" y="4" width="12" height="1"/>
+      <rect x="3" y="5" width="10" height="3"/>
+      <rect x="4" y="8" width="8" height="1"/>
+    </g>
+    <g class="skin">
+      <rect x="6" y="3" width="4" height="2"/>
+      <rect x="6" y="5" width="2" height="1"/>
+      <rect x="8" y="5" width="2" height="1"/>
+    </g>
+    <g class="accent">
+      <!-- eyes/visor and shading -->
+      <rect x="6" y="3" width="1" height="1" fill="#24303a"/>
+      <rect x="9" y="3" width="1" height="1" fill="#24303a"/>
+      <rect x="5" y="6" width="1" height="1" fill="#3b4652"/>
+    </g>
+    <g class="weapon">
+      <rect x="12" y="4" width="1" height="5"/>
+      <rect x="13" y="3" width="1" height="1"/>
+      <rect x="13" y="5" width="1" height="3"/>
+      <rect x="14" y="6" width="1" height="1"/>
+    </g>
+  </symbol>
+  <!-- 32px and 64px nominal size variants as symbols that reuse the base sprite -->
+  <symbol id="warrior-32" viewBox="0 0 32 32" preserveAspectRatio="xMidYMid meet">
+    <g transform="scale(2)">
+      <use href="#warrior-base"/>
+    </g>
+  </symbol>
+  <symbol id="warrior-64" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet">
+    <g transform="scale(4)">
+      <use href="#warrior-base"/>
+    </g>
+  </symbol>
+  <!-- Monochrome outline variant: black silhouette/outline for disabled states -->
+  <symbol id="warrior-outline" viewBox="0 0 16 16" preserveAspectRatio="xMidYMid meet">
+    <g class="outline" fill="#000">
+      <rect x="3" y="1" width="10" height="1"/>
+      <rect x="2" y="2" width="12" height="1"/>
+      <rect x="6" y="3" width="4" height="2"/>
+      <rect x="2" y="4" width="12" height="1"/>
+      <rect x="3" y="5" width="10" height="3"/>
+      <rect x="4" y="8" width="8" height="1"/>
+      <rect x="12" y="4" width="1" height="5"/>
+      <rect x="13" y="3" width="1" height="1"/>
+      <rect x="13" y="5" width="1" height="3"/>
+      <rect x="14" y="6" width="1" height="1"/>
+    </g>
+  </symbol>
+  <!-- Optional small preview instances (can be removed when inlined by developers) -->
+  <g aria-hidden="true" transform="translate(0,0)">
+    <use href="#warrior-32" x="0" y="0" width="32" height="32"/>
+  </g>
+</svg>
