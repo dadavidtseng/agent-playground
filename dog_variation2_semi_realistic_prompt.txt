@@ -1,0 +1,9 @@
+Style: Semi-realistic (pixel-art interpretation with smoother shapes)
+Colors: Cream (#F2E1D0), golden brown (#C48A49), warm brown (#8B5A34), dark gray (#2F2F2F), white (#FFFFFF), black (#000000)
+Mood: Gentle, approachable, warm
+Keywords: semi-realistic dog portrait, soft highlights, warm palette, subtle fur detail, collar with tag
+Generation parameters / seeds: Procedural 64x64 pixel grid; palette limited to 6 colors; layers separated for ears, head, features, collar. Manual adjustments for softer shapes.
+Notes: Source provided as layered SVG. PSD not available. Images are original and free of copyrighted characters.
+License: CC0-equivalent (user may use freely).
+Task ID: bcebaf28-c8c7-4e44-baca-5f37bba316cf
+Timestamp: 2026-03-01T00:00:00Z

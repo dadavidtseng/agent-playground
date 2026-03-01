@@ -1,0 +1,9 @@
+Style: Cartoon
+Colors: Bright yellow (#FFC966), orange (#FF8A00), dark brown (#6B3B00), white (#FFFFFF), black (#000000)
+Mood: Playful, cheerful, energetic
+Keywords: cartoon dog, big eyes, smiling, bold shapes, tongue out, simplified forms
+Generation parameters / seeds: 64x64 pixel-grid SVG; palette limited to 5 colors; bold shapes, layers for ears, head, eyes, mouth, collar.
+Notes: Provided as SVG-encoded PNG filenames. Source: layered SVG included. PSD not available.
+License: CC0-equivalent. Original artwork.
+Task ID: bcebaf28-c8c7-4e44-baca-5f37bba316cf
+Timestamp: 2026-03-01T00:00:00Z
