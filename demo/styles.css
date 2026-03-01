@@ -1,0 +1,119 @@
+/* Tokens / CSS variables */
+:root{
+  --card-bg:#0f1720;
+  --card-surface:#0b1220;
+  --muted:#9aa6b2;
+  --accent:#67a0ff;
+  --accent-2:#9b7bff;
+  --danger:#ff6b6b;
+  --glass: rgba(255,255,255,0.04);
+
+  --radius-lg:16px;
+  --radius-md:10px;
+  --radius-sm:6px;
+
+  --gap:16px;
+  --font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --text-muted:#cbd5e1;
+  --panel-padding:16px;
+  --stat-height:12px;
+  --stat-radius:999px;
+  --stat-duration:600ms; /* default animation duration */
+
+  --break-sm:420px;
+  --break-md:760px;
+  --break-lg:1100px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-family);
+  background:linear-gradient(180deg,#071622 0%, #08131a 100%);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:24px;
+}
+.demo-root{max-width:1200px;margin:0 auto}
+h1{font-size:20px;margin:0 0 8px}
+.lead{color:var(--muted);margin:0 0 20px}
+
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:16px}
+.profile-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.02));
+  border-radius:var(--radius-lg);
+  display:flex;
+  gap:var(--gap);
+  padding:var(--panel-padding);
+  align-items:flex-start;
+  border:1px solid rgba(255,255,255,0.04);
+  transition:transform 180ms ease, box-shadow 180ms ease;
+  outline: none;
+}
+.profile-card:focus{
+  transform:translateY(-4px);
+  box-shadow:0 8px 24px rgba(6,10,22,0.6), 0 0 0 4px rgba(103,160,255,0.12);
+  border-color:rgba(103,160,255,0.22);
+}
+.profile-card:hover{transform:translateY(-2px)}
+
+.card-media{flex:0 0 160px;display:flex;align-items:center;justify-content:center}
+.avatar{width:160px;height:160px;border-radius:12px;display:block}
+.card-content{flex:1;min-width:0}
+.character-name{margin:0 0 6px;font-size:18px}
+.character-desc{margin:0 0 12px;color:var(--muted);font-size:13px}
+
+.stats{margin:0;padding:0;display:block}
+.stat-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:10px}
+.stat-row dt{font-size:13px;color:var(--muted);margin:0}
+.stat-row dd{display:flex;gap:8px;align-items:center;min-width:0;margin:0}
+.stat-shell{background:var(--glass);border-radius:var(--stat-radius);width:160px;height:var(--stat-height);overflow:hidden}
+.stat-bar{height:100%;width:0%;background:linear-gradient(90deg,var(--accent),var(--accent-2));border-radius:var(--stat-radius);transition:width var(--stat-duration) cubic-bezier(.2,.9,.2,1);}
+.stat-value{min-width:28px;text-align:right;font-variant-numeric:tabular-nums}
+
+.card-actions{display:flex;gap:12px;margin-top:12px}
+.btn{background:rgba(255,255,255,0.04);border:1px solid rgba(255,255,255,0.04);color:var(--text-muted);padding:8px 12px;border-radius:8px;cursor:pointer}
+.btn:hover{background:rgba(255,255,255,0.06)}
+.btn:active{transform:translateY(1px)}
+.btn.small{padding:6px 9px;font-size:13px}
+
+/* Variants */
+.variant-compact .card-media{flex-basis:120px}
+.variant-compact .avatar{width:120px;height:120px}
+.variant-stacked{flex-direction:column;align-items:center;text-align:center}
+.variant-stacked .card-media{order:0}
+.variant-stacked .card-content{order:1}
+.variant-stacked .stat-shell{width:220px}
+
+/* Responsive breakpoints */
+@media (max-width: 760px){
+  .cards{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+  .card-media{flex-basis:120px}
+  .avatar{width:120px;height:120px}
+}
+
+@media (max-width:420px){
+  .profile-card{flex-direction:column;align-items:center;text-align:center}
+  .card-media{flex-basis:100%}
+  .card-content{width:100%}
+  .stat-shell{width:200px}
+}
+
+/* Focus visible for buttons */
+.btn:focus{outline:3px solid rgba(103,160,255,0.12);outline-offset:2px}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .profile-card{transition:none}
+  .stat-bar{transition:none}
+}
+
+/* Ensure SVG can be styled: scope via .avatar */
+.avatar *{vector-effect:non-scaling-stroke}
+
+.demo-footer{margin-top:20px;color:var(--muted)}
+
+/* small utilities */
+[hidden]{display:none !important}
