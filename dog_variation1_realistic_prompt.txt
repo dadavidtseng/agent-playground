@@ -1,0 +1,10 @@
+Style: Realistic (pixel-art interpretation)
+Colors: Light tan (#D9C6A7), brown (#B07A3A), dark brown (#7B4A2A), near-black (#3B2A20), white (#FFFFFF), black (#000000)
+Mood: Calm, warm, friendly
+Keywords: realistic dog, portrait, warm lighting, subtle fur texture, collar
+Generation parameters / seeds: Procedural pixel-grid SVG; palette limited to 6 colors; grid 64x64 cells; manual composition approximating realistic proportions.
+Notes: Final assets provided as SVG-encoded PNG filenames (text-based SVG substituting for raster images per system limitations). Source: layered SVG rectangles (no PSD available). All images original, no copyrighted characters.
+License: Created by agent; licensed under CC0-equivalent for user use. No third-party copyrighted content included.
+Source files: layered SVG rectangles embedded in each PNG/SVG text file. PSD not available; layered PNG alternative provided as SVG layers.
+Task ID: bcebaf28-c8c7-4e44-baca-5f37bba316cf
+Timestamp: 2026-03-01T00:00:00Z
