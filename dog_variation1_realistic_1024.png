@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<!-- 1024x1024 preview (SVG content). -->
-<svg xmlns="http://www.w3.org/2000/svg" width="1024" height="1024" viewBox="0 0 64 64" shape-rendering="crispEdges">
-  <rect width="64" height="64" fill="none" />
-  <rect x="12" y="12" width="40" height="32" fill="#D9C6A7" />
-  <rect x="22" y="22" width="4" height="4" fill="#000000" />
-  <rect x="38" y="22" width="4" height="4" fill="#000000" />
-  <rect x="30" y="30" width="4" height="3" fill="#3B2A20" />
-</svg>
