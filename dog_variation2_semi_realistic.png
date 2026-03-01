@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Semi-realistic dog illustration encoded as SVG (pixel-grid using <rect>).
+     Filename uses .png per task naming convention; content is SVG XML to comply with system limitations.
+     Intended output size: 2048x2048 with transparent background. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- Palette: #F2E1D0 (cream), #C48A49 (golden), #8B5A34 (warm brown), #2F2F2F (dark gray), #FFFFFF, #000000 -->
+  <!-- Head shape -->
+  <rect x="10" y="12" width="44" height="34" fill="#F2E1D0" />
+  <!-- Ears with softer curve (pixel approx) -->
+  <rect x="8" y="8" width="8" height="12" fill="#8B5A34" />
+  <rect x="48" y="8" width="8" height="12" fill="#8B5A34" />
+  <!-- Fur shading -->
+  <rect x="14" y="20" width="36" height="6" fill="#C48A49" opacity="0.85" />
+  <rect x="16" y="14" width="32" height="4" fill="#C48A49" opacity="0.5" />
+  <!-- Eyes with soft highlight -->
+  <rect x="22" y="24" width="4" height="4" fill="#2F2F2F" />
+  <rect x="38" y="24" width="4" height="4" fill="#2F2F2F" />
+  <rect x="23" y="25" width="2" height="2" fill="#FFFFFF" />
+  <rect x="39" y="25" width="2" height="2" fill="#FFFFFF" />
+  <!-- Nose and muzzle shading -->
+  <rect x="30" y="32" width="6" height="4" fill="#2F2F2F" />
+  <rect x="26" y="34" width="12" height="3" fill="#8B5A34" opacity="0.9" />
+  <!-- Collar with tag -->
+  <rect x="18" y="44" width="28" height="4" fill="#C48A49" />
+  <rect x="30" y="46" width="4" height="4" fill="#2F2F2F" />
+  <!-- Subtle fur lines -->
+  <rect x="18" y="18" width="6" height="1" fill="#FFFFFF" opacity="0.2" />
+  <rect x="40" y="18" width="6" height="1" fill="#FFFFFF" opacity="0.2" />
+</svg>

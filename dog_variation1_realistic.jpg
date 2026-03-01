@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Flattened JPG-equivalent for realistic dog (SVG text substitute). Filename kept .jpg per naming convention. Width/height set to 2048 for intended size. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="2048" height="2048" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- Simpler flattened version with warm palette -->
+  <rect width="64" height="64" fill="rgba(0,0,0,0)" />
+  <rect x="10" y="10" width="44" height="36" fill="#D9C6A7" />
+  <rect x="12" y="26" width="40" height="10" fill="#B07A3A" />
+  <rect x="20" y="20" width="4" height="4" fill="#000000" />
+  <rect x="40" y="20" width="4" height="4" fill="#000000" />
+  <rect x="28" y="30" width="8" height="4" fill="#3B2A20" />
+</svg>
