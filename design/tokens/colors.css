@@ -1,0 +1,73 @@
+/*
+  design/tokens/colors.css
+
+  Contributor Guidelines (file header):
+  - Canonical ordering: sections MUST appear in this exact order: Colors, Spacing, Typography.
+  - Within each section, variables MUST be listed alphabetically by variable name (ignoring the leading "--").
+  - Use one custom property per line. Keep single space after colon and values terminated with a semicolon.
+  - Add contributor information using a comment block directly above your additions in the form:
+
+    /* Contributor: <name> | Date: YYYY-MM-DD | Reason: <short reason> */
+    --your-variable: value;
+
+  - When adding new tokens, insert them in alphabetical order within the correct section.
+  - If a merge conflict occurs: do NOT resolve by reordering tokens arbitrarily. Re-open the file, ensure sections are intact, then merge by placing incoming and current changes into the correct alphabetical position. Prefer minimal diffs and preserve nearby comment blocks.
+  - Keep naming consistent: colors use semantic tokens (--primary, --accent, --success, --danger, --muted, --bg-card, --glass).
+  - Follow the 8px spacing grid for all size tokens.
+  - Use only CSS custom properties in this file. No classes, no nested rules.
+
+  Conflict test reference:
+  - Run any repository conflict-test script if present (e.g. ./tools/conflict-test) or run `git merge --no-commit` locally to preview ordering conflicts.
+*/
+
+:root {
+  /* Colors (alphabetical within section) */
+  --accent: #7C5CFF;          /* brand accent (interactive elements) */
+  --bg-card: #0F1724;         /* card background */
+  --danger: #FF5C5C;          /* destructive */
+  --glass: rgba(255,255,255,0.06); /* glassy overlay */
+  --muted: #9AA4B2;           /* secondary text / muted UI */
+  --primary: #00B5E2;         /* primary brand color */
+  --success: #4CE08A;        /* success / positive */
+
+  /* Spacing (alphabetical within section) - follows 8px grid
+     Naming: --space-<step> where step increases with size. */
+  --space-0: 0px;
+  --space-1: 8px;   /* 1 * 8 */
+  --space-2: 16px;  /* 2 * 8 */
+  --space-3: 24px;  /* 3 * 8 */
+  --space-4: 32px;  /* 4 * 8 */
+  --space-5: 40px;  /* 5 * 8 */
+  --space-6: 48px;  /* 6 * 8 */
+  --space-8: 64px;  /* 8 * 8 */
+
+  /* Typography (alphabetical within section)
+     Sizes chosen to align with 8px baseline where practical. */
+  --font-family-base: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+  --font-weight-bold: 700;
+  --font-weight-medium: 500;
+  --font-weight-regular: 400;
+
+  /* Type scale (semantic): small -> large */
+  --type-xxs: 10px;   /* optional micro text */
+  --type-xs: 12px;    /* captions */
+  --type-sm: 14px;    /* small text */
+  --type-md: 16px;    /* body */
+  --type-lg: 20px;    /* subheading */
+  --type-xl: 24px;    /* heading */
+  --type-xxl: 32px;   /* display */
+
+  /* Line heights (map to type tokens) */
+  --leading-tight: 1.1;
+  --leading-normal: 1.4;
+  --leading-loose: 1.6;
+
+  /* Card specific semantic tokens */
+  --card-radius: 12px;                 /* rounded corners for CharacterCard */
+  --card-elevation: 0 6px 18px rgba(2,6,23,0.6);
+  --card-elevation-hover: 0 10px 28px rgba(2,6,23,0.7);
+  --card-padding: var(--space-4);
+
+  /* Accessibility */
+  --focus-ring: 3px solid rgba(124,92,255,0.24); /* uses --accent */
+}
