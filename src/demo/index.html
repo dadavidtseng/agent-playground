@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CharacterCard Demo</title>
+  <link rel="stylesheet" href="../styles/character-card.css" />
+  <style>
+    body { margin: 0; font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial; }
+    .wrap { padding: 48px; display:flex; gap:24px; align-items:flex-start; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Import and use the CharacterCard component -->
+    <script type="module" src="../components/CharacterCard.html"></script>
+
+    <div>
+      <character-card></character-card>
+      <p style="font-size:0.9rem;color:#6b7280;margin-top:8px;">Use keyboard arrows on a stat to adjust value. Reduced motion preference disables animation.</p>
+    </div>
+
+  </div>
+</body>
+</html>
