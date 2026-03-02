@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="256" height="96" viewBox="0 0 256 96" shape-rendering="crispEdges" preserveAspectRatio="xMinYMin meet">
+  <!--
+    warrior.svg
+    Contains a single <symbol> pixel-art warrior (16x16 grid) and three previews rendered at 64,128,256px.
+    Classes/IDs are stable for CSS targeting: .helmet .skin .armor .trim .cloak .sword-blade .sword-handle .boot .eye
+  -->
+  <defs>
+    <symbol id="warrior-symbol" viewBox="0 0 16 16" overflow="visible">
+      <!-- Background transparent (no rect) -->
+      <!-- Helmet -->
+      <g id="helmet" class="helmet" fill="#333333">
+        <rect x="4" y="0" width="8" height="1"/>
+        <rect x="3" y="1" width="10" height="1"/>
+        <rect x="2" y="2" width="12" height="1"/>
+      </g>
+      <!-- Face / skin -->
+      <g id="face" class="skin" fill="#F0C8A0">
+        <rect x="4" y="3" width="8" height="1"/>
+        <rect x="4" y="4" width="8" height="1"/>
+      </g>
+      <!-- Eyes -->
+      <g id="eyes" fill="#000000">
+        <rect class="eye" x="6" y="4" width="1" height="1"/>
+        <rect class="eye" x="9" y="4" width="1" height="1"/>
+      </g>
+      <!-- Neck / collar -->
+      <g id="collar" fill="#553311">
+        <rect x="6" y="5" width="4" height="1"/>
+      </g>
+      <!-- Armor -->
+      <g id="armor" class="armor" fill="#6E7AB8">
+        <rect x="3" y="6" width="10" height="2"/>
+        <rect x="4" y="8" width="8" height="1"/>
+      </g>
+      <!-- Trim / emblem -->
+      <g id="trim" class="trim" fill="#FFD24A">
+        <rect x="7" y="7" width="2" height="1"/>
+      </g>
+      <!-- Cloak (back) -->
+      <g id="cloak" class="cloak" fill="#6A2F2F">
+        <rect x="2" y="9" width="12" height="4"/>
+      </g>
+      <!-- Legs / boots -->
+      <g id="legs">
+        <rect class="boot" x="5" y="13" width="2" height="2" fill="#222222"/>
+        <rect class="boot" x="9" y="13" width="2" height="2" fill="#222222"/>
+      </g>
+      <!-- Sword to the right (blade + handle) -->
+      <g id="sword">
+        <rect class="sword-blade" x="13" y="5" width="1" height="6" fill="#CFCFCF"/>
+        <rect class="sword-handle" x="13" y="11" width="1" height="1" fill="#553311"/>
+      </g>
+      <!-- Shoulder pads to add silhouette -->
+      <g id="pads" fill="#4B4B6F">
+        <rect x="2" y="6" width="1" height="2"/>
+        <rect x="13" y="6" width="1" height="2"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <!-- Previews: place three renders side-by-side -->
+  <!-- 64px preview -->
+  <svg x="0" y="0" width="64" height="64" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <use xlink:href="#warrior-symbol"/>
+  </svg>
+
+  <!-- 128px preview -->
+  <svg x="72" y="0" width="128" height="128" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <use xlink:href="#warrior-symbol"/>
+  </svg>
+
+  <!-- 256px preview -->
+  <svg x="204" y="0" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges">
+    <use xlink:href="#warrior-symbol"/>
+  </svg>
+
+  <!-- Note: The outer canvas is larger to contain previews; the core asset is the symbol with viewBox 0 0 16 16 -->
+</svg>
