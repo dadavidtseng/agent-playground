@@ -1,0 +1,36 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 64 64" shape-rendering="crispEdges">
+  <!-- Pixel-art warrior - 64x64 grid, displayed at 128x128 -->
+  <!-- Use limited palette, crisp squares -->
+  <!-- Helmet -->
+  <rect x="24" y="0" width="16" height="4" fill="#3b2f2f"/>
+  <rect x="20" y="4" width="24" height="4" fill="#3b2f2f"/>
+  <rect x="16" y="8" width="32" height="4" fill="#3b2f2f"/>
+  <!-- Face -->
+  <rect x="24" y="12" width="16" height="4" fill="#b5651d"/>
+  <!-- Eyes -->
+  <rect x="24" y="16" width="4" height="4" fill="#000000"/>
+  <rect x="36" y="16" width="4" height="4" fill="#000000"/>
+  <rect x="28" y="16" width="8" height="4" fill="#b5651d"/>
+  <!-- Neck/armor -->
+  <rect x="24" y="20" width="16" height="4" fill="#6b6b6b"/>
+  <!-- Body -->
+  <rect x="16" y="24" width="32" height="16" fill="#6b6b6b"/>
+  <!-- Cape -->
+  <rect x="8" y="24" width="8" height="24" fill="#8b0000"/>
+  <rect x="48" y="24" width="8" height="24" fill="#8b0000"/>
+  <!-- Shield -->
+  <rect x="4" y="32" width="8" height="12" fill="#c8b560"/>
+  <rect x="4" y="28" width="4" height="4" fill="#3b2f2f"/>
+  <!-- Sword -->
+  <rect x="52" y="28" width="4" height="16" fill="#000000"/>
+  <rect x="52" y="24" width="4" height="4" fill="#FFFFFF"/>
+  <!-- Legs -->
+  <rect x="20" y="40" width="8" height="8" fill="#3b2f2f"/>
+  <rect x="36" y="40" width="8" height="8" fill="#3b2f2f"/>
+  <!-- Boots -->
+  <rect x="20" y="48" width="8" height="4" fill="#000000"/>
+  <rect x="36" y="48" width="8" height="4" fill="#000000"/>
+  <!-- Outline accents -->
+  <rect x="16" y="20" width="4" height="4" fill="#000000"/>
+  <rect x="48" y="20" width="4" height="4" fill="#000000"/>
+</svg>
