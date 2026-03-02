@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Pixel-art warrior (inline-friendly SVG)
+  Export settings:
+    - viewBox: 0 0 32 32
+    - width/height: 128 x 128 (recommended when inlining for screen display)
+    - preserveAspectRatio: xMidYMid meet
+    - shape-rendering: crispEdges to preserve pixel-art fidelity
+    - Recommended high-DPI: use warrior-character@2x.svg (64x64 grid) or scale by integer factors (2x, 3x)
+  Author notes: This SVG uses only <rect> elements on an integer grid for perfect pixel alignment.
+  Palette (<=16 colors):
+    - outline: #000000
+    - skin:    #F1C27D
+    - hair:    #4B2E1E
+    - armor:   #8FB5C7
+    - metal:   #D9D9D9
+    - leather: #6B4A2A
+    - cape:    #B33A3A
+    - shield:  #8B5A2B
+  Metadata file: src/assets/warrior-character.metadata.md
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="128" height="128" preserveAspectRatio="xMidYMid meet" aria-label="Pixel-art warrior">
+  <!-- Group with crisp rendering for pixel-art fidelity -->
+  <g shape-rendering="crispEdges" image-rendering="pixelated">
+    <!-- Outline / background pixels (intentional transparent background) -->
+    <!-- Helmet/top hair -->
+    <rect x="12" y="2" width="8" height="1" fill="#4B2E1E" />
+    <rect x="11" y="3" width="10" height="1" fill="#4B2E1E" />
+    <rect x="10" y="4" width="12" height="1" fill="#4B2E1E" />
+    <!-- Helmet visor / metal rim -->
+    <rect x="9" y="5" width="14" height="1" fill="#000000" />
+    <!-- Face / skin -->
+    <rect x="11" y="6" width="3" height="3" fill="#F1C27D" />
+    <rect x="18" y="6" width="3" height="3" fill="#F1C27D" />
+    <rect x="14" y="7" width="4" height="2" fill="#F1C27D" />
+    <!-- Eyes (dark) -->
+    <rect x="13" y="7" width="1" height="1" fill="#000000" />
+    <rect x="16" y="7" width="1" height="1" fill="#000000" />
+    <!-- Neck / armor collar -->
+    <rect x="14" y="9" width="4" height="1" fill="#8FB5C7" />
+    <!-- Body / armor -->
+    <rect x="10" y="10" width="12" height="8" fill="#8FB5C7" />
+    <!-- Belt / accent -->
+    <rect x="10" y="15" width="12" height="1" fill="#6B4A2A" />
+    <!-- Cape (left) -->
+    <rect x="8" y="10" width="2" height="8" fill="#B33A3A" />
+    <rect x="7" y="11" width="1" height="6" fill="#B33A3A" />
+    <!-- Left arm (holding shield) -->
+    <rect x="9" y="11" width="1" height="5" fill="#8FB5C7" />
+    <!-- Shield (left) -->
+    <rect x="5" y="12" width="4" height="6" fill="#8B5A2B" />
+    <rect x="6" y="14" width="2" height="2" fill="#000000" />
+    <!-- Right arm (holding sword) -->
+    <rect x="21" y="11" width="1" height="5" fill="#8FB5C7" />
+    <!-- Sword handle -->
+    <rect x="22" y="13" width="1" height="4" fill="#6B4A2A" />
+    <!-- Sword blade -->
+    <rect x="23" y="11" width="1" height="7" fill="#D9D9D9" />
+    <!-- Legs -->
+    <rect x="12" y="18" width="2" height="5" fill="#000000" />
+    <rect x="18" y="18" width="2" height="5" fill="#000000" />
+    <!-- Boots (darker) -->
+    <rect x="12" y="23" width="2" height="1" fill="#6B4A2A" />
+    <rect x="18" y="23" width="2" height="1" fill="#6B4A2A" />
+    <!-- Small metal highlights -->
+    <rect x="13" y="11" width="1" height="1" fill="#D9D9D9" />
+    <rect x="18" y="11" width="1" height="1" fill="#D9D9D9" />
+    <!-- Decorative studs on armor -->
+    <rect x="14" y="12" width="1" height="1" fill="#000000" />
+    <rect x="17" y="12" width="1" height="1" fill="#000000" />
+  </g>
+  <!-- Accessibility: simple title/desc -->
+  <title>Pixel-art warrior</title>
+  <desc>32x32 pixel-grid warrior icon optimized for inline SVG with crisp edges and integer-aligned rectangles.</desc>
+</svg>
