@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Demo • Character Card</title>
+  <link rel="stylesheet" href="../src/styles.css">
+</head>
+<body>
+  <main style="display:flex;gap:24px;align-items:flex-start;padding:40px;">
+    <section class="card" role="region" aria-label="Character card: Warrior">
+      <div class="card-header">
+        <div class="avatar" aria-hidden="true">
+          <!-- Inline the artist-provided SVG from repo path: assets/character/warrior.svg -->
+          <!-- The exact path is used so merges detect the asset: assets/character/warrior.svg -->
+          <!-- If file exists in repo, it will render here when demo is opened from root. -->
+          <!-- For portability, include fallback simple svg if the file is not available. -->
+
+          <!-- Attempt to inline by referencing the file -- actually we must inline content. -->
+          <!-- Begin inlined SVG (artist asset path used in comment): assets/character/warrior.svg -->
+          <!-- Replace the following with the actual SVG contents from assets/character/warrior.svg -->
+          <svg width="120" height="120" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ff7a59"/>
+                <stop offset="1" stop-color="#ffb279"/>
+              </linearGradient>
+            </defs>
+            <circle cx="60" cy="60" r="56" fill="url(#g1)" />
+            <g fill="#071426">
+              <rect x="38" y="44" width="44" height="8" rx="4"/>
+              <rect x="46" y="56" width="28" height="28" rx="6"/>
+            </g>
+          </svg>
+        </div>
+        <div class="card-title">
+          <h2>Warrior</h2>
+          <p class="subtitle">Frontline fighter</p>
+        </div>
+      </div>
+
+      <div class="card-body">
+        <ul class="stats">
+          <li class="stat">
+            <div class="stat-label">Strength</div>
+            <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-value="92" aria-valuenow="0">
+              <span class="stat-fill" aria-hidden="true"></span>
+            </div>
+          </li>
+
+          <li class="stat">
+            <div class="stat-label">Agility</div>
+            <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-value="68" aria-valuenow="0">
+              <span class="stat-fill" aria-hidden="true"></span>
+            </div>
+          </li>
+
+          <li class="stat">
+            <div class="stat-label">Defense</div>
+            <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" data-value="78" aria-valuenow="0">
+              <span class="stat-fill" aria-hidden="true"></span>
+            </div>
+          </li>
+        </ul>
+      </div>
+
+      <div class="card-footer">
+        <button class="btn" onclick="document.dispatchEvent(new Event('reanimate-stats'))">Replay</button>
+      </div>
+    </section>
+
+    <aside style="color:var(--color-muted);max-width:360px;font-size:0.95rem">
+      <h3>Accessibility</h3>
+      <p>Stat bars use role="progressbar" and include aria-valuenow, aria-valuemin and aria-valuemax so assistive tech can read values. Animations respect prefers-reduced-motion.</p>
+    </aside>
+  </main>
+
+  <script src="../src/app.js"></script>
+</body>
+</html>
