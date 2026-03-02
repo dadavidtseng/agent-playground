@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- designer: add card-spec (intentional conflict) -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Card Component Specification</title>
+  <desc>Annotated card spec with tokens, breakpoints, responsive layouts, and reference to assets/svg/warrior.svg</desc>
+  <defs>
+    <style type="text/css"><![CDATA[
+      .bg { fill: #f6f8fb; }
+      .surface { fill: #ffffff; stroke: #e6eefc; }
+      .muted { fill: #6b7280; }
+      .accent { fill: #0b74ff; }
+      .accent-variant { fill: #0a62d6; }
+      .shadow { filter: drop-shadow(0 6px 18px rgba(11,20,40,0.08)); }
+      .card { rx:12; }
+      .label { font-family: Inter, Arial, Helvetica, sans-serif; font-size:12px; fill:#0b2540; }
+      .token { font-family: Inter, Arial, Helvetica, sans-serif; font-size:11px; fill:#334155; }
+      .heading { font-family: Inter, Arial, Helvetica, sans-serif; font-weight:700; font-size:16px; fill:#0b2540; }
+      .annotation { font-family: Inter, Arial, Helvetica, sans-serif; font-size:12px; fill:#334155; }
+      .small { font-size:11px; fill:#475569; }
+      .line { stroke:#cbd5e1; stroke-width:1; stroke-dasharray:4 4; }
+    ]]></style>
+  </defs>
+
+  <!-- Background -->
+  <rect width="1200" height="800" class="bg" />
+
+  <!-- Title and tokens summary -->
+  <g transform="translate(40,32)">
+    <text class="heading">Card Component — Specification</text>
+    <text class="small" y="22">References: assets/svg/warrior.svg (use as vector source in production)</text>
+  </g>
+
+  <!-- Tokens panel -->
+  <g transform="translate(40,80)">
+    <rect x="0" y="0" width="360" height="640" class="surface" stroke="#e2e8f0" rx="12" />
+    <text class="label" x="16" y="22">Tokens (CSS variables)</text>
+
+    <text class="token" x="16" y="50">--accent: #0b74ff</text>
+    <text class="token" x="16" y="72">--accent-variant: #0a62d6</text>
+    <text class="token" x="16" y="94">--bg: #f6f8fb</text>
+    <text class="token" x="16" y="116">--surface: #ffffff</text>
+    <text class="token" x="16" y="138">--muted: #6b7280</text>
+    <text class="token" x="16" y="160">--shadow: rgba(11,20,40,0.08)</text>
+
+    <text class="label" x="16" y="196">Typography</text>
+    <text class="token" x="16" y="218">--type-xs: 12px/16px</text>
+    <text class="token" x="16" y="240">--type-sm: 14px/20px</text>
+    <text class="token" x="16" y="262">--type-md: 16px/24px</text>
+    <text class="token" x="16" y="284">--type-lg: 20px/28px</text>
+    <text class="token" x="16" y="306">--type-xl: 28px/36px</text>
+
+    <text class="label" x="16" y="342">Layout & Spacing</text>
+    <text class="token" x="16" y="364">--card-radius: 12px</text>
+    <text class="token" x="16" y="386">--card-padding: 16px</text>
+    <text class="token" x="16" y="408">--gap-sm: 8px</text>
+    <text class="token" x="16" y="430">--gap-md: 16px</text>
+
+    <text class="label" x="16" y="466">Breakpoints</text>
+    <text class="token" x="16" y="488">--bp-mobile: 0 — 599px</text>
+    <text class="token" x="16" y="510">--bp-tablet: 600 — 1023px</text>
+    <text class="token" x="16" y="532">--bp-desktop: 1024px+</text>
+
+    <text class="small" x="16" y="572">File note: Keep assets/svg/warrior.svg as vector source, reference via &lt;image&gt; or &lt;use&gt; linking in build step.</text>
+  </g>
+
+  <!-- Layout examples -->
+  <g transform="translate(420,80)">
+    <!-- Mobile card (stacked) -->
+    <g transform="translate(0,0)">
+      <rect x="0" y="0" width="320" height="180" class="surface shadow" rx="12"/>
+      <text class="label" x="12" y="20">Mobile (<=599px)</text>
+      <!-- Illustration placeholder referencing external SVG (kept as vector) -->
+      <rect x="12" y="32" width="296" height="80" fill="#e6eefc" rx="8" />
+      <text class="small" x="20" y="74">Illustration: assets/svg/warrior.svg (vector)</text>
+      <text class="heading" x="12" y="120">Card Title</text>
+      <text class="token" x="12" y="140">Body text using --type-sm</text>
+      <rect x="12" y="148" width="296" height="32" rx="8" fill="#0b74ff" />
+      <text x="24" y="170" font-family="Inter, Arial" font-size="14px" fill="#fff">Primary CTA</text>
+    </g>
+
+    <!-- Tablet card (side-by-side) -->
+    <g transform="translate(0,220)">
+      <rect x="0" y="0" width="560" height="160" class="surface shadow" rx="12"/>
+      <text class="label" x="12" y="20">Tablet (600—1023px)</text>
+      <!-- Illustration area (left 40%) -->
+      <rect x="12" y="32" width="208" height="116" rx="8" fill="#e6eefc" />
+      <text class="small" x="20" y="84">Illustration: assets/svg/warrior.svg</text>
+      <!-- Content area -->
+      <text class="heading" x="236" y="60">Card Title — Tablet</text>
+      <text class="token" x="236" y="84">Body text using --type-md; content area has padding var(--card-padding)</text>
+      <rect x="236" y="104" width="136" height="32" rx="8" fill="#0b74ff" />
+      <text x="252" y="126" font-family="Inter, Arial" font-size="14px" fill="#fff">Primary CTA</text>
+    </g>
+
+    <!-- Desktop card (wide with art bleed option) -->
+    <g transform="translate(0,420)">
+      <rect x="0" y="0" width="720" height="200" class="surface shadow" rx="12"/>
+      <text class="label" x="12" y="20">Desktop (>=1024px)</text>
+      <!-- Art bleed suggestion: illustration extends beyond card bounds -->
+      <rect x="-40" y="32" width="320" height="140" rx="8" fill="#e6eefc" />
+      <text class="small" x="20" y="140">Art bleed (use warrior.svg as SVG source)</text>
+      <text class="heading" x="300" y="80">Card Title — Desktop</text>
+      <text class="token" x="300" y="108">Body text uses --type-lg; larger spacing and alignment</text>
+      <rect x="300" y="128" width="180" height="40" rx="10" fill="#0b74ff" />
+      <text x="330" y="154" font-family="Inter, Arial" font-size="16px" fill="#fff">Primary CTA</text>
+    </g>
+  </g>
+
+  <!-- Annotations and interaction states -->
+  <g transform="translate(40,740)">
+    <text class="label">Interaction states</text>
+    <text class="small" x="200" y="0">Card default: background var(--surface); box-shadow var(--card-shadow)</text>
+    <text class="small" x="200" y="18">Hover: transform: translateY(-4px); stronger shadow (0 12px 28px rgba(11,20,40,0.12))</text>
+    <text class="small" x="200" y="36">Focus: outline: 3px solid rgba(11,116,255,0.12); outline-offset: 3px (use :focus-visible)</text>
+    <text class="small" x="200" y="54">Press: translateY(-1px); reduced shadow</text>
+  </g>
+
+  <!-- Accessibility notes -->
+  <g transform="translate(820,80)">
+    <rect x="0" y="0" width="340" height="240" class="surface" stroke="#e2e8f0" rx="12" />
+    <text class="label" x="16" y="22">Accessibility highlights</text>
+    <text class="small" x="16" y="46">- Text contrast >= 4.5:1 for body text</text>
+    <text class="small" x="16" y="66">- Buttons and focusable areas: visible focus ring</text>
+    <text class="small" x="16" y="86">- Images: aria-hidden if decorative; provide alt if informative</text>
+    <text class="small" x="16" y="106">- Prefers-reduced-motion respected for all transitions</text>
+  </g>
+
+  <!-- Developer handoff: CSS example -->
+  <g transform="translate(820,340)">
+    <rect x="0" y="0" width="340" height="340" class="surface" stroke="#e2e8f0" rx="12" />
+    <text class="label" x="16" y="22">Developer Handoff</text>
+    <text class="small" x="16" y="46">:root {</text>
+    <text class="token" x="28" y="66">--accent: #0b74ff;</text>
+    <text class="token" x="28" y="86">--accent-variant: #0a62d6;</text>
+    <text class="token" x="28" y="106">--bg: #f6f8fb;</text>
+    <text class="small" x="16" y="126">  /* ... */</text>
+    <text class="small" x="16" y="146">}</text>
+    <text class="small" x="16" y="176">Notes:</text>
+    <text class="small" x="16" y="196">- Keep warrior.svg as SVG (do not rasterize)</text>
+    <text class="small" x="16" y="216">- Use CSS variables for theming and spacing</text>
+    <text class="small" x="16" y="236">- Ensure exported inline SVG is optimized for embedding</text>
+  </g>
+</svg>
