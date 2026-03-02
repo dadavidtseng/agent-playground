@@ -1,0 +1,76 @@
+<!--
+  Author: Artist Agent (KĀDI multi-agent system) 
+  Intent: Pixel-art warrior (artist version) for task 316f431c-9d81-4584-b2fa-24cf384ffddb
+  Notes: Designed as an inline-friendly single-file SVG. Uses a small palette (8 colors) and crisp pixel rendering.
+  Palette tokens:
+    K: #0b0b0b (outline)
+    A: #cfd8dc (armor light)
+    B: #6f7b83 (armor dark)
+    S: #f1c27d (skin)
+    H: #34241f (hair)
+    C: #7a3b3b (cloth)
+    G: #ffd32a (gold)
+    D: #2b65ec (shield blue)
+  Optimization: compact structure using rect blocks on a 16x16 grid with shape-rendering="crispEdges". Include <title> and <desc> for accessibility.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" width="320" height="320" role="img" aria-labelledby="warriorTitle warriorDesc" shape-rendering="crispEdges">
+  <title id="warriorTitle">Pixel warrior (artist version)</title>
+  <desc id="warriorDesc">A compact pixel-art warrior: helmet, face, armor, sword on the right, shield on the left. Limited palette for clarity and easy theming.</desc>
+  <!-- Background (transparent) -->
+  <!-- Outline -->
+  <g fill="#0b0b0b">
+    <!-- helmet rim -->
+    <rect x="3" y="0" width="10" height="1"/>
+    <rect x="2" y="1" width="12" height="1"/>
+    <!-- shoulders/outline -->
+    <rect x="2" y="5" width="12" height="1"/>
+    <rect x="1" y="6" width="14" height="1"/>
+    <rect x="1" y="7" width="1" height="3"/>
+    <rect x="14" y="7" width="1" height="3"/>
+    <rect x="2" y="10" width="12" height="1"/>
+  </g>
+  <!-- Helmet -->
+  <g fill="#cfd8dc">
+    <rect x="4" y="1" width="8" height="2"/>
+    <rect x="3" y="3" width="10" height="1"/>
+  </g>
+  <!-- Hair / plume accent -->
+  <rect x="8" y="0" width="1" height="1" fill="#34241f"/>
+  <!-- Face -->
+  <g fill="#f1c27d">
+    <rect x="6" y="3" width="4" height="2"/>
+  </g>
+  <!-- Eyes -->
+  <rect x="6" y="3" width="1" height="1" fill="#0b0b0b"/>
+  <rect x="9" y="3" width="1" height="1" fill="#0b0b0b"/>
+  <!-- Neck -->
+  <rect x="7" y="5" width="2" height="1" fill="#f1c27d"/>
+  <!-- Armor main -->
+  <g fill="#6f7b83">
+    <rect x="3" y="6" width="10" height="2"/>
+    <rect x="4" y="8" width="8" height="2"/>
+  </g>
+  <!-- Cloth / tabard -->
+  <rect x="6" y="8" width="4" height="2" fill="#7a3b3b"/>
+  <!-- Gold accent (belt / trim) -->
+  <rect x="5" y="9" width="6" height="1" fill="#ffd32a"/>
+  <!-- Shield (left) -->
+  <g>
+    <rect x="1" y="6" width="2" height="3" fill="#2b65ec"/>
+    <rect x="2" y="6" width="1" height="1" fill="#ffd32a"/>
+  </g>
+  <!-- Sword (right) -->
+  <g>
+    <rect x="13" y="6" width="1" height="4" fill="#b0b0b0"/>
+    <rect x="12" y="7" width="2" height="1" fill="#8b5a2b"/>
+  </g>
+  <!-- Legs / boots -->
+  <g fill="#6f7b83">
+    <rect x="5" y="10" width="2" height="3"/>
+    <rect x="9" y="10" width="2" height="3"/>
+  </g>
+  <g fill="#0b0b0b">
+    <rect x="5" y="13" width="2" height="1"/>
+    <rect x="9" y="13" width="2" height="1"/>
+  </g>
+</svg>
