@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="style.css" />
+  <title>Character Card Component</title>
+</head>
+<body>
+  <div class="character-card" role="group" aria-labelledby="char-name-1">
+    <div class="card-left">
+      <!-- Inline SVG avatar for styling control -->
+      <svg class="avatar" viewBox="0 0 120 140" xmlns="http://www.w3.org/2000/svg" role="img" aria-labelledby="avatarTitle avatarDesc">
+        <title id="avatarTitle">Character avatar</title>
+        <desc id="avatarDesc">Stylized avatar silhouette with accent color</desc>
+        <defs>
+          <linearGradient id="hairGrad" x1="0" x2="1">
+            <stop offset="0%" stop-color="var(--accent-500, #7c3aed)" />
+            <stop offset="100%" stop-color="var(--accent-700, #5b21b6)" />
+          </linearGradient>
+        </defs>
+        <rect x="0" y="0" width="120" height="140" rx="12" fill="var(--card-bg, #0f172a)" />
+        <circle cx="60" cy="40" r="26" fill="url(#hairGrad)" />
+        <circle cx="60" cy="40" r="20" fill="var(--avatar-face, #ffe" />
+        <!-- stylized body -->
+        <path d="M30 90c0-18 60-18 60 0v30H30z" fill="var(--avatar-body, #111827)" opacity="0.85" />
+      </svg>
+      <div class="controls">
+        <button class="primary" id="view-btn">View</button>
+        <button id="randomize-btn">Randomize</button>
+      </div>
+    </div>
+
+    <div class="card-right">
+      <header class="card-header">
+        <h2 id="char-name-1">Aurelia, the Wanderer</h2>
+        <p class="sub">Level <span id="char-level">12</span> • Class: Ranger</p>
+      </header>
+
+      <section class="stats" aria-label="Character stats">
+        <!-- Each stat is a progressbar widget for accessibility -->
+        <div class="stat-row">
+          <div class="stat-meta">
+            <span class="stat-name">HP</span>
+            <span class="stat-value" id="hp-value">78/100</span>
+          </div>
+          <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="78" aria-labelledby="hp-label">
+            <div class="stat-fill" data-stat="hp" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-meta">
+            <span class="stat-name">Attack</span>
+            <span class="stat-value" id="atk-value">54/100</span>
+          </div>
+          <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="54" aria-labelledby="atk-label">
+            <div class="stat-fill" data-stat="atk" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-meta">
+            <span class="stat-name">Defense</span>
+            <span class="stat-value" id="def-value">62/100</span>
+          </div>
+          <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="62" aria-labelledby="def-label">
+            <div class="stat-fill" data-stat="def" style="width:0%"></div>
+          </div>
+        </div>
+
+        <div class="stat-row">
+          <div class="stat-meta">
+            <span class="stat-name">Speed</span>
+            <span class="stat-value" id="spd-value">88/100</span>
+          </div>
+          <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="88" aria-labelledby="spd-label">
+            <div class="stat-fill" data-stat="spd" style="width:0%"></div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
