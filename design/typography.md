@@ -11,13 +11,18 @@ Token naming conventions
 - Line-height tokens: --line-height-*
 - Font weight tokens: --font-weight-*
 - Letter spacing tokens: --letter-spacing-*
-- Utility tokens for responsive scale using clamp and breakpoint overrides: --font-base, --font-scale-step
+- Utility tokens for responsive scale using clamp and breakpoint overrides: --font-base, --font-scale-ratio
+
+Notes about merge
+
+This file was reviewed and merged with contributions from the Artist. Where the Artist proposed shorthand token names (for example: --fs-*, --fw-*), those were standardized to the full, descriptive form above (--font-size-*, --font-weight-*). The Artist also suggested adding a serif family token for decorative headings; that token is included below as optional.
 
 Base tokens (global)
 
-:root tokens (examples)
+:root tokens (finalized)
 
 - --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+- --font-family-serif: "Merriweather", Georgia, "Times New Roman", serif; /* optional — recommended for display/heading use */
 - --font-family-mono: "Source Code Pro", ui-monospace, SFMono-Regular, Menlo, Monaco, monospace;
 - --font-weight-regular: 400;
 - --font-weight-medium: 500;
@@ -65,6 +70,7 @@ Role-based mapping (examples)
   - font-weight: var(--font-weight-medium)
 
 - H1 (page title)
+  - font-family: var(--font-family-serif) /* optional */
   - font-size: var(--font-size-3xl)
   - line-height: var(--line-height-tight)
   - font-weight: var(--font-weight-bold)
@@ -79,10 +85,46 @@ Role-based mapping (examples)
   - line-height: var(--line-height-tight)
   - font-weight: var(--font-weight-semibold)
 
+Finalized token list (for developers)
+
+Use these tokens as the canonical set. The Artist proposed a shorthand mapping; we converted those into the canonical names below and documented the mapping in the changelog.
+
+Font families
+- --font-family-sans
+- --font-family-serif (optional)
+- --font-family-mono
+
+Font sizes
+- --font-size-xs
+- --font-size-sm
+- --font-size-base
+- --font-size-lg
+- --font-size-xl
+- --font-size-2xl
+- --font-size-3xl
+
+Font weights
+- --font-weight-regular
+- --font-weight-medium
+- --font-weight-semibold
+- --font-weight-bold
+
+Line heights
+- --line-height-none
+- --line-height-tight
+- --line-height-default
+- --line-height-loose
+
+Letter spacing
+- --letter-spacing-tight
+- --letter-spacing-normal
+- --letter-spacing-wide
+
 Example CSS snippet
 
 :root {
   --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-family-serif: "Merriweather", Georgia, "Times New Roman", serif;
   --font-weight-regular: 400;
   --font-weight-medium: 500;
   --font-weight-semibold: 600;
@@ -108,7 +150,7 @@ body {
   color: var(--color-text);
 }
 
-h1 { font-size: var(--font-size-3xl); line-height: var(--line-height-tight); font-weight: var(--font-weight-bold); }
+h1 { font-family: var(--font-family-serif); font-size: var(--font-size-3xl); line-height: var(--line-height-tight); font-weight: var(--font-weight-bold); }
 h2 { font-size: var(--font-size-2xl); line-height: var(--line-height-tight); font-weight: var(--font-weight-semibold); }
 
 Accessibility notes
@@ -141,3 +183,7 @@ Notes for developers
 
 - Tokens above reference color tokens (e.g., var(--color-text)). Ensure color tokens are imported before typography tokens in global CSS.
 - When integrating web fonts, use font-display: swap to avoid FOIT.
+
+References
+
+- Adopt a consistent token naming scheme to avoid friction between design and engineering. This file is the authoritative source for typography tokens in the repository.
