@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- designer: add card-spec (intentional conflict) - inline-optimized version -->
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="titleDesc">
+  <title id="titleDesc">Card Component Specification (inline optimized)</title>
+  <desc>Annotated card spec with tokens, breakpoints, responsive layouts, and reference to assets/svg/warrior.svg</desc>
+  <style><![CDATA[
+    .bg{fill:#f6f8fb}
+    .surface{fill:#fff;stroke:#e6eefc}
+    .muted{fill:#6b7280}
+    .accent{fill:#0b74ff}
+    .label{font-family:Inter, Arial, sans-serif;font-size:12px;fill:#0b2540}
+    .token{font-family:Inter, Arial, sans-serif;font-size:11px;fill:#334155}
+    .heading{font-family:Inter, Arial, sans-serif;font-weight:700;font-size:16px;fill:#0b2540}
+    .small{font-family:Inter, Arial, sans-serif;font-size:11px;fill:#475569}
+  ]]></style>
+
+  <rect width="1200" height="800" class="bg" />
+  <g transform="translate(40,32)">
+    <text class="heading">Card Component — Specification</text>
+    <text class="small" y="22">References: assets/svg/warrior.svg (use as vector source in production)</text>
+  </g>
+
+  <g transform="translate(40,80)">
+    <rect x="0" y="0" width="360" height="640" class="surface" rx="12" />
+    <text class="label" x="16" y="22">Tokens (CSS variables)</text>
+    <text class="token" x="16" y="50">--accent: #0b74ff</text>
+    <text class="token" x="16" y="72">--accent-variant: #0a62d6</text>
+    <text class="token" x="16" y="94">--bg: #f6f8fb</text>
+    <text class="token" x="16" y="116">--surface: #ffffff</text>
+    <text class="token" x="16" y="138">--muted: #6b7280</text>
+  </g>
+
+  <g transform="translate(420,80)">
+    <rect x="0" y="0" width="320" height="180" class="surface" rx="12"/>
+    <text class="label" x="12" y="20">Mobile (<=599px)</text>
+    <rect x="12" y="32" width="296" height="80" fill="#e6eefc" rx="8" />
+    <text class="small" x="20" y="74">Illustration: assets/svg/warrior.svg (vector)</text>
+    <text class="heading" x="12" y="120">Card Title</text>
+    <rect x="12" y="148" width="296" height="32" rx="8" fill="#0b74ff" />
+    <text x="24" y="170" font-family="Inter, Arial" font-size="14px" fill="#fff">Primary CTA</text>
+  </g>
+
+  <g transform="translate(820,80)">
+    <rect x="0" y="0" width="340" height="240" class="surface" rx="12" />
+    <text class="label" x="16" y="22">Accessibility highlights</text>
+    <text class="small" x="16" y="46">- Text contrast >= 4.5:1 for body text</text>
+    <text class="small" x="16" y="66">- Buttons and focusable areas: visible focus ring</text>
+  </g>
+</svg>
