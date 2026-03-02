@@ -1,0 +1,48 @@
+<!-- CharacterCard component
+Usage: Include the stylesheet and script, then insert the markup where needed.
+<link rel="stylesheet" href="/src/components/character-card.css">
+<script type="module" src="/src/components/character-card.js"></script>
+
+This file contains a self-contained component markup that is accessible and responsive.
+-->
+<article class="character-card" role="group" aria-labelledby="char-name-1" tabindex="0">
+  <header class="character-card__header">
+    <div class="character-card__avatar" aria-hidden="true">
+      <!-- Prefer referencing the asset file. If you want to inline the SVG for tighter CSS control,
+           replace the <img> below with the SVG markup. -->
+      <img src="../../assets/characters/warrior.svg" alt="Warrior avatar" class="character-card__img">
+    </div>
+    <div class="character-card__meta">
+      <h2 id="char-name-1" class="character-card__name">Ragnar the Bold</h2>
+      <p class="character-card__subtitle">Level 12 • Human Warrior</p>
+    </div>
+  </header>
+
+  <section class="character-card__stats" aria-label="Character statistics">
+    <div class="stat" data-stat="health" data-value="82">
+      <div class="stat__label">Health</div>
+      <div class="stat__meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="stat__bar" style="--target: 82%"></span>
+      </div>
+    </div>
+
+    <div class="stat" data-stat="stamina" data-value="64">
+      <div class="stat__label">Stamina</div>
+      <div class="stat__meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="stat__bar" style="--target: 64%"></span>
+      </div>
+    </div>
+
+    <div class="stat" data-stat="armor" data-value="47">
+      <div class="stat__label">Armor</div>
+      <div class="stat__meter" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+        <span class="stat__bar" style="--target: 47%"></span>
+      </div>
+    </div>
+  </section>
+
+  <footer class="character-card__actions">
+    <button class="btn" type="button">View</button>
+    <button class="btn btn--primary" type="button">Select</button>
+  </footer>
+</article>
