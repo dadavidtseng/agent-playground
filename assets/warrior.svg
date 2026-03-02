@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="128" height="128" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <title>Warrior avatar</title>
+  <desc>Pixel-art style simplified warrior for CharacterCard reference (64x64 grid).</desc>
+  <rect width="64" height="64" fill="#0F1724"/>
+  <!-- Helmet -->
+  <rect x="18" y="8" width="28" height="10" fill="#374151"/>
+  <rect x="20" y="10" width="24" height="6" fill="#9CA3AF"/>
+  <rect x="28" y="6" width="8" height="4" fill="#374151"/>
+  <!-- Face -->
+  <rect x="24" y="18" width="16" height="10" fill="#FFDBB5"/>
+  <!-- Eyes -->
+  <rect x="28" y="22" width="2" height="2" fill="#0F1724"/>
+  <rect x="34" y="22" width="2" height="2" fill="#0F1724"/>
+  <!-- Armor torso -->
+  <rect x="16" y="30" width="32" height="20" fill="#1F2937"/>
+  <rect x="20" y="34" width="24" height="12" fill="#60A5FA"/>
+  <!-- Belt -->
+  <rect x="24" y="44" width="16" height="4" fill="#FFB020"/>
+  <!-- Arms -->
+  <rect x="12" y="30" width="4" height="16" fill="#1F2937"/>
+  <rect x="48" y="30" width="4" height="16" fill="#1F2937"/>
+  <!-- Legs -->
+  <rect x="22" y="50" width="6" height="8" fill="#111827"/>
+  <rect x="36" y="50" width="6" height="8" fill="#111827"/>
+  <!-- Sword (simplified) -->
+  <rect x="50" y="18" width="2" height="20" fill="#9CA3AF"/>
+  <rect x="49" y="18" width="4" height="2" fill="#374151"/>
+  <!-- Shield -->
+  <rect x="8" y="22" width="6" height="12" fill="#FFB020"/>
+  <rect x="9" y="24" width="4" height="8" fill="#F59E0B"/>
+</svg>
