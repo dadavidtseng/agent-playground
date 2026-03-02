@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Asset: warrior.svg
+  Task ID: 2233dda7-34da-461a-8fd2-5f05bc52498b
+  Palette (limited <=16 colors):
+    --skin: #F2C99D
+    --metal: #B0C6D8
+    --armor: #6B8FB4
+    --trim: #283D4A
+    --blade: #DFE8EE
+    --handle: #6B4A2B
+    --shadow: rgba(0,0,0,0.12)
+    --bg: none (transparent)
+  Layer names: helmet, armor, weapon
+  Notes: Pixel-art built from <rect> on a 16x16 grid (cell = 4 units). Grouped layers have IDs and classes
+-->
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 160 128" width="160" height="128" aria-labelledby="title desc">
+  <title id="title">Pixel-art warrior (64px and 128px variants)</title>
+  <desc id="desc">A compact pixel-art warrior with layered helmet, armor, and weapon. Groups have ids/classes for inline styling.</desc>
+
+  <style>
+    /* Default palette as CSS variables - can be overridden when inlined */
+    :root {
+      --skin: #F2C99D;
+      --metal: #B0C6D8;
+      --armor: #6B8FB4;
+      --trim: #283D4A;
+      --blade: #DFE8EE;
+      --handle: #6B4A2B;
+      --shadow: rgba(0,0,0,0.12);
+    }
+    .layer { shape-rendering: crispEdges; }
+    .helmet { fill: var(--metal); }
+    .helmet.trim { fill: var(--trim); }
+    .face { fill: var(--skin); }
+    .armor { fill: var(--armor); }
+    .armor.trim { fill: var(--trim); }
+    .weapon.blade { fill: var(--blade); }
+    .weapon.handle { fill: var(--handle); }
+    .shadow { fill: var(--shadow); }
+  </style>
+
+  <!-- Define the artwork once as a symbol at 64x64 grid -->
+  <symbol id="warrior-symbol" viewBox="0 0 64 64" preserveAspectRatio="xMidYMid meet">
+    <!-- Background (transparent) -->
+
+    <!-- Helmet layer: grouped for easy styling -->
+    <g id="helmet" class="layer helmet-group">
+      <!-- Helmet main metal -->
+      <g class="helmet">
+        <!-- Row-wise rectangles (pixel grid cell = 4) -->
+        <!-- Row 2 -->
+        <rect x="20" y="4" width="24" height="4" />
+        <!-- Row 3 -->
+        <rect x="16" y="8" width="32" height="4" />
+        <!-- Row 4 -->
+        <rect x="12" y="12" width="40" height="4" />
+        <!-- Row 5 (visor gap) -->
+        <rect x="12" y="16" width="8" height="4" class="helmet trim" />
+        <rect x="44" y="16" width="8" height="4" class="helmet trim" />
+      </g>
+      <!-- Face under helmet -->
+      <g id="face" class="face">
+        <rect x="24" y="16" width="16" height="12" rx="0" ry="0" />
+      </g>
+      <!-- Helmet trim details -->
+      <g class="helmet trim">
+        <rect x="28" y="12" width="8" height="2" />
+      </g>
+    </g>
+
+    <!-- Armor layer -->
+    <g id="armor" class="layer armor-group">
+      <!-- Shoulders -->
+      <g class="armor">
+        <rect x="8" y="28" width="48" height="8" />
+        <rect x="12" y="36" width="40" height="8" />
+        <rect x="16" y="44" width="32" height="12" />
+      </g>
+      <!-- Armor trim -->
+      <g class="armor trim">
+        <rect x="20" y="32" width="24" height="2" />
+        <rect x="24" y="44" width="16" height="2" />
+      </g>
+      <!-- Shadow under armor -->
+      <g class="shadow">
+        <rect x="20" y="52" width="24" height="4" />
+      </g>
+    </g>
+
+    <!-- Weapon layer: a simple sword to the right -->
+    <g id="weapon" class="layer weapon-group">
+      <!-- Handle -->
+      <g class="weapon handle">
+        <rect x="48" y="26" width="4" height="12" />
+        <rect x="46" y="36" width="8" height="2" />
+      </g>
+      <!-- Blade -->
+      <g class="weapon blade">
+        <rect x="50" y="18" width="2" height="20" />
+        <rect x="49" y="16" width="4" height="2" />
+      </g>
+    </g>
+
+    <!-- Small feet / base -->
+    <g id="feet" class="layer">
+      <rect x="22" y="56" width="6" height="6" fill="#283D4A" />
+      <rect x="36" y="56" width="6" height="6" fill="#283D4A" />
+    </g>
+  </symbol>
+
+  <!-- 64x64 variant (left) -->
+  <svg x="8" y="8" width="64" height="64" viewBox="0 0 64 64" aria-hidden="false">
+    <use href="#warrior-symbol" />
+  </svg>
+
+  <!-- 128x128 variant (right) -->
+  <svg x="88" y="0" width="128" height="128" viewBox="0 0 64 64" aria-hidden="false">
+    <use href="#warrior-symbol" />
+  </svg>
+
+  <!-- End of file -->
+</svg>
