@@ -1,0 +1,72 @@
+<!-- KĀDI Card Component Template -->
+<!-- Inline SVG warrior asset included below. This file provides a template that can be cloned by src/scripts/card.js -->
+<template id="kadi-card-template">
+  <article class="kadi-card" role="group" aria-labelledby="card-name-__ID__">
+    <header class="card-header">
+      <div class="art-wrap" aria-hidden="true">
+        <!-- Inline warrior SVG (stylable via CSS variables / currentColor) -->
+        <svg class="warrior" width="160" height="160" viewBox="0 0 160 160" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="true">
+          <defs>
+            <linearGradient id="wg-grad" x1="0" x2="1" y1="0" y2="1">
+              <stop offset="0" stop-color="var(--color-accent, #ff6b6b)" stop-opacity="0.95"/>
+              <stop offset="1" stop-color="var(--color-accent-2, #ff8e53)" stop-opacity="0.95"/>
+            </linearGradient>
+          </defs>
+          <g fill="none" fill-rule="evenodd" stroke="none" stroke-width="1">
+            <circle cx="80" cy="80" r="78" fill="var(--color-card, #1d2633)" />
+            <g transform="translate(24,22)" class="warrior-figure" fill="url(#wg-grad)">
+              <path d="M54 10c-8 0-14 6-14 14v8H24v12h10v28l-8 16h40l-8-16V44h10V32H74v-8c0-8-6-14-14-14z"/>
+              <!-- helmet detail -->
+              <path d="M34 6c6 4 18 4 24 0" fill-opacity="0.12"/>
+            </g>
+            <!-- accent lines using currentColor so themes can recolor stroke via --color-accent-stroke -->
+            <path d="M40 120c18 8 36 8 54 0" stroke="var(--color-accent-stroke, rgba(255,255,255,0.08))" stroke-width="2" fill="none"/>
+          </g>
+        </svg>
+      </div>
+      <div class="card-meta">
+        <h2 id="card-name-__ID__" class="card-name">Hero Name</h2>
+        <p class="card-title">Warrior</p>
+      </div>
+    </header>
+
+    <section class="card-stats" aria-label="Stats">
+      <!-- stat item template repeated for each stat. Use data-stat-key attribute for mapping. -->
+      <div class="stat" data-stat-key="strength">
+        <div class="stat-label">Strength</div>
+        <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Strength">
+          <div class="fill" style="width:0%"></div>
+        </div>
+        <div class="stat-value">0</div>
+      </div>
+
+      <div class="stat" data-stat-key="agility">
+        <div class="stat-label">Agility</div>
+        <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Agility">
+          <div class="fill" style="width:0%"></div>
+        </div>
+        <div class="stat-value">0</div>
+      </div>
+
+      <div class="stat" data-stat-key="endurance">
+        <div class="stat-label">Endurance</div>
+        <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Endurance">
+          <div class="fill" style="width:0%"></div>
+        </div>
+        <div class="stat-value">0</div>
+      </div>
+    </section>
+
+    <section class="card-bio">
+      <button class="bio-toggle" aria-expanded="false" aria-controls="bio-__ID__">Show Bio</button>
+      <div id="bio-__ID__" class="bio-content" hidden>
+        <p class="bio-text">A seasoned warrior, forged in many battles. Replace this text when instantiating the component.</p>
+      </div>
+    </section>
+
+    <footer class="card-actions">
+      <button class="primary-action">Select</button>
+      <button class="secondary-action">Details</button>
+    </footer>
+  </article>
+</template>
