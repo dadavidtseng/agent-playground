@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Card Component - KĀDI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="container">
+    <article class="card" id="character-card">
+      <header class="card-header">
+        <!-- Inline SVG asset (decorative but accessible) -->
+        <div class="card-icon" aria-hidden="false" role="img" aria-labelledby="card-title card-icon-desc">
+          <svg class="icon-sword" viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="false">
+            <title id="card-icon-desc">Sword emblem</title>
+            <g class="sword-group" transform="translate(0,0)">
+              <rect x="28" y="2" width="8" height="36" rx="2" fill="var(--token-accent)"/>
+              <polygon points="16,44 48,44 56,52 8,52" fill="var(--token-muted)"/>
+              <circle cx="32" cy="50" r="6" fill="var(--token-accent-2)"/>
+            </g>
+          </svg>
+        </div>
+
+        <div class="card-title-wrap">
+          <h1 id="card-title">Adventurer</h1>
+          <p class="card-sub">Level 7 · Rogue</p>
+        </div>
+      </header>
+
+      <section class="card-body">
+        <ul class="stats-list" aria-label="Character statistics">
+          <li class="stat-item">
+            <div class="stat-meta">
+              <span class="stat-name">Strength</span>
+              <span class="stat-value" aria-hidden="true">0%</span>
+            </div>
+            <div class="stat-track">
+              <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-stat="strength"></div>
+            </div>
+          </li>
+
+          <li class="stat-item">
+            <div class="stat-meta">
+              <span class="stat-name">Agility</span>
+              <span class="stat-value" aria-hidden="true">0%</span>
+            </div>
+            <div class="stat-track">
+              <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-stat="agility"></div>
+            </div>
+          </li>
+
+          <li class="stat-item">
+            <div class="stat-meta">
+              <span class="stat-name">Intelligence</span>
+              <span class="stat-value" aria-hidden="true">0%</span>
+            </div>
+            <div class="stat-track">
+              <div class="stat-bar" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" data-stat="intelligence"></div>
+            </div>
+          </li>
+        </ul>
+
+        <div class="card-actions" role="group" aria-label="Actions">
+          <!-- Using role=button and tabindex to demonstrate keyboard handling in JS -->
+          <div class="action" role="button" tabindex="0" data-action="equip">Equip</div>
+          <div class="action" role="button" tabindex="0" data-action="inspect">Inspect</div>
+          <div class="action" role="button" tabindex="0" data-action="share">Share</div>
+        </div>
+      </section>
+    </article>
+  </main>
+
+  <script src="scripts.js" defer></script>
+</body>
+</html>
