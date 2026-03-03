@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Mobile wireframe (≤480px)
+     Uses design tokens from ../tokens.css (spacing tokens, colors, motion)
+     Focus: layout, spacing, and interaction states (default / hover / focus / active)
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="375" height="812" viewBox="0 0 375 812">
+  <style>
+    /* Lightweight inline styles for clarity. Tokens referenced in spec.md and tokens.css */
+    .bg{fill:#fff}
+    .card{fill:#f6f6f6;stroke:#bdbdbd}
+    .stroke{stroke:#bdbdbd;fill:none}
+    .accent{fill:#2b6ef6}
+    .text{fill:#222;font-family:Inter, Helvetica, sans-serif;font-size:12px}
+    .annot{fill:#222;font-family:Inter, Helvetica, sans-serif;font-size:11px}
+    .muted{fill:#666;font-size:10px}
+    .btn{fill:#e9eefc;stroke:#bdbdf0}
+    .btn-hover{fill:#e0e7ff}
+    .focus-ring{fill:none;stroke:#ff9800;stroke-width:2;stroke-dasharray:4 2}
+  </style>
+
+  <rect class="bg" x="0" y="0" width="375" height="812" />
+
+  <!-- Top app bar -->
+  <rect class="card" x="0" y="0" width="375" height="56" />
+  <text class="text" x="16" y="34">App — Mobile (375×812)</text>
+
+  <!-- Hero/content card -->
+  <rect class="card" x="16" y="80" width="343" height="160" rx="8"/>
+  <rect class="stroke" x="24" y="96" width="120" height="14" rx="3"/>
+  <rect class="stroke" x="24" y="118" width="280" height="12" rx="3"/>
+  <rect class="stroke" x="24" y="136" width="200" height="12" rx="3"/>
+
+  <!-- Buttons row: default, hover, focus, active -->
+  <text class="annot" x="16" y="268">Buttons — states</text>
+  <g transform="translate(16,280)">
+    <!-- Default -->
+    <rect class="btn" x="0" y="0" width="96" height="40" rx="6" />
+    <text class="text" x="48" y="25" text-anchor="middle">Default</text>
+    <text class="muted" x="48" y="53" text-anchor="middle">--space-4 (16px) margin</text>
+
+    <!-- Hover -->
+    <g transform="translate(116,0)">
+      <rect class="btn-hover" x="0" y="0" width="96" height="40" rx="6" />
+      <text class="text" x="48" y="25" text-anchor="middle">Hover</text>
+      <text class="muted" x="48" y="53" text-anchor="middle">transition: var(--motion-fast)</text>
+    </g>
+
+    <!-- Focus -->
+    <g transform="translate(232,0)">
+      <rect class="btn" x="0" y="0" width="96" height="40" rx="6" />
+      <rect class="focus-ring" x="-4" y="-4" width="104" height="48" rx="8"/>
+      <text class="text" x="48" y="25" text-anchor="middle">Focus</text>
+      <text class="muted" x="48" y="53" text-anchor="middle">outline: 2px dashed (focus)</text>
+    </g>
+  </g>
+
+  <!-- Form field with spacing annotations -->
+  <text class="annot" x="16" y="360">Form field</text>
+  <rect class="card" x="16" y="372" width="343" height="54" rx="8"/>
+  <rect class="stroke" x="24" y="386" width="280" height="16" rx="4"/>
+  <!-- Spacing annotations -->
+  <line x1="16" y1="372" x2="16" y2="436" stroke="#ff9800" stroke-width="1" stroke-dasharray="2 2"/>
+  <text class="muted" x="22" y="410">height: 54 (approx.  --space-6)</text>
+
+  <!-- List with spacing units -->
+  <text class="annot" x="16" y="460">List items (spacing between items)</text>
+  <g transform="translate(16,472)">
+    <rect class="card" x="0" y="0" width="343" height="56" rx="8"/>
+    <rect class="card" x="0" y="68" width="343" height="56" rx="8"/>
+    <!-- spacing line -->
+    <line x1="0" y1="56" x2="343" y2="56" stroke="#bdbdbd" stroke-width="1" stroke-dasharray="3 2"/>
+    <text class="muted" x="20" y="34">item padding: --space-4 (16px)</text>
+  </g>
+
+  <!-- Footer with motion spec -->
+  <text class="annot" x="16" y="660">Motion</text>
+  <text class="muted" x="16" y="678">enter/exit: var(--motion-medium) 200ms — ease-out</text>
+  <text class="muted" x="16" y="694">hover transitions: var(--motion-fast) 120ms</text>
+
+  <!-- Breakpoint label -->
+  <text class="muted" x="275" y="34">breakpoint: mobile ≤480px</text>
+
+</svg>
