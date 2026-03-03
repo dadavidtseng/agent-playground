@@ -1,0 +1,157 @@
+/*
+  tokens.css
+  Design tokens expressed as CSS custom properties.
+  - Uses rem-based typography and spacing
+  - Generic, descriptive token names
+  - No external frameworks
+*/
+:root{
+  /* --- Breakpoints (px values) --- */
+  --bp-mobile: 480px;
+  --bp-tablet: 768px;
+  --bp-desktop: 1024px;
+
+  /* --- Typography (based on 16px root) --- */
+  --font-family-sans: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Font sizes (rem) */
+  --fs-xxs: 0.625rem; /* 10px */
+  --fs-xs: 0.75rem;   /* 12px */
+  --fs-sm: 0.875rem;  /* 14px */
+  --fs-md: 1rem;      /* 16px */
+  --fs-lg: 1.125rem;  /* 18px */
+  --fs-xl: 1.25rem;   /* 20px */
+  --fs-2xl: 1.5rem;   /* 24px */
+  --fs-3xl: 1.875rem; /* 30px */
+
+  /* Line heights (unitless) */
+  --lh-tight: 1.1;
+  --lh-default: 1.4;
+  --lh-relaxed: 1.6;
+
+  /* --- Spacing (rem) --- */
+  --space-xxs: 0.25rem;  /*4px*/
+  --space-xs: 0.5rem;    /*8px*/
+  --space-sm: 0.75rem;   /*12px*/
+  --space-md: 1rem;      /*16px*/
+  --space-lg: 1.5rem;    /*24px*/
+  --space-xl: 2rem;      /*32px*/
+
+  /* --- Radii --- */
+  --radius-sm: 0.25rem;  /*4px*/
+  --radius-md: 0.5rem;   /*8px*/
+  --radius-lg: 1rem;     /*16px*/
+
+  /* --- Elevation / Shadow --- */
+  --shadow-1: 0 1px 2px rgba(11,26,43,0.06), 0 1px 3px rgba(11,26,43,0.04);
+  --shadow-2: 0 4px 12px rgba(11,26,43,0.08);
+
+  /* --- Motion (timing + easing) --- */
+  --motion-duration-fast: 150ms;
+  --motion-duration-medium: 300ms;
+  --motion-duration-slow: 500ms;
+  --motion-easing-standard: cubic-bezier(0.2, 0.8, 0.2, 1);
+  --motion-easing-decelerate: cubic-bezier(0.0, 0.0, 0.2, 1);
+
+  /* --- Color Palette ---
+     - Surface tokens
+     - Neutral / text tokens
+     - Accent and states
+     All hex values provided; prefer tokens in components
+  */
+  /* Surfaces */
+  --color-surface: #FFFFFF;        /* Primary surface */
+  --color-surface-01: #F5F7FA;     /* Elevated/secondary surface */
+  --color-surface-02: #E9EEF5;     /* Muted surface */
+
+  /* Neutral / Text */
+  --color-text: #0B1A2B;           /* Primary text (dark navy) */
+  --color-text-secondary: #4B5C6B; /* Secondary/tertiary text */
+  --color-muted: #7B8894;          /* Muted / placeholder */
+
+  /* Accent */
+  --color-accent: #0066CC;         /* Brand accent */
+  --color-accent-strong: #004C99;  /* Strong accent (use for small text / links) */
+  --color-accent-hover: #005EB8;
+
+  /* States */
+  --color-success: #1E8E3E;
+  --color-warning: #E6A700;
+  --color-danger: #D64545;
+
+  /* Dividers */
+  --color-divider: #E1E8F0;
+
+  /* Iconography and subtle strokes */
+  --color-icon: #324A5F;
+
+  /* Transparent tokens */
+  --transparent: transparent;
+
+  /* --- Accessibility helper tokens (fallbacks) --- */
+  --color-on-accent-contrast: #FFFFFF; /* default text on accent */
+  --color-on-success-contrast: #FFFFFF;
+  --color-on-warning-contrast: #0B1A2B;
+
+  /* --- Component specific size tokens --- */
+  --avatar-size-sm: 2rem; /*32px*/
+  --avatar-size-md: 3rem; /*48px*/
+  --card-padding: var(--space-md);
+  --statbar-height: 0.75rem; /*12px*/
+}
+
+/* Example utility classes (naming conventions: .cc-*) */
+.cc-card{
+  background-color: var(--color-surface);
+  border-radius: var(--radius-md);
+  padding: var(--card-padding);
+  box-shadow: var(--shadow-1);
+  color: var(--color-text);
+  font-family: var(--font-family-sans);
+}
+
+.cc-avatar{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  border-radius:50%;
+  overflow:hidden;
+  background-color: var(--color-surface-01);
+  color: var(--color-text);
+}
+
+.cc-stats{
+  display:block;
+  width:100%;
+}
+
+.cc-statbar{
+  background: linear-gradient(90deg, var(--color-accent) 0%, var(--color-accent-hover) 100%);
+  height: var(--statbar-height);
+  border-radius: var(--radius-lg);
+  transition: width var(--motion-duration-medium) var(--motion-easing-standard);
+}
+
+/* Interaction states - examples */
+.cc-btn{
+  display:inline-flex;
+  align-items:center;
+  gap: var(--space-xs);
+  padding: calc(var(--space-xs) * 0.75) var(--space-md);
+  border-radius: var(--radius-sm);
+  background: var(--color-accent);
+  color: var(--color-on-accent-contrast);
+  border: none;
+  cursor: pointer;
+  transition: transform var(--motion-duration-fast) var(--motion-easing-standard), box-shadow var(--motion-duration-fast);
+}
+.cc-btn:hover{ transform: translateY(-1px); background: var(--color-accent-hover);} 
+.cc-btn:active{ transform: translateY(0); box-shadow: var(--shadow-1);} 
+.cc-btn:focus{ outline: 3px solid rgba(0,102,204,0.16); outline-offset: 2px; }
+.cc-btn.is-disabled, .cc-btn[disabled]{ background: var(--color-divider); color: var(--color-muted); cursor: not-allowed; transform:none; }
+
+/* Focus visible utility */
+:focus-visible{ outline: 3px solid rgba(11,26,43,0.12); outline-offset: 2px; }
