@@ -1,0 +1,192 @@
+/*
+  tokens.css
+  Design tokens and basic utility styles for Character Profile Card (framework-agnostic)
+  - Place in a global CSS file and reference CSS variables in components
+*/
+:root{
+  /* Breakpoints (also available as CSS variables) */
+  --bp-mobile: 480px;   /* <=480px */
+  --bp-tablet: 900px;   /* 481-900px */
+  --bp-desktop: 901px;  /* >900px (use min-width queries) */
+
+  /* Spacing scale (multiples of 4px) */
+  --space-0: 0rem;      /* 0 */
+  --space-1: 0.25rem;   /* 4px */
+  --space-2: 0.5rem;    /* 8px */
+  --space-3: 0.75rem;   /* 12px */
+  --space-4: 1rem;      /* 16px */
+  --space-5: 1.5rem;    /* 24px */
+  --space-6: 2rem;      /* 32px */
+  --space-7: 3rem;      /* 48px */
+  --space-8: 4rem;      /* 64px */
+
+  /* Typography scale (system: xs, sm, md, lg) - use rems for accessibility
+     Base font-size assumed 16px -> 1rem = 16px
+  */
+  --type-xs: 0.75rem;   /* 12px */
+  --type-sm: 0.875rem;  /* 14px */
+  --type-md: 1rem;      /* 16px */
+  --type-lg: 1.25rem;   /* 20px */
+
+  /* Line heights */
+  --lh-xs: 1rem;
+  --lh-sm: 1.25rem;
+  --lh-md: 1.5rem;
+  --lh-lg: 1.6rem;
+
+  /* Font stack */
+  --font-sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --font-serif: Georgia, 'Times New Roman', Times, serif;
+  --fw-regular: 400;
+  --fw-medium: 600;
+  --fw-bold: 700;
+
+  /* Color palette (design-first + semantic tokens)
+     - Use accessible color contrast: primary on background meets AA/AAA where possible
+  */
+  --color-bg: #0f1724;            /* dark page background */
+  --color-surface: #121826;       /* card surface */
+  --color-card-contrast: #0b1220; /* slightly darker for borders/shadows */
+
+  --color-primary: #6ee7b7;       /* mint */
+  --color-primary-600: #34d399;
+  --color-primary-800: #059669;
+
+  --color-accent: #60a5fa;        /* blue accent for links/action */
+  --color-accent-600: #3b82f6;
+
+  --color-muted: #94a3b8;         /* muted/secondary text */
+  --color-text: #e6eef8;          /* primary text on dark bg */
+  --color-on-primary: #052d2e;    /* text on primary backgrounds */
+
+  --color-success: #10b981;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* UI state tokens */
+  --focus-ring: 0 0 0 3px rgba(99, 102, 241, 0.18); /* subtle indigo ring */
+  --focus-ring-color: rgba(96,165,250,0.24);
+  --surface-border: rgba(255,255,255,0.06);
+  --surface-elevation: 0 6px 18px rgba(2,6,23,0.6);
+
+  /* Opacity tokens for states */
+  --opacity-disabled: 0.4;
+  --opacity-hover: 0.92;
+
+  /* Component-specific tokens (for Character Profile Card) */
+  --card-padding: var(--space-4);
+  --card-radius: 0.75rem; /* 12px */
+  --avatar-size-sm: 48px;
+  --avatar-size-md: 72px;
+  --avatar-size-lg: 96px;
+
+  /* Transition */
+  --transition-fast: 150ms cubic-bezier(.2,.8,.2,1);
+  --transition-medium: 220ms cubic-bezier(.2,.8,.2,1);
+}
+
+/* Responsive helpers (examples) */
+@media (max-width: 480px){
+  :root{
+    /* Mobile adjustments */
+    --type-md: 0.9375rem; /* 15px for denser mobile reading */
+    --avatar-size-md: 56px;
+  }
+}
+@media (min-width: 481px) and (max-width: 900px){
+  :root{
+    --type-md: 1rem;
+    --avatar-size-md: 72px;
+  }
+}
+@media (min-width: 901px){
+  :root{
+    --type-lg: 1.375rem; /* slightly larger on desktop */
+    --avatar-size-lg: 112px;
+  }
+}
+
+/* Example: minimal utility classes for the Character Profile Card
+   These are optional but serve to show how tokens are used in real components.
+*/
+.card-character{
+  background: linear-gradient(180deg, var(--color-surface), var(--color-card-contrast));
+  color: var(--color-text);
+  padding: var(--card-padding);
+  border-radius: var(--card-radius);
+  border: 1px solid var(--surface-border);
+  box-shadow: var(--surface-elevation);
+  display: flex;
+  gap: var(--space-4);
+  align-items: center;
+  transition: transform var(--transition-medium), box-shadow var(--transition-medium);
+}
+.card-character:hover{
+  transform: translateY(-4px);
+}
+.card-avatar{
+  width: var(--avatar-size-md);
+  height: var(--avatar-size-md);
+  min-width: var(--avatar-size-md);
+  min-height: var(--avatar-size-md);
+  border-radius: 12px;
+  overflow: hidden;
+  background: linear-gradient(135deg,#07131a 0%, rgba(255,255,255,0.02) 100%);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(255,255,255,0.03);
+}
+.card-content{
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0; /* for truncation */
+}
+.card-title{
+  font-family: var(--font-sans);
+  font-weight: var(--fw-medium);
+  font-size: var(--type-md);
+  line-height: var(--lh-md);
+  margin: 0;
+  color: var(--color-text);
+}
+.card-subtitle{
+  font-size: var(--type-sm);
+  color: var(--color-muted);
+  margin: 0;
+}
+.card-actions{
+  margin-left: auto;
+  display: flex;
+  gap: var(--space-2);
+}
+.button{
+  background: transparent;
+  color: var(--color-accent);
+  border: 1px solid rgba(96,165,250,0.12);
+  padding: 0.375rem 0.75rem;
+  border-radius: 0.5rem;
+  font-size: var(--type-sm);
+  cursor: pointer;
+  transition: background var(--transition-fast), transform var(--transition-fast);
+}
+.button:hover{ background: rgba(96,165,250,0.06); }
+.button:active{ transform: translateY(1px); }
+.button[disabled]{ opacity: var(--opacity-disabled); cursor: not-allowed; }
+
+/* Focus-visible (accessibility) */
+:focus{
+  outline: none;
+}
+:focus-visible{
+  box-shadow: var(--focus-ring);
+  border-radius: 0.25rem;
+}
+
+/* Utility: text truncation */
+.truncate{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

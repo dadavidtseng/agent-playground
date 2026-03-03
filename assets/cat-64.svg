@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Colored pixel-cat (8x8 grid) displayed at 64x64 -->
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 8 8" role="img" aria-labelledby="title desc" shape-rendering="crispEdges">
+  <title id="title">Pixel Cat — 64x64 (colored)</title>
+  <desc id="desc">A medium pixel-art cat. Palette: outline #2B2B2B, fur #8B8B8B, light #EDEDED, eyes #FFD34D.</desc>
+  <!-- Outline -->
+  <g fill="#2B2B2B">
+    <rect x="1" y="0" width="1" height="1"/>
+    <rect x="2" y="0" width="1" height="1"/>
+    <rect x="4" y="0" width="1" height="1"/>
+    <rect x="5" y="0" width="1" height="1"/>
+
+    <rect x="0" y="1" width="1" height="1"/>
+    <rect x="6" y="1" width="1" height="1"/>
+
+    <rect x="0" y="2" width="1" height="1"/>
+    <rect x="7" y="2" width="1" height="1"/>
+
+    <rect x="0" y="3" width="1" height="1"/>
+    <rect x="7" y="3" width="1" height="1"/>
+
+    <rect x="0" y="4" width="1" height="1"/>
+    <rect x="7" y="4" width="1" height="1"/>
+
+    <rect x="0" y="5" width="1" height="1"/>
+    <rect x="7" y="5" width="1" height="1"/>
+
+    <rect x="1" y="6" width="1" height="1"/>
+    <rect x="6" y="6" width="1" height="1"/>
+
+    <rect x="2" y="7" width="1" height="1"/>
+    <rect x="3" y="7" width="1" height="1"/>
+    <rect x="4" y="7" width="1" height="1"/>
+    <rect x="5" y="7" width="1" height="1"/>
+  </g>
+  <!-- Fur (mid) -->
+  <g fill="#8B8B8B">
+    <rect x="1" y="1" width="1" height="1"/>
+    <rect x="2" y="1" width="1" height="1"/>
+    <rect x="4" y="1" width="1" height="1"/>
+    <rect x="5" y="1" width="1" height="1"/>
+
+    <rect x="1" y="2" width="1" height="1"/>
+    <rect x="2" y="2" width="1" height="1"/>
+    <rect x="3" y="2" width="1" height="1"/>
+    <rect x="4" y="2" width="1" height="1"/>
+    <rect x="5" y="2" width="1" height="1"/>
+    <rect x="6" y="2" width="1" height="1"/>
+
+    <rect x="1" y="3" width="1" height="1"/>
+    <rect x="2" y="3" width="1" height="1"/>
+    <rect x="3" y="3" width="1" height="1"/>
+    <rect x="4" y="3" width="1" height="1"/>
+    <rect x="5" y="3" width="1" height="1"/>
+    <rect x="6" y="3" width="1" height="1"/>
+
+    <rect x="1" y="4" width="1" height="1"/>
+    <rect x="2" y="4" width="1" height="1"/>
+    <rect x="3" y="4" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+    <rect x="5" y="4" width="1" height="1"/>
+    <rect x="6" y="4" width="1" height="1"/>
+
+    <rect x="1" y="5" width="1" height="1"/>
+    <rect x="2" y="5" width="1" height="1"/>
+    <rect x="3" y="5" width="1" height="1"/>
+    <rect x="4" y="5" width="1" height="1"/>
+    <rect x="5" y="5" width="1" height="1"/>
+    <rect x="6" y="5" width="1" height="1"/>
+
+    <rect x="2" y="6" width="1" height="1"/>
+    <rect x="3" y="6" width="1" height="1"/>
+    <rect x="4" y="6" width="1" height="1"/>
+    <rect x="5" y="6" width="1" height="1"/>
+  </g>
+  <!-- Light accents -->
+  <g fill="#EDEDED">
+    <rect x="2" y="2" width="1" height="1"/>
+    <rect x="5" y="2" width="1" height="1"/>
+  </g>
+  <!-- Eyes -->
+  <g fill="#FFD34D">
+    <rect x="3" y="4" width="1" height="1"/>
+    <rect x="4" y="4" width="1" height="1"/>
+  </g>
+</svg>
