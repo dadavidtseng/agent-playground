@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Character Profile Card Demo</title>
+  <link rel="stylesheet" href="./styles/styles.css">
+</head>
+<body>
+  <main class="demo">
+    <header class="demo__header">
+      <h1>Character Profile Cards — Demo</h1>
+      <p class="muted">Responsive, accessible, animated stat bars, and expandable bios.</p>
+    </header>
+
+    <section class="cards" aria-label="Character gallery">
+
+      <!-- Card 1 -->
+      <article class="card" id="char-1" role="group" aria-labelledby="name-1">
+        <div class="card__media">
+          <!-- Inline SVG portrait (primary) -->
+          <svg class="portrait" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="g1" x1="0" x2="1">
+                <stop offset="0" stop-color="#ffd27f" />
+                <stop offset="1" stop-color="#ff9a9e" />
+              </linearGradient>
+            </defs>
+            <rect rx="12" width="120" height="120" fill="url(#g1)" />
+            <circle cx="60" cy="46" r="22" fill="#fff8" />
+            <path d="M30 96c6-14 24-14 30-14s24 0 30 14v6H30v-6z" fill="#fff" opacity="0.6" />
+          </svg>
+          <!-- External SVG fallback -->
+          <img src="./assets/svg/portrait1.svg" alt="Portrait of Leora" class="portrait-fallback">
+        </div>
+
+        <div class="card__body">
+          <h2 id="name-1" class="card__name">Leora Windwhisper</h2>
+          <p class="card__subtitle">Skybound Scout</p>
+
+          <div class="card__stats" aria-live="polite">
+            <div class="stat" data-stat-key="strength">
+              <div class="stat__label">Strength</div>
+              <div class="stat__bar" aria-hidden="true">
+                <div class="stat__fill" style="--value: 78%"></div>
+              </div>
+              <div class="stat__value" aria-hidden="true">78</div>
+            </div>
+
+            <div class="stat" data-stat-key="agility">
+              <div class="stat__label">Agility</div>
+              <div class="stat__bar" aria-hidden="true">
+                <div class="stat__fill" style="--value: 92%"></div>
+              </div>
+              <div class="stat__value" aria-hidden="true">92</div>
+            </div>
+
+            <div class="stat" data-stat-key="intellect">
+              <div class="stat__label">Intellect</div>
+              <div class="stat__bar" aria-hidden="true">
+                <div class="stat__fill" style="--value: 64%"></div>
+              </div>
+              <div class="stat__value" aria-hidden="true">64</div>
+            </div>
+          </div>
+
+          <div class="card__bio">
+            <p class="bio__text">Leora grew up in the high terraces and learned to read the winds before she could read the stars. Quick with a rope and quicker with a joke, she scouts ahead of caravans and has an uncanny knack for finding safe passages through cloudstorms.</p>
+            <button class="bio__toggle" aria-expanded="false">Read more</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 2 -->
+      <article class="card" id="char-2" role="group" aria-labelledby="name-2">
+        <div class="card__media">
+          <svg class="portrait" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="g2" x1="0" x2="1">
+                <stop offset="0" stop-color="#a0c4ff" />
+                <stop offset="1" stop-color="#bdb2ff" />
+              </linearGradient>
+            </defs>
+            <rect rx="12" width="120" height="120" fill="url(#g2)" />
+            <circle cx="60" cy="46" r="22" fill="#fff8" />
+            <path d="M30 96c6-14 24-14 30-14s24 0 30 14v6H30v-6z" fill="#fff" opacity="0.6" />
+          </svg>
+          <img src="./assets/svg/portrait2.svg" alt="Portrait of Brom" class="portrait-fallback">
+        </div>
+
+        <div class="card__body">
+          <h2 id="name-2" class="card__name">Brom Ironhand</h2>
+          <p class="card__subtitle">Forge Sentinel</p>
+
+          <div class="card__stats" aria-live="polite">
+            <div class="stat" data-stat-key="strength">
+              <div class="stat__label">Strength</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 94%"></div>
+              </div>
+              <div class="stat__value">94</div>
+            </div>
+
+            <div class="stat" data-stat-key="agility">
+              <div class="stat__label">Agility</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 56%"></div>
+              </div>
+              <div class="stat__value">56</div>
+            </div>
+
+            <div class="stat" data-stat-key="intellect">
+              <div class="stat__label">Intellect</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 70%"></div>
+              </div>
+              <div class="stat__value">70</div>
+            </div>
+          </div>
+
+          <div class="card__bio">
+            <p class="bio__text">Brom stands watch over the western forges. His hammers sing like thunder and his heart holds more patience than magma. Students come seeking lessons in metalwork and resilience.</p>
+            <button class="bio__toggle" aria-expanded="false">Read more</button>
+          </div>
+        </div>
+      </article>
+
+      <!-- Card 3 -->
+      <article class="card" id="char-3" role="group" aria-labelledby="name-3">
+        <div class="card__media">
+          <svg class="portrait" viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+            <defs>
+              <linearGradient id="g3" x1="0" x2="1">
+                <stop offset="0" stop-color="#c8f7d4" />
+                <stop offset="1" stop-color="#9be7ff" />
+              </linearGradient>
+            </defs>
+            <rect rx="12" width="120" height="120" fill="url(#g3)" />
+            <circle cx="60" cy="46" r="22" fill="#fff8" />
+            <path d="M30 96c6-14 24-14 30-14s24 0 30 14v6H30v-6z" fill="#fff" opacity="0.6" />
+          </svg>
+          <img src="./assets/svg/portrait3.svg" alt="Portrait of Sera" class="portrait-fallback">
+        </div>
+
+        <div class="card__body">
+          <h2 id="name-3" class="card__name">Sera Greenbloom</h2>
+          <p class="card__subtitle">Field Healer</p>
+
+          <div class="card__stats" aria-live="polite">
+            <div class="stat" data-stat-key="strength">
+              <div class="stat__label">Strength</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 48%"></div>
+              </div>
+              <div class="stat__value">48</div>
+            </div>
+
+            <div class="stat" data-stat-key="agility">
+              <div class="stat__label">Agility</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 67%"></div>
+              </div>
+              <div class="stat__value">67</div>
+            </div>
+
+            <div class="stat" data-stat-key="intellect">
+              <div class="stat__label">Intellect</div>
+              <div class="stat__bar">
+                <div class="stat__fill" style="--value: 88%"></div>
+              </div>
+              <div class="stat__value">88</div>
+            </div>
+          </div>
+
+          <div class="card__bio">
+            <p class="bio__text">Sera collects dawn dew and rare herbs. She tends to wounded travelers and teaches first aid to the caravan guards. Her calm presence steadies even the most anxious souls.</p>
+            <button class="bio__toggle" aria-expanded="false">Read more</button>
+          </div>
+        </div>
+      </article>
+
+    </section>
+
+    <footer class="demo__footer">
+      <button id="refresh-stats">Animate stats</button>
+    </footer>
+  </main>
+
+  <script src="./scripts/script.js"></script>
+</body>
+</html>
