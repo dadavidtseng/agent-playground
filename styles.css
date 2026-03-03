@@ -1,0 +1,84 @@
+:root{
+  /* tokens will be injected by reading design/tokens.json; replicate here as CSS vars */
+  --color-bg: #0f172a;
+  --color-card-bg: #0b1220;
+  --color-muted: #9aa4b2;
+  --color-accent: #4fd1c5;
+  --color-accent-dark: #2bb19f;
+  --color-stat-bg: #122033;
+
+  --space-gutter: 16px;
+  --space-card-padding: 20px;
+
+  --font-family: Inter, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --font-size: 14px;
+  --heading-size: 16px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:var(--font-family);
+  font-size:var(--font-size);
+  background:var(--color-bg);
+  color:var(--color-muted);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  padding:32px;
+}
+
+.stat-card{
+  background:linear-gradient(180deg, rgba(255,255,255,0.02), transparent), var(--color-card-bg);
+  padding:var(--space-card-padding);
+  border-radius:12px;
+  width:min(680px, calc(100% - 64px));
+  box-shadow:0 6px 18px rgba(2,6,23,0.6);
+  color:#e6eef6;
+}
+.card-head{
+  display:flex;
+  gap:16px;
+  align-items:center;
+}
+.icon{width:64px;height:64px;flex:0 0 64px}
+.title{margin:0;font-size:var(--heading-size);color:#fff}
+.subtitle{margin:0;color:var(--color-muted);font-size:13px}
+.variant-toggle{margin-left:auto}
+.variant-toggle select{background:transparent;color:var(--color-muted);border:1px solid rgba(255,255,255,0.04);padding:6px 8px;border-radius:8px}
+
+.stats{margin-top:16px;display:flex;flex-direction:column;gap:12px}
+.stat-row{display:flex;align-items:center;gap:12px}
+.stat-label{width:100px;color:var(--color-muted);font-size:13px}
+.stat-track{flex:1;background:var(--color-stat-bg);height:12px;border-radius:999px;position:relative;overflow:hidden}
+.stat-fill{position:absolute;left:0;top:0;bottom:0;width:0;background:linear-gradient(90deg,var(--color-accent),var(--color-accent-dark));border-radius:inherit;transition:width 700ms cubic-bezier(.2,.9,.2,1)}
+.stat-value{width:48px;text-align:right;color:#fff;font-variant-numeric:tabular-nums}
+
+/* variants via data-attribute */
+.stat-card[data-variant="compact"]{width:320px;padding:12px}
+.stat-card[data-variant="compact"] .icon{width:40px;height:40px}
+.stat-card[data-variant="compact"] .stat-label{width:80px;font-size:12px}
+
+.stat-card[data-variant="expanded"]{width:900px}
+.stat-card[data-variant="expanded"] .stat-label{width:140px}
+
+/* responsive */
+@media (max-width: 480px){
+  .stat-card{width:calc(100% - 32px);padding:12px}
+  .card-head{gap:12px}
+}
+
+/* focus styles for keyboard */
+[tabindex]:focus, select:focus{outline:3px solid rgba(79,209,197,0.16);outline-offset:2px}
+
+/* visually-hidden helper */
+.visually-hidden{position:absolute!important;height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap}
+
+/* svg crispness adjustments */
+svg{shape-rendering:crispEdges; image-rendering:optimizeQuality}
+
+/* reduced-motion fallback for assistive tech */
+@media (prefers-reduced-motion: reduce){
+  .stat-fill{transition:none}
+}
