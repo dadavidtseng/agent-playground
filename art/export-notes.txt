@@ -1,0 +1,44 @@
+Export notes for task 970b9495-742b-4214-9fe4-ba4dafc4be33
+
+Files created:
+- art/cat-small.svg       (48x48 target, 32x32 pixel grid viewBox)
+- art/cat-medium.svg      (96x96 target, same viewBox)
+- art/cat-large.svg       (192x192 target, same viewBox)
+- art/cat-small-mono.svg  (monochrome small variant)
+- art/cat-anim.svg        (inline 2-frame animation example)
+
+Design decisions:
+- Artwork created on a 32x32 grid using <rect> elements to preserve pixel-art look when scaled.
+- Palette limited to 6 colors and CSS tokens referenced where applicable (--color-foreground, --color-accent, --color-primary).
+- Files are pure SVG vector; no raster images included.
+- Titles and descriptions included for accessibility.
+- shape-rendering="crispEdges" ensures pixel-accurate rendering when scaled. preserveAspectRatio="xMidYMid meet" maintains consistent centering.
+
+Animation:
+- Simple 2-frame animation implemented by toggling opacity on two grouped frames using <animate>. This keeps the SVG single-file and inline-compatible without scripting.
+- Duration: 800ms loop; tweak by editing the dur attribute.
+
+SVGO optimization suggestions (recommended settings):
+- removeMetadata: true
+- removeComments: true
+- removeDesc: false (keep desc for accessibility) => set to false
+- removeTitle: false (keep title) => set to false
+- removeUselessDefs: true
+- collapseGroups: true
+- convertStyleToAttrs: true
+- removeAttrs: remove unused "xmlns:xlink" if present
+- cleanupIDs: preserve IDs used by animation (frame1, frame2)
+
+Command example using svgo (npm package):
+svgo -i art/cat-small.svg -o art/cat-small.min.svg --enable=removeMetadata,removeComments,removeUselessDefs,collapseGroups,convertStyleToAttrs --disable=removeTitle,removeDesc
+
+Notes on accessibility:
+- Keep <title> and <desc> inside each SVG for screen readers.
+- For animated SVGs, consider adding aria-live or pausing controls if it may distract users.
+
+Tokens:
+- Colors reference CSS variables so consumers can override with their design tokens (e.g., --color-foreground, --color-accent, --color-primary).
+
+Optimization:
+- Files kept minimal: repeated shapes are explicit for readability; further size reduction possible by merging rects into paths or using <use>.
+- Ensure svgo cleanup retains title/desc and IDs needed by animations.
