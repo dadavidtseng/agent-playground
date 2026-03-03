@@ -1,0 +1,175 @@
+/* CharacterCard.css
+   Designer-scoped tokens and component scaffolding
+   Task ID: 7ada93a4-9435-4afc-a72e-b32551406c6d
+   Note: This file intentionally includes token definitions and minimal component rules.
+*/
+
+:root {
+  /* Color tokens */
+  --color-bg: #ffffff;
+  --color-surface: #f5f7fb;
+  --color-surface-contrast: #ffffff;
+  --color-primary: #0057b8;
+  --color-on-primary: #ffffff;
+  --color-text: #111827;
+  --color-muted: #6b7280;
+  --color-accent: #f59e0b;
+  --color-success: #059669;
+  --color-danger: #dc2626;
+  --color-border: #e6e9ee;
+  --color-focus: rgba(0, 87, 184, 0.28);
+
+  /* Typography */
+  --font-family-base: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+  --type-xs: 12px;
+  --type-sm: 14px;
+  --type-md: 16px;
+  --type-lg: 20px;
+  --type-xl: 24px;
+  --type-xxl: 32px;
+
+  /* Spacing (8px base) */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 20px;
+  --space-6: 24px;
+  --space-8: 32px;
+
+  /* Layout / shape */
+  --radius-sm: 6px;
+  --radius-md: 12px;
+  --shadow-sm: 0 1px 2px rgba(16,24,40,0.05);
+  --shadow-md: 0 4px 12px rgba(16,24,40,0.08);
+  --border-width: 1px;
+
+  /* Breakpoints */
+  --breakpoint-sm: 480px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+
+  /* Interaction tokens */
+  --surface-hover: rgba(0,0,0,0.03);
+  --surface-active: rgba(0,0,0,0.06);
+  --disabled-opacity: 0.48;
+}
+
+/* Component scaffolding for .character-card */
+.character-card {
+  --card-padding: var(--space-4);
+  box-sizing: border-box;
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-family: var(--font-family-base);
+  padding: var(--card-padding);
+  border-radius: var(--radius-md);
+  border: var(--border-width) solid var(--color-border);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 160ms ease, transform 120ms ease, background-color 120ms ease;
+}
+
+.character-card:hover {
+  background: color-mix(in srgb, var(--color-surface) 88%, var(--surface-hover) 12%);
+  box-shadow: var(--shadow-md);
+}
+
+.character-card:active {
+  background: color-mix(in srgb, var(--color-surface) 80%, var(--surface-active) 20%);
+  transform: translateY(1px);
+}
+
+.character-card--disabled,
+.character-card[aria-disabled="true"] {
+  opacity: var(--disabled-opacity);
+  pointer-events: none;
+  box-shadow: none;
+}
+
+.character-card__header {
+  display: flex;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.character-card__avatar {
+  width: 56px;
+  height: 56px;
+  border-radius: 9999px;
+  object-fit: cover;
+  background: var(--color-surface-contrast);
+  flex-shrink: 0;
+}
+
+.character-card__title {
+  display: flex;
+  flex-direction: column;
+}
+
+.character-card__name {
+  font-size: var(--type-lg);
+  line-height: 1;
+  color: var(--color-text);
+}
+
+.character-card__meta {
+  font-size: var(--type-sm);
+  color: var(--color-muted);
+}
+
+.character-card__body {
+  margin-top: var(--space-3);
+  font-size: var(--type-md);
+  color: var(--color-text);
+}
+
+.character-card__actions {
+  margin-top: var(--space-4);
+  display: flex;
+  gap: var(--space-3);
+}
+
+/* Buttons inside component should rely on global button tokens; include minimal guidance here */
+.character-card__actions .btn {
+  min-height: 40px;
+  padding: 8px 12px;
+  border-radius: var(--radius-sm);
+}
+
+.character-card__actions .btn--primary {
+  background: var(--color-primary);
+  color: var(--color-on-primary);
+  border: none;
+}
+
+.character-card__actions .btn--primary:hover {
+  filter: brightness(1.03);
+}
+
+.character-card__actions .btn--ghost {
+  background: transparent;
+  color: var(--color-text);
+  border: 1px solid transparent;
+}
+
+/* Focus styles for keyboard accessibility */
+.character-card :focus {
+  outline: none;
+  box-shadow: 0 0 0 4px var(--color-focus);
+  border-radius: calc(var(--radius-md) - 2px);
+}
+
+/* Responsive adjustments */
+@media (max-width: var(--breakpoint-sm)) {
+  .character-card {
+    --card-padding: var(--space-3);
+    padding: var(--card-padding);
+  }
+  .character-card__avatar {
+    width: 40px;
+    height: 40px;
+  }
+  .character-card__name { font-size: var(--type-md); }
+}
+
+/* End of designer scaffolding - keep component rules token-based only */
