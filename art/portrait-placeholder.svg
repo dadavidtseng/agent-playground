@@ -1,9 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 320 320" role="img" aria-labelledby="title desc">
-  <title id="title">Portrait Placeholder</title>
-  <desc id="desc">A simple placeholder silhouette for character portraits.</desc>
-  <rect width="100%" height="100%" fill="#eef2ff"/>
-  <g transform="translate(40,40)" fill="#9aa7ff">
-    <circle cx="120" cy="80" r="56" fill="#cfd9ff" stroke="#9aa7ff" stroke-width="6"/>
-    <rect x="48" y="160" width="144" height="96" rx="16" fill="#cfd9ff"/>
-  </g>
-</svg>
