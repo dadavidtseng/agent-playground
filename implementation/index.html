@@ -1,0 +1,27 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Card Component - Scaffold</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Root container for the demo. Card.render(root) will populate .card-root -->
+  <main id="app">
+    <h1>Card Component - Placeholder Demo</h1>
+    <div class="card-root" aria-live="polite"></div>
+
+    <!-- Placeholder inline SVG: replace with final card frame SVG from /art/placeholders/ when ready -->
+    <!-- TOKEN: INSERT_SVG_CARD_FRAME_HERE -->
+    <svg id="placeholder-frame" width="0" height="0" aria-hidden="true">
+      <!-- Small inline placeholder: this will be replaced by final artwork -->
+      <symbol id="card-frame" viewBox="0 0 120 160">
+        <rect x="0" y="0" width="120" height="160" rx="8" ry="8" fill="var(--card-bg)" stroke="var(--card-border)" />
+      </symbol>
+    </svg>
+  </main>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
