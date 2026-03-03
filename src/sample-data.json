@@ -1,0 +1,12 @@
+{
+  "name": "Arielle Stormborne",
+  "level": 7,
+  "stats": {
+    "HP": 74,
+    "STR": 14,
+    "DEX": 17,
+    "INT": 12
+  },
+  "bio": "Arielle is an agile scout from the coastal isles, quick with a blade and quicker with a smile. Known for swift reconnaissance and uncanny luck.",
+  "portraitVariant": "placeholder"
+}
