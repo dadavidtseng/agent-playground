@@ -1,0 +1,10 @@
+<svg width="1280" height="800" xmlns="http://www.w3.org/2000/svg">
+  <rect width="100%" height="100%" fill="#FFFFFF"/>
+  <rect x="32" y="24" width="1216" height="72" rx="8" fill="#F5F7FA" stroke="#E6EAF0"/>
+  <rect x="32" y="120" width="760" height="420" rx="12" fill="#F5F7FA" stroke="#E6EAF0"/>
+  <rect x="808" y="120" width="440" height="180" rx="12" fill="#F5F7FA" stroke="#E6EAF0"/>
+  <rect x="32" y="560" width="1216" height="64" rx="8" fill="#0B63FF"/>
+  <text x="56" y="60" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="20" fill="#0B1225">Desktop Header</text>
+  <text x="56" y="160" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="18" fill="#5B6776">Main content</text>
+  <text x="56" y="600" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="16" fill="#FFFFFF">Primary CTA</text>
+</svg>
