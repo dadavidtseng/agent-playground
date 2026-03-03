@@ -1,0 +1,18 @@
+{
+  "assets": [
+    {
+      "filename": "cat_idle.svg",
+      "sizes": ["64x64", "128x128"],
+      "viewBox": "0 0 128 128",
+      "ids": ["cat-ears", "cat-head", "cat-eye-left", "cat-eye-right", "cat-nose", "cat-torso"],
+      "classes": ["cat-body", "cat-eye", "cat-pupil", "cat-nose", "cat-stripe"]
+    },
+    {
+      "filename": "cat_blink.svg",
+      "sizes": ["64x64", "128x128"],
+      "viewBox": "0 0 128 128",
+      "ids": ["cat-ears", "cat-head", "cat-eye-left", "cat-eye-right", "cat-nose", "cat-torso", "cat-eyelid-left", "cat-eyelid-right"],
+      "classes": ["cat-body", "cat-eye", "cat-pupil", "cat-nose", "cat-eyelid"]
+    }
+  ]
+}
