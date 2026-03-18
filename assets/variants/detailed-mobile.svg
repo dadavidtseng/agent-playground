@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="667" viewBox="0 0 375 667" xmlns="http://www.w3.org/2000/svg">
+  <rect width="375" height="667" fill="#ffffff"/>
+  <text x="24" y="46" font-family="Inter, Arial" font-size="16" fill="#0f1724">Detailed - Mobile</text>
+
+  <!-- Large card -->
+  <rect x="16" y="80" width="343" height="180" rx="12" fill="#ffffff" stroke="#e6edf6"/>
+  <text x="32" y="116" font-family="Inter, Arial" font-size="18" fill="#0f1724">Card Title - 20px</text>
+  <text x="32" y="140" font-family="Inter, Arial" font-size="14" fill="#6b7280">Body: 16px (var(--type-scale-md)); comfortable spacing</text>
+
+  <!-- Larger CTA -->
+  <rect x="16" y="280" width="343" height="44" rx="8" fill="#0456d6"/>
+  <text x="160" y="308" font-family="Inter, Arial" font-size="16" fill="#ffffff" text-anchor="middle">Primary Action</text>
+
+  <text x="16" y="360" font-family="Inter, Arial" font-size="12" fill="#6b7280">Detailed variant uses larger padding (16-24px) and larger typography for readability.</text>
+</svg>

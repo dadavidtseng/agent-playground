@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="800" height="1024" viewBox="0 0 800 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="1024" fill="#ffffff"/>
+  <text x="32" y="56" font-family="Inter, Arial" font-size="20" fill="#0f1724">Detailed - Tablet</text>
+
+  <!-- Wide card -->
+  <rect x="32" y="96" width="736" height="200" rx="12" fill="#ffffff" stroke="#e6edf6"/>
+  <text x="48" y="136" font-family="Inter, Arial" font-size="20" fill="#0f1724">Card Title - 24px</text>
+  <text x="48" y="166" font-family="Inter, Arial" font-size="16" fill="#6b7280">Lead paragraph: var(--type-scale-md) 16px. Use comfortable leading and 24px inner padding.</text>
+
+  <!-- Actions -->
+  <rect x="32" y="320" width="220" height="44" rx="10" fill="#0456d6"/>
+  <text x="142" y="350" font-family="Inter, Arial" font-size="16" fill="#ffffff" text-anchor="middle">Primary Action</text>
+  <rect x="268" y="320" width="220" height="44" rx="10" fill="#f1f5f9" stroke="#e6edf6"/>
+  <text x="378" y="350" font-family="Inter, Arial" font-size="16" fill="#0f1724" text-anchor="middle">Secondary</text>
+
+  <text x="32" y="420" font-family="Inter, Arial" font-size="12" fill="#6b7280">Detailed tablet: larger radii and padding; use --space-l and --space-xl.</text>
+</svg>
