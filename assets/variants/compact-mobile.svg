@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="667" viewBox="0 0 375 667" xmlns="http://www.w3.org/2000/svg">
+  <rect width="375" height="667" fill="#ffffff"/>
+  <!-- Header -->
+  <rect x="16" y="16" width="343" height="48" rx="6" fill="#f7f9fc" stroke="#e6edf6"/>
+  <text x="24" y="46" font-family="Inter, Arial" font-size="14" fill="#0f1724">Compact - Mobile</text>
+
+  <!-- Card -->
+  <rect x="16" y="80" width="343" height="120" rx="6" fill="#f7f9fc" stroke="#e6edf6"/>
+  <text x="32" y="110" font-family="Inter, Arial" font-size="14" fill="#0f1724">Card (padding: 12px)</text>
+  <text x="32" y="130" font-family="Inter, Arial" font-size="12" fill="#6b7280">Body: 14px (var(--type-scale-sm))</text>
+
+  <!-- Compact button row -->
+  <rect x="16" y="220" width="160" height="36" rx="6" fill="#0456d6"/>
+  <text x="40" y="244" font-family="Inter, Arial" font-size="14" fill="#ffffff">Primary</text>
+  <rect x="199" y="220" width="160" height="36" rx="6" fill="#f1f5f9" stroke="#e6edf6"/>
+  <text x="235" y="244" font-family="Inter, Arial" font-size="14" fill="#0f1724">Secondary</text>
+
+  <!-- Spacing guide -->
+  <line x1="16" y1="320" x2="343" y2="320" stroke="#e6edf6" stroke-dasharray="4"/>
+  <text x="24" y="340" font-family="Inter, Arial" font-size="12" fill="#6b7280">Gutters: 16px (var(--space-m)), internal padding compact: 12px (var(--space-s))</text>
+
+  <!-- Color swatches -->
+  <rect x="24" y="380" width="48" height="48" rx="6" fill="#0456d6"/>
+  <text x="80" y="404" font-family="Inter, Arial" font-size="12" fill="#0f1724">Primary #0456d6</text>
+  <rect x="24" y="440" width="48" height="48" rx="6" fill="#00a896"/>
+  <text x="80" y="464" font-family="Inter, Arial" font-size="12" fill="#0f1724">Secondary #00a896</text>
+
+  <!-- Notes -->
+  <text x="16" y="520" font-family="Inter, Arial" font-size="12" fill="#6b7280">Compact variant: tight spacing, 36px buttons, 14px body. Use for dense UIs.</text>
+</svg>
