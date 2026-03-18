@@ -1,9 +1,0 @@
-<svg width="360" height="640" xmlns="http://www.w3.org/2000/svg">
-  <rect width="100%" height="100%" fill="#FFFFFF"/>
-  <rect x="16" y="20" width="328" height="48" rx="8" fill="#F5F7FA" stroke="#E6EAF0"/>
-  <rect x="16" y="84" width="328" height="160" rx="12" fill="#F5F7FA" stroke="#E6EAF0"/>
-  <rect x="16" y="260" width="328" height="48" rx="8" fill="#0B63FF"/>
-  <text x="34" y="52" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="16" fill="#0B1225">Header</text>
-  <text x="34" y="120" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="14" fill="#5B6776">Card title</text>
-  <text x="34" y="288" font-family='-apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial' font-size="16" fill="#FFFFFF">Primary CTA</text>
-</svg>
