@@ -1,0 +1,94 @@
+/* char-card.css - styles for CharCard web component and demo page */
+:root{
+  --bg: #0f172a;
+  --card-bg: #0b1220;
+  --muted: #94a3b8;
+  --accent: #60a5fa;
+  --radius: 12px;
+  --surface: linear-gradient(180deg,#071024 0%, #071827 100%);
+  --success: #34d399;
+  --danger: #fb7185;
+  --glass: rgba(255,255,255,0.04);
+
+  /* breakpoints */
+  --bp-sm: 480px;
+  --bp-md: 768px;
+  --bp-lg: 1024px;
+}
+
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background:radial-gradient(1200px 600px at 10% 10%, rgba(59,130,246,0.06), transparent), var(--bg);
+  color:#e6eef8;
+  -webkit-font-smoothing:antialiased;
+}
+.demo-root{max-width:980px;margin:32px auto;padding:0 20px}
+.demo-root h1{font-size:1.25rem;margin:0 0 18px}
+.demo-grid{display:grid;gap:18px}
+.notes{color:var(--muted);font-size:0.9rem}
+
+/* Component host sizing */
+char-card{display:block;max-width:420px}
+
+/* Card layout */
+.char-card{
+  background:var(--card-bg);
+  border-radius:var(--radius);
+  padding:16px;
+  display:flex;
+  gap:12px;
+  align-items:flex-start;
+  box-shadow: 0 6px 20px rgba(2,6,23,0.6);
+  border:1px solid rgba(255,255,255,0.03);
+}
+.char-card.compact{padding:12px}
+.avatar{
+  width:96px;flex:0 0 96px;height:96px;border-radius:10px;overflow:hidden;display:flex;align-items:center;justify-content:center;background:var(--glass);align-self:center
+}
+.avatar svg{width:92px;height:92px;display:block}
+
+.meta{flex:1;min-width:0}
+.row{display:flex;align-items:center;gap:8px}
+.name{font-weight:700;font-size:1.05rem}
+.class-level{color:var(--muted);font-size:0.9rem}
+.bio{margin-top:8px;color:#cfe8ff;opacity:0.92;font-size:0.95rem}
+
+.stats{margin-top:12px;display:grid;gap:8px}
+.stat{display:flex;flex-direction:column;gap:6px}
+.stat__label{display:flex;justify-content:space-between;font-size:0.82rem;color:var(--muted)}
+.stat__bar{height:12px;background:rgba(255,255,255,0.06);border-radius:999px;overflow:hidden;position:relative}
+.stat__fill{position:absolute;left:0;top:0;bottom:0;transform-origin:left center;background:linear-gradient(90deg,var(--accent),#7dd3fc);width:100%;transform:scaleX(0);transition:transform 700ms cubic-bezier(0.2,0.8,0.2,1)}
+.stat__value{font-weight:600;color:#dff6ff;font-size:0.86rem}
+
+/* individual colors */
+.stat.hp .stat__fill{background:linear-gradient(90deg,#fb7185,#f97316)}
+.stat.attack .stat__fill{background:linear-gradient(90deg,#f59e0b,#f97316)}
+.stat.defense .stat__fill{background:linear-gradient(90deg,#60a5fa,#7c3aed)}
+.stat.speed .stat__fill{background:linear-gradient(90deg,#34d399,#10b981)}
+
+/* focus and accessibility */
+.stat__bar:focus{outline:3px solid rgba(96,165,250,0.18);outline-offset:3px}
+.char-card:focus-within{box-shadow:0 8px 28px rgba(96,165,250,0.06)}
+
+/* Responsive adjustments */
+@media (max-width: 600px){
+  .char-card{flex-direction:row;gap:10px;padding:12px}
+  .avatar{width:76px;height:76px}
+  .avatar svg{width:68px;height:68px}
+}
+@media (max-width: 420px){
+  .char-card{flex-direction:column;align-items:center;text-align:center}
+  .avatar{width:92px;height:92px}
+  .meta{width:100%}
+}
+
+/* Respect prefers-reduced-motion */
+@media (prefers-reduced-motion: reduce){
+  .stat__fill{transition:none}
+}
+
+/* Demo-specific tweaks */
+.demo-grid char-card{margin-bottom:8px}
