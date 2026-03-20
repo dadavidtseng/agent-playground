@@ -1,3 +1,7 @@
+Assets README
+
+This folder contains optimized SVGs and other images used by the profile card component, including a set of warrior pixel-art SVG assets and general optimization/licensing guidance.
+
 Warrior SVG assets and optimization notes
 
 Files:
@@ -47,3 +51,18 @@ Export checklist performed:
 Suggested next steps:
 - Run svgo (keeping animateTransform and IDs) to minify. Example config: {"plugins":[{"removeComments":true},{"removeMetadata":true},{"convertShapeToPath":false},{"collapseGroups":false}]}.
 - Test on target devices at intended thumbnail/full sizes (e.g., thumbnail: 64px, full: 300x420) and check for crisp pixels and no anti-aliasing.
+
+General assets guidance
+
+Optimization notes:
+- SVGs have been optimized using SVGO with default recommended plugins.
+- Raster images (if any) should be provided in multiple sizes and webp where appropriate.
+
+Usage:
+- Place SVGs in assets/ and reference them via <img src="/assets/icon.svg" alt="..."> or inline the SVG for color control.
+- When inlining many SVGs, ensure unique ids or use aria-labelledby patterns to avoid collisions.
+
+Licensing:
+- All icons are from open-source icon sets or created for this project. Confirm license in each file header.
+
+For more details, see docs/design.md for how icons are used in the component and recommended sizes.

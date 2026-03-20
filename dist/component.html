@@ -1,0 +1,20 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Profile Card - Example Integration</title>
+  <link rel="stylesheet" href="component.css">
+</head>
+<body>
+  <div id="profile-root"></div>
+  <script src="component.js"></script>
+  <script>
+    MyProfileCard.init(document.getElementById('profile-root'), {
+      name: 'Alex Example',
+      title: 'Lead Developer',
+      stats: { followers: 1240, projects: 12 },
+      bio: 'Passionate developer building small, useful UI components.'
+    });
+  </script>
+</body>
+</html>
