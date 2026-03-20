@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48" width="48" height="48" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <!-- Pixel-art headshot -->
+  <g data-layer="shadow" fill="#0b0b0b">
+    <rect x="18" y="34" width="12" height="1"/>
+  </g>
+
+  <g data-layer="hair" fill="#3b2f2f">
+    <rect x="14" y="8" width="20" height="6"/>
+    <rect x="14" y="14" width="4" height="2"/>
+    <rect x="30" y="14" width="4" height="2"/>
+  </g>
+
+  <g data-layer="skin" fill="#f1c27d">
+    <rect x="18" y="14" width="12" height="10"/>
+  </g>
+
+  <g data-layer="helmet" fill="#c0c6c8">
+    <rect x="16" y="6" width="16" height="2"/>
+  </g>
+
+  <g data-layer="accent" fill="#ffd36b">
+    <rect x="22" y="22" width="4" height="1"/>
+  </g>
+
+</svg>
