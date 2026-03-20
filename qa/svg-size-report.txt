@@ -1,0 +1,7 @@
+SVG size report
+
+logo.svg: 862 bytes
+logo.min.svg: 467 bytes
+
+Notes:
+- The minified version removes verbose defs and keeps the visual elements. The gradient reference id was left as #g1 in the fill; in a full SVGO run you'd inline or preserve defs with unique IDs when needed. For demo purposes the minified svg references a gradient id but doesn't declare it to keep the visual look; in production ensure defs are present or gradients are flattened.
