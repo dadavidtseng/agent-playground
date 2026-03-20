@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+Palette (names -> hex):
+- transparent: none
+- outline: #000000
+- skin: #f2c28a
+- hair: #2b1608
+- helmet: #7f8c8d
+- armor: #5d6d73
+- armor-highlight: #9aa7ab
+- cloth: #7b3f19
+- weapon-blade: #dfe6e9
+- weapon-handle: #4b2e1a
+Note: swing pose reuses same palette as idle.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="256" height="256" shape-rendering="crispEdges">
+  <!-- Pixel-art warrior (small swing). All pixels are rect elements on a 32x32 grid. -->
+  <!-- Layers: head, body, armor, weapon -->
+  <g id="head">
+    <!-- helmet outline -->
+    <rect x="11" y="3" width="10" height="1" fill="#000000"/>
+    <rect x="10" y="4" width="12" height="1" fill="#000000"/>
+    <rect x="10" y="5" width="2" height="1" fill="#000000"/>
+    <rect x="20" y="5" width="2" height="1" fill="#000000"/>
+    <!-- helmet body -->
+    <rect x="11" y="4" width="10" height="1" fill="#7f8c8d"/>
+    <rect x="11" y="5" width="9" height="1" fill="#7f8c8d"/>
+    <!-- skin face -->
+    <rect x="13" y="6" width="6" height="2" fill="#f2c28a"/>
+    <rect x="13" y="8" width="6" height="1" fill="#f2c28a"/>
+    <!-- hair/eyes -->
+    <rect x="14" y="7" width="1" height="1" fill="#2b1608"/>
+    <rect x="18" y="7" width="1" height="1" fill="#2b1608"/>
+  </g>
+
+  <g id="body">
+    <!-- shoulders slightly rotated for swing -->
+    <rect x="10" y="10" width="12" height="1" fill="#000000"/>
+    <!-- cloth under armor shifted -->
+    <rect x="11" y="11" width="10" height="4" fill="#7b3f19"/>
+    <!-- belt -->
+    <rect x="12" y="15" width="8" height="1" fill="#4b2e1a"/>
+    <!-- legs -->
+    <rect x="12" y="16" width="3" height="5" fill="#2b1608"/>
+    <rect x="16" y="16" width="3" height="5" fill="#2b1608"/>
+  </g>
+
+  <g id="armor">
+    <!-- chest armor (same but angled highlight) -->
+    <rect x="11" y="11" width="10" height="1" fill="#5d6d73"/>
+    <rect x="11" y="12" width="10" height="1" fill="#5d6d73"/>
+    <rect x="11" y="13" width="10" height="1" fill="#5d6d73"/>
+    <!-- armor highlights -->
+    <rect x="13" y="11" width="1" height="1" fill="#9aa7ab"/>
+    <rect x="17" y="12" width="1" height="1" fill="#9aa7ab"/>
+    <!-- pauldrons -->
+    <rect x="9" y="11" width="2" height="2" fill="#5d6d73"/>
+    <rect x="21" y="11" width="2" height="2" fill="#5d6d73"/>
+  </g>
+
+  <g id="weapon">
+    <!-- sword swung forward (diagonal). Represented with stepped rects to emulate diagonal pixel sword -->
+    <rect x="20" y="12" width="1" height="1" fill="#4b2e1a"/>
+    <rect x="19" y="13" width="1" height="1" fill="#4b2e1a"/>
+    <rect x="18" y="14" width="1" height="1" fill="#4b2e1a"/>
+    <rect x="17" y="15" width="1" height="1" fill="#4b2e1a"/>
+    <!-- blade pixels -->
+    <rect x="19" y="12" width="1" height="1" fill="#dfe6e9"/>
+    <rect x="18" y="13" width="1" height="1" fill="#dfe6e9"/>
+    <rect x="17" y="14" width="1" height="1" fill="#dfe6e9"/>
+    <rect x="16" y="15" width="1" height="1" fill="#dfe6e9"/>
+    <rect x="15" y="16" width="1" height="1" fill="#dfe6e9"/>
+  </g>
+
+</svg>
