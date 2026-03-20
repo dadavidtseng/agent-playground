@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>Character Profile Card — Example</title>
+<link rel="stylesheet" href="./tokens.css">
+<style>
+:root{font-family:var(--font-family, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif);font-size:16px;color:var(--color-text)}
+body{background: #F2F5F8;padding:var(--space-6);}
+.card{background:var(--color-bg);border:1px solid var(--color-border);border-radius:var(--radius-md);box-shadow:var(--shadow-sm);padding:var(--space-4);max-width:420px}
+.card[role="region"]:focus-within{box-shadow:var(--focus-ring);outline:none}
+.header{display:flex;gap:var(--space-3);align-items:center}
+.avatar{width:var(--avatar-md);height:var(--avatar-md);border-radius:50%;background:linear-gradient(135deg,var(--color-accent),var(--color-accent-2));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700}
+.name{font-size:var(--type-scale-xl);margin:0}
+.handle{font-size:var(--type-scale-sm);color:var(--color-muted);margin:0}
+.bio{margin-top:var(--space-3);font-size:var(--type-scale-md);color:var(--color-text)}
+.stats{display:flex;gap:var(--space-4);margin-top:var(--space-4);font-size:var(--type-scale-sm);color:var(--color-muted)}
+.stat-item{display:flex;flex-direction:column}
+.stat-value{font-weight:700;color:var(--color-text);font-size:var(--type-scale-md)}
+.progress-wrap{margin-top:var(--space-4)}
+.progress-label{display:flex;justify-content:space-between;align-items:center;font-size:var(--type-scale-sm);color:var(--color-muted)}
+.progress{appearance:none;width:100%;height:10px;border-radius:8px;background:var(--color-surface);overflow:hidden}
+.progress::-webkit-progress-bar{background:var(--color-surface)}
+.progress::-webkit-progress-value{background:linear-gradient(90deg,var(--color-accent),var(--color-accent-2))}
+.actions{display:flex;gap:var(--space-3);margin-top:var(--space-4)}
+.button{padding:calc(var(--space-2) + 2px) var(--space-4);border-radius:8px;border:1px solid transparent;cursor:pointer;font-weight:600}
+.button.primary{background:var(--color-accent);color:var(--color-bg)}
+.button.secondary{background:transparent;border:1px solid var(--color-border);color:var(--color-text)}
+.button:focus{box-shadow:var(--focus-ring);outline:none}
+.button:active{transform:translateY(1px)}
+.button:disabled{opacity:.5;pointer-events:none}
+.footer{margin-top:var(--space-4);font-size:var(--type-scale-xs);color:var(--color-muted)}
+
+/* Responsive rules */
+@media (min-width: var(--bp-sm)){
+  .card{max-width:640px;padding:var(--space-5)}
+  .header{align-items:center}
+  .name{font-size:var(--type-scale-2xl)}
+}
+@media (min-width: var(--bp-md)){
+  .card{display:flex;gap:var(--space-6);align-items:flex-start;padding:var(--space-6)}
+  .avatar{width:var(--avatar-lg);height:var(--avatar-lg);flex:0 0 auto}
+  .content{flex:1}
+  .header{align-items:flex-start}
+}
+
+/* Utility to demo focus on whole card via keyboard */
+.card:focus{outline: none}
+.card:focus-visible{box-shadow:var(--focus-ring)}
+</style>
+</head>
+<body>
+  <article class="card" role="region" aria-labelledby="char-name-1">
+    <div class="header">
+      <div class="avatar" aria-hidden="true">AB</div>
+      <div>
+        <h3 id="char-name-1" class="name">Ari Bennett</h3>
+        <p class="handle">Senior Ranger • @aribennett</p>
+      </div>
+    </div>
+
+    <div class="content">
+      <p class="bio">Explorer, cartographer, and long-distance camper. I map remote trails and build lightweight shelters.</p>
+
+      <div class="stats" aria-hidden="true">
+        <div class="stat-item"><span class="stat-value">1.2k</span><span class="stat-key">Followers</span></div>
+        <div class="stat-item"><span class="stat-value">86</span><span class="stat-key">Projects</span></div>
+        <div class="stat-item"><span class="stat-value">24</span><span class="stat-key">Trips</span></div>
+      </div>
+
+      <div class="progress-wrap">
+        <div class="progress-label"><span>Profile</span><span id="profile-pct">72%</span></div>
+        <!-- Use native progress element for accessibility or add role="progressbar" with aria-* attrs -->
+        <progress class="progress" max="100" value="72" aria-labelledby="profile-pct">72%</progress>
+      </div>
+
+      <div class="actions">
+        <button class="button primary">Follow</button>
+        <button class="button secondary">Message</button>
+      </div>
+
+      <div class="footer">Updated 2 days ago</div>
+    </div>
+  </article>
+</body>
+</html>
