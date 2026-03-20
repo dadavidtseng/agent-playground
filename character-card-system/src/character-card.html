@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Character Profile Card</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <article class="character-card" role="article" tabindex="0" aria-labelledby="character-name">
+    <!-- Portrait Container -->
+    <div class="character-card__portrait" aria-label="Character portrait">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" class="character-card__svg">
+        <!-- Warrior Character Pixel Art -->
+        <defs>
+          <style>
+            .skin { fill: #f4a460; }
+            .armor { fill: #708090; }
+            .armor-dark { fill: #4a5568; }
+            .helmet { fill: #b8860b; }
+            .helmet-dark { fill: #8b6914; }
+            .eye { fill: #2c3e50; }
+            .sword { fill: #c0c0c0; }
+            .sword-handle { fill: #8b4513; }
+            .cape { fill: #dc143c; }
+            .cape-dark { fill: #a0111f; }
+          </style>
+        </defs>
+        
+        <!-- Cape -->
+        <rect class="cape" x="12" y="28" width="4" height="20"/>
+        <rect class="cape" x="48" y="28" width="4" height="20"/>
+        <rect class="cape-dark" x="12" y="32" width="4" height="4"/>
+        <rect class="cape-dark" x="48" y="32" width="4" height="4"/>
+        
+        <!-- Body - Armor -->
+        <rect class="armor" x="24" y="28" width="16" height="20"/>
+        <rect class="armor-dark" x="24" y="32" width="16" height="4"/>
+        <rect class="armor-dark" x="28" y="28" width="8" height="2"/>
+        
+        <!-- Arms -->
+        <rect class="armor" x="16" y="28" width="8" height="16"/>
+        <rect class="armor" x="40" y="28" width="8" height="16"/>
+        <rect class="skin" x="16" y="44" width="8" height="8"/>
+        <rect class="skin" x="40" y="44" width="8" height="8"/>
+        
+        <!-- Head -->
+        <rect class="skin" x="24" y="12" width="16" height="16"/>
+        
+        <!-- Helmet -->
+        <rect class="helmet" x="20" y="8" width="24" height="8"/>
+        <rect class="helmet-dark" x="20" y="12" width="24" height="2"/>
+        <rect class="helmet" x="22" y="16" width="4" height="4"/>
+        <rect class="helmet" x="38" y="16" width="4" height="4"/>
+        
+        <!-- Eyes -->
+        <rect class="eye" x="28" y="18" width="3" height="3"/>
+        <rect class="eye" x="33" y="18" width="3" height="3"/>
+        
+        <!-- Legs -->
+        <rect class="armor-dark" x="24" y="48" width="6" height="12"/>
+        <rect class="armor-dark" x="34" y="48" width="6" height="12"/>
+        
+        <!-- Boots -->
+        <rect class="armor" x="22" y="60" width="8" height="4"/>
+        <rect class="armor" x="34" y="60" width="8" height="4"/>
+        
+        <!-- Sword -->
+        <rect class="sword" x="48" y="36" width="4" height="16"/>
+        <rect class="sword-handle" x="46" y="52" width="8" height="4"/>
+        <rect class="sword" x="44" y="32" width="12" height="4"/>
+      </svg>
+    </div>
+
+    <!-- Character Info -->
+    <section class="character-card__info">
+      <h2 id="character-name" class="character-card__name">Warrior Knight</h2>
+      <p class="character-card__title">Legendary Defender</p>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="character-card__stats" aria-label="Character statistics">
+      <div class="stat-bar" data-stat="hp" data-value="80">
+        <div class="stat-bar__label">
+          <span class="stat-bar__name">HP</span>
+          <span class="stat-bar__value" aria-live="polite">
+            <span class="stat-bar__current">0</span>/<span class="stat-bar__max">100</span>
+          </span>
+        </div>
+        <div class="stat-bar__track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Health Points">
+          <div class="stat-bar__fill stat-bar__fill--hp"></div>
+        </div>
+      </div>
+
+      <div class="stat-bar" data-stat="atk" data-value="65">
+        <div class="stat-bar__label">
+          <span class="stat-bar__name">ATK</span>
+          <span class="stat-bar__value" aria-live="polite">
+            <span class="stat-bar__current">0</span>/<span class="stat-bar__max">100</span>
+          </span>
+        </div>
+        <div class="stat-bar__track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Attack Power">
+          <div class="stat-bar__fill stat-bar__fill--atk"></div>
+        </div>
+      </div>
+
+      <div class="stat-bar" data-stat="def" data-value="75">
+        <div class="stat-bar__label">
+          <span class="stat-bar__name">DEF</span>
+          <span class="stat-bar__value" aria-live="polite">
+            <span class="stat-bar__current">0</span>/<span class="stat-bar__max">100</span>
+          </span>
+        </div>
+        <div class="stat-bar__track" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" aria-label="Defense Power">
+          <div class="stat-bar__fill stat-bar__fill--def"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Biography Section -->
+    <section class="character-card__bio">
+      <h3 class="character-card__bio-title">Biography</h3>
+      <p class="character-card__bio-text">
+        A valiant warrior who has defended the realm for decades. Known for unwavering courage and masterful swordsmanship, this legendary knight stands as a beacon of hope against the forces of darkness.
+      </p>
+    </section>
+  </article>
+
+  <script src="script.js"></script>
+</body>
+</html>
