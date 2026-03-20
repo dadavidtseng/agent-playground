@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="96" height="96" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-labelledby="title desc">
+  <metadata>Author: KĀDI Artist Agent; License: CC0 1.0 Universal</metadata>
+  <title id="title">Warrior - Idle</title>
+  <desc id="desc">16x16 pixel-art warrior (idle). Scaled to 96px container. Palette <=16 colors. CC0 license.</desc>
+  <!-- Palette: outline #000, skin #F1C27D, hair #2B2B2B, armor #6B8AA2, cloth #8B3E2F, metal #CFCFCF, wood #704214, shadow #4A4A4A -->
+  <!-- Background transparent -->
+  <rect x="0" y="0" width="16" height="16" fill="none"/>
+  <!-- Hair -->
+  <rect x="5" y="1" width="6" height="1" fill="#2B2B2B"/>
+  <rect x="4" y="2" width="8" height="1" fill="#2B2B2B"/>
+  <!-- Head skin -->
+  <rect x="5" y="3" width="6" height="2" fill="#F1C27D"/>
+  <!-- Helmet/outline -->
+  <rect x="4" y="3" width="1" height="1" fill="#000"/>
+  <rect x="11" y="3" width="1" height="1" fill="#000"/>
+  <!-- Eyes -->
+  <rect x="6" y="4" width="1" height="1" fill="#000"/>
+  <rect x="9" y="4" width="1" height="1" fill="#000"/>
+  <!-- Neck -->
+  <rect x="7" y="5" width="2" height="1" fill="#F1C27D"/>
+  <!-- Armor torso -->
+  <rect x="4" y="6" width="8" height="3" fill="#6B8AA2"/>
+  <!-- Cloth belt -->
+  <rect x="4" y="9" width="8" height="1" fill="#8B3E2F"/>
+  <!-- Legs -->
+  <rect x="5" y="10" width="2" height="3" fill="#4A4A4A"/>
+  <rect x="9" y="10" width="2" height="3" fill="#4A4A4A"/>
+  <!-- Boots outline -->
+  <rect x="5" y="13" width="2" height="1" fill="#000"/>
+  <rect x="9" y="13" width="2" height="1" fill="#000"/>
+  <!-- Right arm holding sword (idle) -->
+  <rect x="12" y="6" width="1" height="3" fill="#6B8AA2"/>
+  <rect x="13" y="6" width="1" height="1" fill="#6B8AA2"/>
+  <!-- Sword handle -->
+  <rect x="14" y="7" width="1" height="4" fill="#704214"/>
+  <!-- Blade -->
+  <rect x="15" y="8" width="1" height="2" fill="#CFCFCF"/>
+  <!-- Shoulder outline/shadow -->
+  <rect x="3" y="6" width="1" height="3" fill="#000"/>
+  <rect x="12" y="5" width="1" height="1" fill="#000"/>
+</svg>
