@@ -1,0 +1,29 @@
+Pixel-art Warrior - Artist Notes
+
+Files created (in assets/):
+- warrior.svg       (source SVG, 16x16 pixel grid, viewBox 0 0 16 16)
+- warrior-64.svg    (export optimized for 64x64 display)
+- warrior-128.svg   (export optimized for 128x128 display)
+
+Design decisions:
+- Artwork built entirely from <rect> elements on a 16x16 grid (pure vector, no raster embeds).
+- Palette limited to 9 colors; all fills are hex colors. No gradients or filters used to keep file size small and rendering crisp.
+- style includes shape-rendering:crispEdges and image-rendering:pixelated to ensure nearest-neighbor scaling in browsers.
+- viewBox is 0 0 16 16 so the artwork scales cleanly. The export variants set width/height to 64 or 128 while keeping the same viewBox.
+
+Export & scaling guidance:
+- For best results use the provided warrior-64.svg and warrior-128.svg for those exact sizes.
+- To scale to other multiples, keep viewBox 0 0 16 16 and set width/height to an integer multiple of 16 (e.g., 32, 48, 64, 128) to maintain pixel-perfect alignment.
+- If non-integer scaling is used (e.g., 100px), visual artifacts may appear due to fractional pixel rendering. To minimize blur, set image-rendering:pixelated in CSS or use CSS property image-rendering: -moz-crisp-edges for Firefox.
+- When embedding in HTML/CSS, include style: image-rendering: pixelated; shape-rendering: crispEdges; will help maintain sharp edges.
+
+Limitations:
+- The artwork is intentionally low-resolution pixel art (16x16 grid). Details are limited by grid size.
+- Anti-aliasing is dependent on the viewer; some viewers or SVG renderers may smooth edges despite pixel rendering hints.
+- Complex effects (glows, soft shadows) are avoided to keep file size minimal and to preserve crispness at small sizes.
+
+Verification checklist:
+- No raster images embedded — files contain only SVG rects and styles.
+- The three files are placed in assets/ as required.
+
+If you want alternative color schemes, variants with outlines, or larger base grids (e.g., 32x32) for more detail, I can produce additional SVGs accordingly.

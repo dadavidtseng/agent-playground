@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" role="img" aria-label="Pixel-art and stylized warrior illustration">
+  <!-- Combined file: preserves both the original pixel-art warrior (compact 16x16) and the larger stylized illustration -->
+  <!-- Rendering hints for crisp pixel scaling (applies mainly to the pixel-art group) -->
+  <style>*{shape-rendering:crispEdges; image-rendering:-webkit-optimize-contrast; image-rendering:pixelated}</style>
+
+  <defs>
+    <linearGradient id="g" x1="0" x2="1">
+      <stop offset="0" stop-color="#7dd3fc"/>
+      <stop offset="1" stop-color="#60a5fa"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="100%" height="100%" fill="none"/>
+
+  <!-- Stylized warrior (original agent-playground-programmer side) -->
+  <!-- shield -->
+  <g transform="translate(100,110)">
+    <path d="M0-50 L36-20 A60,60 0 0 1 0 50 A60,60 0 0 1 -36-20 Z" fill="#0b1220" stroke="url(#g)" stroke-width="3"/>
+  </g>
+  <!-- body -->
+  <g transform="translate(100,70)">
+    <ellipse cx="0" cy="40" rx="24" ry="36" fill="#0f1724" stroke="#25414f"/>
+    <rect x="-6" y="-10" width="12" height="36" rx="4" fill="#1f2937"/>
+  </g>
+  <!-- head -->
+  <circle cx="100" cy="40" r="18" fill="#dbeafe" stroke="#0b1220"/>
+  <!-- helmet accent -->
+  <path d="M82 40 Q100 18 118 40" fill="none" stroke="url(#g)" stroke-width="3" stroke-linecap="round"/>
+  <!-- sword -->
+  <g transform="translate(140,60) rotate(-20)">
+    <rect x="-2" y="-36" width="4" height="60" fill="#c7d2fe"/>
+    <rect x="-8" y="-40" width="16" height="8" rx="2" fill="#93c5fd"/>
+  </g>
+
+  <!-- Pixel-art warrior (original HEAD side, preserved at a larger scale and positioned within the same canvas) -->
+  <!-- Source pixel-art warrior (vector) for task f2ae1070-5ab4-42f7-b9be-7cb89284124d -->
+  <!-- Palette used (<=16 colors):
+       skin: #f1c27d
+       helmet/dark: #3a3a3a
+       metal/light: #bfc7c9
+       metal/dark: #6e7678
+       cloth/red: #b22222
+       leather/brown: #8b5a2b
+       black: #000000
+       highlight/white: #ffffff
+  -->
+  <!-- Place pixel art at lower-left portion of the canvas; apply a translation and scale so it complements the stylized piece -->
+  <g transform="translate(20,120)">
+    <g transform="scale(8)">
+      <!-- Helmet / head -->
+      <rect x="6" y="0" width="4" height="1" fill="#3a3a3a"/>
+      <rect x="5" y="1" width="6" height="1" fill="#3a3a3a"/>
+      <rect x="4" y="2" width="8" height="1" fill="#3a3a3a"/>
+      <!-- face / eyes -->
+      <rect x="5" y="3" width="1" height="1" fill="#f1c27d"/>
+      <rect x="6" y="3" width="1" height="1" fill="#000000"/>
+      <rect x="7" y="3" width="1" height="1" fill="#f1c27d"/>
+      <rect x="8" y="3" width="1" height="1" fill="#000000"/>
+      <rect x="9" y="3" width="1" height="1" fill="#f1c27d"/>
+      <!-- neck / collar -->
+      <rect x="7" y="4" width="2" height="1" fill="#6e7678"/>
+
+      <!-- Body / armor -->
+      <rect x="3" y="5" width="10" height="1" fill="#bfc7c9"/>
+      <rect x="3" y="6" width="10" height="1" fill="#6e7678"/>
+      <rect x="4" y="7" width="8" height="1" fill="#bfc7c9"/>
+      <rect x="4" y="8" width="2" height="1" fill="#b22222"/>
+      <rect x="6" y="8" width="4" height="1" fill="#bfc7c9"/>
+      <rect x="10" y="8" width="2" height="1" fill="#b22222"/>
+
+      <!-- Legs / greaves -->
+      <rect x="5" y="9" width="2" height="1" fill="#6e7678"/>
+      <rect x="9" y="9" width="2" height="1" fill="#6e7678"/>
+      <rect x="5" y="10" width="2" height="1" fill="#3a3a3a"/>
+      <rect x="9" y="10" width="2" height="1" fill="#3a3a3a"/>
+
+      <!-- Boots -->
+      <rect x="5" y="11" width="2" height="1" fill="#000000"/>
+      <rect x="9" y="11" width="2" height="1" fill="#000000"/>
+
+      <!-- Shield (left) -->
+      <rect x="1" y="5" width="1" height="1" fill="#8b5a2b"/>
+      <rect x="1" y="6" width="1" height="1" fill="#8b5a2b"/>
+      <rect x="2" y="6" width="1" height="1" fill="#8b5a2b"/>
+      <rect x="2" y="5" width="1" height="1" fill="#bfc7c9"/>
+      <rect x="1" y="7" width="1" height="1" fill="#3a3a3a"/>
+
+      <!-- Arm / gauntlet holding shield -->
+      <rect x="3" y="6" width="1" height="2" fill="#3a3a3a"/>
+
+      <!-- Sword (right) - blade and hilt -->
+      <rect x="12" y="3" width="1" height="7" fill="#bfc7c9"/>
+      <rect x="11" y="4" width="1" height="1" fill="#6e7678"/>
+      <rect x="13" y="4" width="1" height="1" fill="#6e7678"/>
+      <rect x="11" y="3" width="1" height="1" fill="#6e7678"/>
+      <rect x="13" y="3" width="1" height="1" fill="#6e7678"/>
+      <rect x="12" y="2" width="1" height="1" fill="#6e7678"/>
+      <!-- sword tip highlight -->
+      <rect x="12" y="3" width="1" height="1" fill="#ffffff" opacity="0.35"/>
+
+      <!-- small details / rivets -->
+      <rect x="6" y="6" width="1" height="1" fill="#ffffff" opacity="0.25"/>
+      <rect x="9" y="6" width="1" height="1" fill="#ffffff" opacity="0.25"/>
+
+      <!-- Ground shadow (subtle) -->
+      <rect x="6" y="12" width="4" height="1" fill="#000000" opacity="0.08"/>
+
+      <!-- Accessibility: no raster embeds, pure vector rects -->
+    </g>
+  </g>
+
+  <!-- End combined SVG -->
+</svg>
