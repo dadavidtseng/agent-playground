@@ -1,0 +1,17 @@
+<!-- Original logo.svg - contains title/desc for accessibility -->
+<svg xmlns="http://www.w3.org/2000/svg" width="120" height="40" viewBox="0 0 120 40" role="img" aria-labelledby="logoTitle logoDesc">
+  <!-- decorative gradient and metadata that can be stripped by SVGO -->
+  <title id="logoTitle">Project Logo</title>
+  <desc id="logoDesc">A simple two-tone mark used in the demo</desc>
+  <defs>
+    <linearGradient id="g1" x1="0%" x2="100%" y1="0%" y2="0%">
+      <stop offset="0%" stop-color="#6C8EF5" />
+      <stop offset="100%" stop-color="#49C6FF" />
+    </linearGradient>
+  </defs>
+  <rect width="120" height="40" rx="6" fill="#fff" stroke="#e6eefc" />
+  <g transform="translate(12,8)">
+    <circle cx="16" cy="12" r="12" fill="url(#g1)" />
+    <text x="40" y="18" font-family="Inter, Arial" font-size="14" fill="#0b1724">Agent Demo</text>
+  </g>
+</svg>

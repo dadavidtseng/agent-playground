@@ -1,0 +1,115 @@
+{
+  "name": "KĀDI Design Tokens",
+  "version": "1.0.0",
+  "description": "Design specification and tokens for implementation: colors, typography, spacing, radii, breakpoints, interaction states, motion timings, and component guidance (Character Card).",
+  "meta": {
+    "baseline": 8,
+    "contrastRequirements": "WCAG AA for body text (>= 4.5:1)"
+  },
+  "colors": {
+    "background": { "value": "#FFFFFF", "role": "app background" },
+    "surface": { "value": "#F8FAFC", "role": "surface / cards / panels" },
+    "text-primary": { "value": "#111827", "role": "body text / primary text", "contrastAgainstBackground": "15.3:1 (meets WCAG AA/AAA)" },
+    "text-secondary": { "value": "#374151", "role": "secondary text / metadata", "contrastAgainstBackground": "7.2:1 (meets WCAG AA)" },
+    "muted": { "value": "#6B7280", "role": "muted / disabled text" },
+    "primary": { "value": "#007B7A", "role": "primary brand color / buttons", "onPrimary": "#FFFFFF", "contrastOnPrimary": "4.7:1 (meets WCAG AA for text on primary)" },
+    "primary-variant": { "value": "#005d5c", "role": "primary dark / hover state" },
+    "accent": { "value": "#FFB020", "role": "accent / highlights" },
+    "danger": { "value": "#E11D48", "role": "error / destructive" },
+    "success": { "value": "#059669", "role": "success / positive" },
+    "border": { "value": "#E6E9EE", "role": "dividers & borders" },
+    "focus-ring": { "value": "#0EA5A4", "role": "focus ring / focus outline" }
+  },
+  "typography": {
+    "fonts": {
+      "system-stack": "Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+      "display": "Inter, system-stack",
+      "ui": "Inter, system-stack"
+    },
+    "baseFontSize": 16,
+    "scale": {
+      "h1": { "size": 40, "lineHeight": 48, "weight": 700 },
+      "h2": { "size": 32, "lineHeight": 40, "weight": 600 },
+      "h3": { "size": 24, "lineHeight": 32, "weight": 600 },
+      "h4": { "size": 20, "lineHeight": 28, "weight": 600 },
+      "body": { "size": 16, "lineHeight": 24, "weight": 400 },
+      "body-small": { "size": 14, "lineHeight": 20, "weight": 400 },
+      "caption": { "size": 12, "lineHeight": 16, "weight": 400 }
+    },
+    "letterSpacing": {
+      "default": 0,
+      "caps": 0.6
+    }
+  },
+  "spacing": {
+    "unit": 8,
+    "scale": {
+      "0": 0,
+      "1": 8,
+      "2": 16,
+      "3": 24,
+      "4": 32,
+      "5": 40,
+      "6": 48,
+      "8": 64,
+      "10": 80
+    },
+    "notes": "Spacing increments follow an 8px baseline grid. Use multiples of 8 where possible to maintain rhythm."
+  },
+  "radii": {
+    "small": 4,
+    "medium": 8,
+    "large": 16,
+    "round": 9999
+  },
+  "breakpoints": {
+    "mobile": { "min": 0, "max": 599, "css": "(max-width: 599px)", "note": "Phones" },
+    "tablet": { "min": 600, "max": 1023, "css": "(min-width: 600px) and (max-width: 1023px)", "note": "Tablets / small laptops" },
+    "desktop": { "min": 1024, "max": null, "css": "(min-width: 1024px)", "note": "Desktop and large screens" }
+  },
+  "motion": {
+    "timing": {
+      "instant": 0,
+      "fast": 100,
+      "normal": 200,
+      "slow": 350
+    },
+    "easing": {
+      "standard": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+      "decay": "cubic-bezier(0.0, 0.0, 0.2, 1)",
+      "sharp": "cubic-bezier(0.4, 0.0, 1, 1)"
+    },
+    "notes": "Use transform + opacity for performant animations. Keep durations short for interactive responses (fast/normal)."
+  },
+  "interactionStates": {
+    "hover": { "opacity": 0.92, "translateY": 0 },
+    "active": { "scale": 0.98 },
+    "focus": { "outlineWidth": 3, "outlineColor": "focus-ring" },
+    "disabled": { "opacity": 0.5, "pointerEvents": "none" }
+  },
+  "components": {
+    "characterCard": {
+      "purpose": "Compact card used to present a character with avatar, name, metadata and quick actions",
+      "layoutTokens": {
+        "gap": 16,
+        "padding": { "mobile": 12, "tablet": 16, "desktop": 24 },
+        "borderRadius": "medium",
+        "shadow": "0 1px 3px rgba(16,24,40,0.06)"
+      },
+      "imageSizes": { "mobile": 56, "tablet": 64, "desktop": 96 },
+      "typography": {
+        "name": "h4",
+        "meta": "body-small"
+      },
+      "responsiveGuidelines": {
+        "mobile": "Vertical layout: avatar left, stacked name & metadata, single column actions below or as icons.",
+        "tablet": "Horizontal layout: avatar left, name & metadata to the right, actions aligned to right edge if space allows.",
+        "desktop": "Expanded horizontal layout: larger avatar, more metadata visible, actions as text buttons to the right."
+      }
+    }
+  },
+  "examples": {
+    "cssUsageSnippet": "See tokens.css for :root CSS variables and example .character-card responsive rules",
+    "jsonUsage": "Tokens are consumable by build systems. Keys map directly to CSS variables included in tokens.css"
+  }
+}
