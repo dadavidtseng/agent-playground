@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 128 128" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <title>Pixel-art Warrior — 128x128 grid (transparent)</title>
+  <desc>Palette: armor_dark:#2b2f3a, armor_light:#4b5563, metal:#b9c0c8, gold:#ffd24a, skin:#f2c9a0, cloth:#7b3f00, shield:#2f8f4d, boot:#111417. License: CC0 — public domain.</desc>
+  <!-- This is an exact 2x scale of the 64px sprite using 2x2 rect blocks to preserve crisp pixels. -->
+
+  <!-- Helmet trim (gold) -->
+  <rect x="52" y="24" width="24" height="2" fill="#ffd24a" />
+  <!-- Helmet base -->
+  <rect x="52" y="26" width="24" height="10" fill="#2b2f3a" />
+  <!-- Visor highlight -->
+  <rect x="60" y="28" width="8" height="4" fill="#b9c0c8" />
+
+  <!-- Face -->
+  <rect x="56" y="36" width="16" height="6" fill="#f2c9a0" />
+
+  <!-- Body / Armor -->
+  <rect x="48" y="42" width="32" height="24" fill="#4b5563" />
+  <!-- Armor center darker band -->
+  <rect x="60" y="44" width="8" height="20" fill="#2b2f3a" />
+
+  <!-- Left arm -->
+  <rect x="40" y="42" width="8" height="20" fill="#4b5563" />
+  <!-- Sword (held in left hand) -->
+  <rect x="36" y="28" width="4" height="24" fill="#b9c0c8" />
+  <rect x="34" y="28" width="2" height="4" fill="#ffd24a" />
+
+  <!-- Right arm -->
+  <rect x="80" y="42" width="8" height="20" fill="#4b5563" />
+  <!-- Shield (in front of right arm) -->
+  <rect x="84" y="48" width="12" height="16" fill="#2f8f4d" />
+  <!-- Shield rim -->
+  <rect x="84" y="48" width="2" height="16" fill="#b9c0c8" />
+  <rect x="94" y="48" width="2" height="16" fill="#b9c0c8" />
+
+  <!-- Cloth sash -->
+  <rect x="56" y="52" width="16" height="6" fill="#7b3f00" />
+
+  <!-- Legs / Boots -->
+  <rect x="52" y="66" width="10" height="16" fill="#111417" />
+  <rect x="66" y="66" width="10" height="16" fill="#111417" />
+
+  <!-- Small highlights -->
+  <rect x="50" y="46" width="4" height="4" fill="#b9c0c8" opacity="0.9" />
+  <rect x="74" y="46" width="4" height="4" fill="#b9c0c8" opacity="0.9" />
+
+  <!-- Metadata comment: Created for task 77d2de92-0cb3-44a7-8fbc-68ed33e10669 -->
+</svg>
