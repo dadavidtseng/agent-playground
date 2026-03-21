@@ -94,6 +94,62 @@
   }
 }
 
+/* Light theme tokens (additional, non-cc tokens retained for compatibility) */
+:root {
+  --color-bg: #f6f7fb;
+  --color-fg: #0f1724;
+  --accent: #2563eb;
+  --card-bg: #ffffff;
+  --card-border: rgba(15, 23, 36, 0.06);
+  --muted: #6b7280;
+  --radius: 12px;
+  --shadow: 0 6px 20px rgba(2,6,23,0.08);
+  --transition-duration: 220ms;
+}
+
+/* Dark theme tokens — map both non-cc and cc variables so both sets are usable */
+:root[data-theme="dark"] {
+  /* Non-cc tokens from agent-playground branch */
+  --color-bg: #0b1220;
+  --color-fg: #e6eef8;
+  --accent: #60a5fa;
+  --card-bg: #0f1724;
+  --card-border: rgba(255,255,255,0.04);
+  --muted: #9aa6b2;
+  --radius: 12px;
+  --shadow: 0 10px 30px rgba(2,6,23,0.6);
+  --transition-duration: 220ms;
+
+  /* Map to cc- prefixed tokens for the profile card utilities */
+  --cc-color-bg: #0f1724;
+  --cc-color-surface: #0b1220;
+  --cc-color-border: rgba(255,255,255,0.04);
+  --cc-color-text: #e6eef8;
+  --cc-color-text-muted: #9aa6b2;
+  --cc-color-accent: #60a5fa;
+  --cc-color-accent-foreground: #ffffff;
+  --cc-card-bg: var(--cc-color-bg);
+  --cc-card-bg-hover: #0b1220;
+  --cc-card-bg-active: #07101a;
+  --cc-card-border: var(--cc-color-border);
+
+  /* Elevation tuned for dark */
+  --cc-elevation-low: 0 6px 20px rgba(2,6,23,0.6);
+  --cc-elevation-medium: 0 10px 30px rgba(2,6,23,0.6);
+  --cc-elevation-high: 0 18px 40px rgba(2,6,23,0.7);
+
+  /* Motion mapping */
+  --cc-transition-default: 220ms;
+  --cc-transition-fast: 150ms;
+}
+
+/* Reduce motion preference hook for non-cc tokens (keeps both branches respectful of user preference) */
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --transition-duration: 0ms;
+  }
+}
+
 /* Basic utility examples for implementers (optional) */
 .cc-card{
   background: var(--cc-card-bg);

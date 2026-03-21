@@ -1,0 +1,8 @@
+{
+  "extends": "stylelint-config-standard",
+  "rules": {
+    "indentation": 2,
+    "color-hex-case": "lower",
+    "declaration-block-no-duplicate-properties": true
+  }
+}

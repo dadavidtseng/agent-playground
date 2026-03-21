@@ -1,0 +1,14 @@
+{
+  "name": "demo-smoke-test",
+  "version": "1.0.0",
+  "description": "Lightweight smoke tests for demo using jsdom",
+  "main": "run-smoke.js",
+  "scripts": {
+    "test": "node run-smoke.js"
+  },
+  "author": "agent",
+  "license": "MIT",
+  "dependencies": {
+    "jsdom": "^22.1.0"
+  }
+}
