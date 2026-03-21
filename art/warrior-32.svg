@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <style>
+    :root{
+      --skin-color: #f2c9a7;
+      --hair-color: #2b2117;
+      --armor-color: #6b8aa2;
+      --accent-color: #dba84a;
+      --cloth-color: #6b3b2b;
+      --weapon-color: #cfcfcf;
+      --outline-color: #000000;
+    }
+    .outline{fill:var(--outline-color)}
+    .skin{fill:var(--skin-color)}
+    .hair{fill:var(--hair-color)}
+    .armor{fill:var(--armor-color)}
+    .accent{fill:var(--accent-color)}
+    .cloth{fill:var(--cloth-color)}
+    .weapon{fill:var(--weapon-color)}
+  </style>
+
+  <!-- Head group -->
+  <g id="head">
+    <!-- head base -->
+    <rect class="skin" x="12" y="4" width="8" height="8"/>
+    <!-- hair top -->
+    <rect class="hair" x="11" y="3" width="10" height="2"/>
+    <rect class="hair" x="11" y="5" width="2" height="1"/>
+    <rect class="hair" x="19" y="5" width="2" height="1"/>
+    <!-- eyes -->
+    <rect class="outline" x="14" y="7" width="1" height="1"/>
+    <rect class="outline" x="17" y="7" width="1" height="1"/>
+    <!-- mouth -->
+    <rect class="outline" x="15" y="9" width="2" height="1"/>
+  </g>
+
+  <!-- Body group -->
+  <g id="body">
+    <!-- cloak/cloth under armor -->
+    <rect class="cloth" x="10" y="12" width="12" height="10"/>
+    <!-- armor plate -->
+    <rect class="armor" x="11" y="13" width="10" height="6"/>
+    <!-- armor accent/emblem -->
+    <rect class="accent" x="15" y="15" width="2" height="2"/>
+    <!-- outline details -->
+    <rect class="outline" x="10" y="12" width="1" height="10"/>
+    <rect class="outline" x="21" y="12" width="1" height="10"/>
+  </g>
+
+  <!-- Armor group (separate for easy recolor) -->
+  <g id="armor">
+    <!-- shoulder pads -->
+    <rect class="armor" x="9" y="13" width="2" height="3"/>
+    <rect class="armor" x="21" y="13" width="2" height="3"/>
+    <!-- helmet rim -->
+    <rect class="armor" x="12" y="3" width="8" height="1"/>
+  </g>
+
+  <!-- Weapon group -->
+  <g id="weapon">
+    <!-- sword blade -->
+    <rect class="weapon" x="22" y="14" width="2" height="6"/>
+    <rect class="outline" x="22" y="13" width="2" height="1"/>
+    <!-- hilt -->
+    <rect class="cloth" x="21" y="18" width="4" height="1"/>
+    <rect class="outline" x="21" y="18" width="1" height="1"/>
+    <rect class="outline" x="24" y="18" width="1" height="1"/>
+    <!-- handle -->
+    <rect class="cloth" x="22" y="19" width="2" height="2"/>
+  </g>
+
+  <!-- small feet/outlines -->
+  <rect class="outline" x="13" y="22" width="2" height="1"/>
+  <rect class="outline" x="17" y="22" width="2" height="1"/>
+
+  <!-- optional border for crispness (transparent) -->
+  <rect x="0" y="0" width="32" height="32" fill="none" stroke="none"/>
+</svg>
