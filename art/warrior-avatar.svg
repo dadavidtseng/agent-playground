@@ -1,0 +1,217 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--
+  warrior-avatar.svg
+
+  Pixel-art warrior avatar (vector-only SVG). Designed on a 16x16 pixel grid using <rect> elements.
+
+  Usage notes and CSS variables (tinting hooks):
+    --outline-color: color for monochrome outline (default: #111111)
+    --helm-color: main helmet/hood color (default: #555a86)
+    --plume-color: plume/accent (default: #d9534f)
+    --armor-color: body armor color (default: #7f8fb0)
+    --metal-color: sword/shield metal (default: #bfc8d6)
+    --skin-color: face/skin tone (default: #f1c27d)
+    --shadow-color: darker accent/shadow (default: #3b4056)
+
+  You can override these variables when inlining the SVG or via CSS when SVG is embedded with <img> replaced by inline SVG.
+
+  Example when inlining:
+    <svg ... style="--helm-color:#2b6cb0; --plume-color:#ffcc00"> ...</svg>
+
+  Animation:
+    The SVG contains 3 animation frames (frame0, frame1, frame2). Each frame is shown in sequence with an opacity animation to create a simple idle (breathing) effect.
+
+  Notes:
+    - No raster images embedded. All shapes are rects aligned to the integer grid (16x16 viewBox) for clean scaling.
+    - Two visual modes are provided per frame: the monochrome outline (class .outline) and the colored variant (class .color). Both are kept in the same document for ease of toggling via CSS.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="256" height="256" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-labelledby="title desc">
+  <title id="title">Warrior Avatar (pixel art)</title>
+  <desc id="desc">16x16 pixel warrior avatar with 3-frame idle animation. CSS variables available for tinting.</desc>
+
+  <defs>
+    <!-- default CSS variables -- can be overridden by parent document or inline style -->
+    <style type="text/css"><![CDATA[
+      :root{
+        --outline-color: #111111;
+        --helm-color: #555a86;
+        --plume-color: #d9534f;
+        --armor-color: #7f8fb0;
+        --metal-color: #bfc8d6;
+        --skin-color: #f1c27d;
+        --shadow-color: #3b4056;
+      }
+      /* Utility classes to quickly toggle display */
+      .outline { display:inline }
+      .color { display:inline }
+    ]]></style>
+  </defs>
+
+  <!-- Frame groups: each contains both outline and colored layers. Frames cycle opacity to produce a 3-frame idle animation. -->
+
+  <!-- FRAME 0 (neutral) -->
+  <g id="frame0" opacity="1">
+    <!-- outline layer (monochrome) -->
+    <g class="outline" fill="var(--outline-color)">
+      <!-- silhouette (all non-empty pixels) -->
+      <!-- plume -->
+      <rect x="7" y="0" width="1" height="1" />
+      <rect x="8" y="0" width="1" height="1" />
+      <!-- helmet/top head -->
+      <rect x="5" y="1" width="6" height="1" />
+      <rect x="4" y="2" width="8" height="1" />
+      <rect x="4" y="3" width="8" height="1" />
+      <!-- face opening and helmet rims -->
+      <rect x="5" y="4" width="6" height="1" />
+      <rect x="5" y="5" width="6" height="1" />
+      <!-- body -->
+      <rect x="5" y="6" width="6" height="6" />
+      <!-- sword (right) -->
+      <rect x="11" y="6" width="1" height="3" />
+      <rect x="11" y="5" width="1" height="1" />
+      <!-- shield (left) -->
+      <rect x="3" y="7" width="1" height="3" />
+      <rect x="2" y="8" width="1" height="1" />
+    </g>
+
+    <!-- colored layer -->
+    <g class="color">
+      <!-- plume -->
+      <rect x="7" y="0" width="1" height="1" fill="var(--plume-color)" />
+      <rect x="8" y="0" width="1" height="1" fill="var(--plume-color)" />
+
+      <!-- helmet -->
+      <rect x="5" y="1" width="6" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="2" width="8" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="3" width="8" height="1" fill="var(--helm-color)" />
+
+      <!-- face (skin) -->
+      <rect x="6" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="7" y="4" width="2" height="1" fill="var(--skin-color)" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="6" y="5" width="4" height="1" fill="var(--skin-color)" />
+
+      <!-- eyes (shadow color) -->
+      <rect x="6" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+
+      <!-- body armor -->
+      <rect x="5" y="6" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="8" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="10" width="6" height="2" fill="var(--armor-color)" />
+      <!-- belt accent -->
+      <rect x="6" y="9" width="4" height="1" fill="var(--plume-color)" />
+
+      <!-- sword metal -->
+      <rect x="11" y="5" width="1" height="1" fill="var(--metal-color)" />
+      <rect x="11" y="6" width="1" height="3" fill="var(--metal-color)" />
+
+      <!-- shield -->
+      <rect x="3" y="7" width="1" height="3" fill="var(--metal-color)" />
+      <rect x="2" y="8" width="1" height="1" fill="var(--metal-color)" />
+
+      <!-- subtle shadow on armor -->
+      <rect x="5" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+      <rect x="10" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+    </g>
+  </g>
+
+  <!-- FRAME 1 (slightly inhaled - move body up 0.3px) -->
+  <g id="frame1" opacity="0">
+    <g class="outline" fill="var(--outline-color)" transform="translate(0,-0.25)">
+      <rect x="7" y="0" width="1" height="1" />
+      <rect x="8" y="0" width="1" height="1" />
+      <rect x="5" y="1" width="6" height="1" />
+      <rect x="4" y="2" width="8" height="1" />
+      <rect x="4" y="3" width="8" height="1" />
+      <rect x="5" y="4" width="6" height="1" />
+      <rect x="5" y="5" width="6" height="1" />
+      <rect x="5" y="6" width="6" height="6" />
+      <rect x="11" y="6" width="1" height="3" />
+      <rect x="11" y="5" width="1" height="1" />
+      <rect x="3" y="7" width="1" height="3" />
+      <rect x="2" y="8" width="1" height="1" />
+    </g>
+
+    <g class="color" transform="translate(0,-0.25)">
+      <rect x="7" y="0" width="1" height="1" fill="var(--plume-color)" />
+      <rect x="8" y="0" width="1" height="1" fill="var(--plume-color)" />
+      <rect x="5" y="1" width="6" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="2" width="8" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="3" width="8" height="1" fill="var(--helm-color)" />
+      <rect x="6" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="7" y="4" width="2" height="1" fill="var(--skin-color)" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="6" y="5" width="4" height="1" fill="var(--skin-color)" />
+      <rect x="6" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+
+      <rect x="5" y="6" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="8" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="10" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="6" y="9" width="4" height="1" fill="var(--plume-color)" />
+
+      <rect x="11" y="5" width="1" height="1" fill="var(--metal-color)" />
+      <rect x="11" y="6" width="1" height="3" fill="var(--metal-color)" />
+      <rect x="3" y="7" width="1" height="3" fill="var(--metal-color)" />
+      <rect x="2" y="8" width="1" height="1" fill="var(--metal-color)" />
+      <rect x="5" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+      <rect x="10" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+    </g>
+  </g>
+
+  <!-- FRAME 2 (slightly exhaled - move body down 0.4px) -->
+  <g id="frame2" opacity="0">
+    <g class="outline" fill="var(--outline-color)" transform="translate(0,0.35)">
+      <rect x="7" y="0" width="1" height="1" />
+      <rect x="8" y="0" width="1" height="1" />
+      <rect x="5" y="1" width="6" height="1" />
+      <rect x="4" y="2" width="8" height="1" />
+      <rect x="4" y="3" width="8" height="1" />
+      <rect x="5" y="4" width="6" height="1" />
+      <rect x="5" y="5" width="6" height="1" />
+      <rect x="5" y="6" width="6" height="6" />
+      <rect x="11" y="6" width="1" height="3" />
+      <rect x="11" y="5" width="1" height="1" />
+      <rect x="3" y="7" width="1" height="3" />
+      <rect x="2" y="8" width="1" height="1" />
+    </g>
+
+    <g class="color" transform="translate(0,0.35)">
+      <rect x="7" y="0" width="1" height="1" fill="var(--plume-color)" />
+      <rect x="8" y="0" width="1" height="1" fill="var(--plume-color)" />
+      <rect x="5" y="1" width="6" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="2" width="8" height="1" fill="var(--helm-color)" />
+      <rect x="4" y="3" width="8" height="1" fill="var(--helm-color)" />
+      <rect x="6" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="7" y="4" width="2" height="1" fill="var(--skin-color)" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--skin-color)" />
+      <rect x="6" y="5" width="4" height="1" fill="var(--skin-color)" />
+      <rect x="6" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+      <rect x="9" y="4" width="1" height="1" fill="var(--shadow-color)" opacity="0.6" />
+
+      <rect x="5" y="6" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="8" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="5" y="10" width="6" height="2" fill="var(--armor-color)" />
+      <rect x="6" y="9" width="4" height="1" fill="var(--plume-color)" />
+
+      <rect x="11" y="5" width="1" height="1" fill="var(--metal-color)" />
+      <rect x="11" y="6" width="1" height="3" fill="var(--metal-color)" />
+      <rect x="3" y="7" width="1" height="3" fill="var(--metal-color)" />
+      <rect x="2" y="8" width="1" height="1" fill="var(--metal-color)" />
+      <rect x="5" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+      <rect x="10" y="8" width="1" height="1" fill="var(--shadow-color)" opacity="0.25" />
+    </g>
+  </g>
+
+  <!-- Opacity animations for the three frames (cycle through frames) -->
+  <g>
+    <!-- frame0 opacity: 1 -> 0 -> 0 -> 1 (visible first third) -->
+    <animate xlink:href="#frame0" attributeName="opacity" values="1;0;0;1" keyTimes="0;0.333;0.666;1" dur="1.2s" repeatCount="indefinite" />
+    <!-- frame1 opacity: 0 -> 1 -> 0 -> 0 (visible second third) -->
+    <animate xlink:href="#frame1" attributeName="opacity" values="0;1;0;0" keyTimes="0;0.333;0.666;1" dur="1.2s" repeatCount="indefinite" />
+    <!-- frame2 opacity: 0 -> 0 -> 1 -> 0 (visible last third) -->
+    <animate xlink:href="#frame2" attributeName="opacity" values="0;0;1;0" keyTimes="0;0.333;0.666;1" dur="1.2s" repeatCount="indefinite" />
+  </g>
+
+</svg>
