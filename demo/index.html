@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Character Demo</title>
+  <link rel="stylesheet" href="/design/css-tokens.css">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="demo-header">
+    <h1 id="page-title">Character Demo</h1>
+    <div class="controls" role="toolbar" aria-label="Theme and motion controls">
+      <label>
+        <input type="checkbox" id="theme-toggle" aria-pressed="false"> Dark theme
+      </label>
+      <label>
+        <input type="checkbox" id="reduced-motion-toggle"> Reduced motion
+      </label>
+    </div>
+  </header>
+
+  <main>
+    <section id="cards" class="cards" aria-labelledby="page-title">
+      <!-- JS will mount three cards here -->
+    </section>
+  </main>
+
+  <script type="module" src="script.js"></script>
+</body>
+</html>
