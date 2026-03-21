@@ -1,134 +1,98 @@
-/* Demo script to mount character cards. Dependency-free. */
+// Small dependency-free JS for demo interactions
+(function(){
+  const root = document.documentElement;
+  const prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
-const cardsRoot = document.getElementById('cards');
-const themeToggle = document.getElementById('theme-toggle');
-const reducedMotionToggle = document.getElementById('reduced-motion-toggle');
-
-// Example characters — avatarSvg left as placeholder string for Artist later
-const EXAMPLE_CHARACTERS = [
-  {
-    id: 'char-1',
-    name: 'Ayla the Swift',
-    role: 'Rogue',
-    bio: 'A swift scout with a penchant for mischief and keen eyes for treasure.',
-    avatarSvg: '',
-  },
-  {
-    id: 'char-2',
-    name: 'Borin Stonehelm',
-    role: 'Warrior',
-    bio: 'A steadfast defender, veteran of many campaigns and a lover of strong ale.',
-    avatarSvg: '',
-  },
-  {
-    id: 'char-3',
-    name: 'Lirael of the Veil',
-    role: 'Mage',
-    bio: 'A scholar of forbidden lore who prefers moonlit libraries to crowds.',
-    avatarSvg: '',
-  }
-];
-
-// Mount initial UI
-function init() {
-  // mount characters
-  EXAMPLE_CHARACTERS.forEach(char => {
-    const container = document.createElement('article');
-    container.className = 'char-card';
-    container.setAttribute('role', 'article');
-    container.setAttribute('aria-labelledby', `${char.id}-name`);
-    container.id = char.id;
-
-    cardsRoot.appendChild(container);
-    mountCharCard(container, char);
+  // Theme toggle
+  const themeToggle = document.getElementById('themeToggle');
+  themeToggle.addEventListener('click', ()=>{
+    const isDark = root.getAttribute('data-theme') === 'dark';
+    root.setAttribute('data-theme', isDark ? '': 'dark');
+    themeToggle.setAttribute('aria-pressed', String(!isDark));
   });
 
-  // theme toggle
-  themeToggle.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      document.documentElement.setAttribute('data-theme', 'dark');
-      themeToggle.setAttribute('aria-pressed', 'true');
-    } else {
-      document.documentElement.removeAttribute('data-theme');
-      themeToggle.setAttribute('aria-pressed', 'false');
+  // Reduced motion toggle (for demo only) - mirrors prefers-reduced-motion
+  const reducedToggle = document.getElementById('reducedMotionToggle');
+  reducedToggle.checked = prefersReduced;
+  reducedToggle.addEventListener('change', (e)=>{
+    document.body.classList.toggle('reduced-motion', e.target.checked);
+  });
+
+  // Inline SVG injection: replace .char-card__avatar contents with svg fetched from path
+  async function inlineSvgs(){
+    const avatars = document.querySelectorAll('.char-card__avatar');
+    // fetch SVG once
+    const src = avatars[0] && avatars[0].dataset.svgSrc;
+    if(!src) return;
+    try{
+      const res = await fetch(src);
+      if(!res.ok) throw new Error('fetch failed');
+      const text = await res.text();
+      avatars.forEach(el=>{
+        // create a container and insert SVG markup
+        el.innerHTML = text;
+        // ensure the svg isn't aria-hidden if the container has role=img
+        const svg = el.querySelector('svg');
+        if(svg){
+          // remove aria-hidden if present so screen readers can use the container's label
+          svg.removeAttribute('aria-hidden');
+          svg.setAttribute('focusable','false');
+        }
+      });
+    }catch(err){
+      console.error('Could not inline SVGs', err);
     }
-  });
-
-  // reduced motion toggle
-  reducedMotionToggle.addEventListener('change', (e) => {
-    if (e.target.checked) {
-      document.documentElement.setAttribute('data-reduced-motion', 'true');
-    } else {
-      document.documentElement.removeAttribute('data-reduced-motion');
-    }
-  });
-}
-
-// Stub: mountCharCard should render the card structure and wire up bio toggle
-export function mountCharCard(container, character) {
-  // Clear container
-  container.innerHTML = '';
-
-  // Visual area with placeholder SVG (Artist will replace avatarSvg later)
-  const visual = document.createElement('div');
-  visual.className = 'char-visual';
-  visual.setAttribute('aria-hidden', 'true');
-
-  // Use provided avatarSvg if present, otherwise simple placeholder
-  if (character.avatarSvg) {
-    visual.innerHTML = character.avatarSvg; // safe here for demo
-  } else {
-    visual.innerHTML = `
-      <svg width="96" height="96" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-        <rect width="24" height="24" rx="4" fill="currentColor" opacity="0.08"/>
-        <circle cx="12" cy="9" r="3" stroke="currentColor" stroke-width="1.2" fill="none" />
-        <path d="M4 20c1.5-3 4.5-4 8-4s6.5 1 8 4" stroke="currentColor" stroke-width="1.2" fill="none" stroke-linecap="round" />
-      </svg>
-    `;
   }
 
-  // Meta
-  const meta = document.createElement('div');
-  meta.className = 'char-meta';
+  // Stat bar animation
+  function animateStats(){
+    const bars = document.querySelectorAll('.char-card__stat-bar');
+    const reduceClass = document.body.classList.contains('reduced-motion') || prefersReduced;
+    bars.forEach((bar, i)=>{
+      const value = Number(bar.dataset.value) || 0;
+      const final = Math.max(0, Math.min(100, value));
+      if(reduceClass){
+        bar.style.width = final + '%';
+        return;
+      }
+      // set transition
+      bar.style.transition = 'width 700ms ease-out';
+      // stagger slightly for nicer effect
+      const delay = i * 80;
+      setTimeout(()=>{
+        bar.style.width = final + '%';
+      }, delay);
+    });
+  }
 
-  const name = document.createElement('h2');
-  name.className = 'char-name';
-  name.id = `${character.id}-name`;
-  name.textContent = character.name;
+  // Bio toggle accessibility
+  function wireBioToggles(){
+    const toggles = document.querySelectorAll('.char-card__bio-toggle');
+    toggles.forEach(btn=>{
+      btn.addEventListener('click', ()=>{
+        const id = btn.getAttribute('aria-controls');
+        const panel = document.getElementById(id);
+        const expanded = btn.getAttribute('aria-expanded') === 'true';
+        btn.setAttribute('aria-expanded', String(!expanded));
+        if(panel){
+          if(expanded){
+            panel.hidden = true;
+            btn.textContent = 'Show bio';
+          }else{
+            panel.hidden = false;
+            btn.textContent = 'Hide bio';
+            panel.focus && panel.focus();
+          }
+        }
+      });
+      // ensure keyboard space/enter works (button already does by default)
+    });
+  }
 
-  const role = document.createElement('p');
-  role.className = 'char-role';
-  role.textContent = character.role;
-
-  const toggle = document.createElement('button');
-  toggle.className = 'toggle-bio';
-  toggle.type = 'button';
-  toggle.setAttribute('aria-expanded', 'false');
-  toggle.textContent = 'Show bio';
-
-  // Bio
-  const bio = document.createElement('p');
-  bio.className = 'char-bio';
-  bio.id = `${character.id}-bio`;
-  bio.setAttribute('aria-hidden', 'true');
-  bio.textContent = character.bio;
-
-  // Wire toggle
-  toggle.addEventListener('click', () => {
-    const expanded = toggle.getAttribute('aria-expanded') === 'true';
-    toggle.setAttribute('aria-expanded', String(!expanded));
-    toggle.textContent = expanded ? 'Show bio' : 'Hide bio';
-    bio.setAttribute('aria-hidden', String(expanded));
+  // Initialize on DOM ready
+  document.addEventListener('DOMContentLoaded', async ()=>{
+    await inlineSvgs();
+    wireBioToggles();
+    animateStats();
   });
-
-  meta.appendChild(name);
-  meta.appendChild(role);
-  meta.appendChild(toggle);
-
-  container.appendChild(visual);
-  container.appendChild(meta);
-  container.appendChild(bio);
-}
-
-// Auto-init
-document.addEventListener('DOMContentLoaded', init);
+})();
