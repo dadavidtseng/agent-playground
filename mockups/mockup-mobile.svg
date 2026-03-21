@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="667" viewBox="0 0 375 667" xmlns="http://www.w3.org/2000/svg">
+  <title id="m-title">Mobile mockup - Profile Card</title>
+  <desc id="m-desc">Mobile layout showing avatar, name, stats, bio and actions with spacing annotations</desc>
+  <rect x="0" y="0" width="375" height="667" fill="#f7fafc"/>
+  <!-- Card -->
+  <g id="card" transform="translate(16,28)">
+    <rect x="0" y="0" width="343" height="280" rx="12" fill="#ffffff" stroke="#e5e7eb"/>
+    <!-- Header -->
+    <g id="header">
+      <circle cx="36" cy="36" r="20" fill="#e0e7ff" stroke="#e5e7eb" />
+      <text x="72" y="28" font-family="Inter, Arial" font-size="18" font-weight="700" fill="#111827">Jane Doe</text>
+      <text x="72" y="48" font-family="Inter, Arial" font-size="14" fill="#6b7280">Product Designer</text>
+      <!-- action -->
+      <rect x="260" y="18" width="72" height="36" rx="8" fill="#0b63ff" />
+      <text x="296" y="42" font-family="Inter, Arial" font-size="14" fill="#ffffff" text-anchor="middle">Follow</text>
+    </g>
+    <!-- Stats -->
+    <g id="stats" transform="translate(16,76)">
+      <text x="0" y="0" font-family="Inter" font-size="16" font-weight="600" fill="#111827">1.2k</text>
+      <text x="0" y="18" font-family="Inter" font-size="12" fill="#6b7280">Followers</text>
+      <text x="92" y="0" font-family="Inter" font-size="16" font-weight="600" fill="#111827">210</text>
+      <text x="92" y="18" font-family="Inter" font-size="12" fill="#6b7280">Following</text>
+      <text x="184" y="0" font-family="Inter" font-size="16" font-weight="600" fill="#111827">34</text>
+      <text x="184" y="18" font-family="Inter" font-size="12" fill="#6b7280">Posts</text>
+    </g>
+    <!-- Bio -->
+    <text x="16" y="150" font-family="Inter" font-size="14" fill="#111827" width="311">Designing intuitive interfaces and systems. Focused on accessibility and scalable design systems. Loves dogs and coffee.</text>
+    <!-- Actions -->
+    <rect x="16" y="210" width="150" height="40" rx="8" fill="#0b63ff" />
+    <text x="91" y="236" font-family="Inter" font-size="14" fill="#ffffff" text-anchor="middle">Message</text>
+    <rect x="186" y="210" width="150" height="40" rx="8" fill="#ffffff" stroke="#e5e7eb" />
+    <text x="261" y="236" font-family="Inter" font-size="14" fill="#111827" text-anchor="middle">More</text>
+    <!-- Annotations -->
+    <text x="0" y="296" font-family="Inter" font-size="12" fill="#6b7280">Spacing notes: card padding 16px; avatar 40px; gaps 12-16px</text>
+  </g>
+</svg>
