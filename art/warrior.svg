@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" width="320" height="320" viewBox="0 0 32 32" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <!-- Pixel-art warrior (single frame). Grid: 32x32. Use integer coords and 1x1 rects. -->
+  <defs>
+    <style><![CDATA[
+      /* keep crisp pixels when scaled */
+      svg { image-rendering: optimizeSpeed; image-rendering: -moz-crisp-edges; image-rendering: -o-crisp-edges; image-rendering: -webkit-optimize-contrast; image-rendering: crisp-edges; }
+    ]]></style>
+  </defs>
+
+  <!-- Palette comments: black, skin, armor, cloth, metal, wood, gold, dark -->
+  <!-- Outline -->
+  <!-- Helmet / head outline -->
+  <rect x="10" y="6" width="8" height="1" fill="#000" />
+  <rect x="9" y="7" width="10" height="1" fill="#000" />
+  <rect x="9" y="8" width="2" height="1" fill="#000" />
+  <rect x="19" y="8" width="2" height="1" fill="#000" />
+  <rect x="10" y="9" width="8" height="1" fill="#000" />
+
+  <!-- Body outline -->
+  <rect x="11" y="10" width="6" height="1" fill="#000" />
+  <rect x="10" y="11" width="8" height="1" fill="#000" />
+  <rect x="10" y="12" width="2" height="6" fill="#000" />
+  <rect x="18" y="12" width="2" height="6" fill="#000" />
+  <rect x="11" y="18" width="6" height="1" fill="#000" />
+
+  <!-- Left arm / shield outline -->
+  <rect x="7" y="11" width="3" height="6" fill="#000" />
+  <rect x="6" y="12" width="1" height="4" fill="#000" />
+  <!-- Right arm / sword outline -->
+  <rect x="21" y="11" width="3" height="6" fill="#000" />
+  <rect x="24" y="9" width="1" height="4" fill="#000" />
+
+  <!-- Legs outline -->
+  <rect x="12" y="19" width="1" height="3" fill="#000" />
+  <rect x="16" y="19" width="1" height="3" fill="#000" />
+
+  <!-- Fill: armor (steel) -->
+  <rect x="11" y="6" width="8" height="1" fill="#6b8ba4" />
+  <rect x="10" y="7" width="10" height="1" fill="#6b8ba4" />
+  <rect x="10" y="9" width="8" height="1" fill="#6b8ba4" />
+  <rect x="11" y="10" width="6" height="1" fill="#8aa6b4" />
+  <rect x="10" y="11" width="8" height="1" fill="#8aa6b4" />
+  <rect x="11" y="12" width="6" height="6" fill="#6b8ba4" />
+
+  <!-- Cloth (red tabard) -->
+  <rect x="12" y="13" width="4" height="3" fill="#8b3a3a" />
+
+  <!-- Shield (gold) on left -->
+  <rect x="6" y="13" width="3" height="3" fill="#d4a017" />
+  <rect x="6" y="12" width="3" height="1" fill="#b8860b" />
+
+  <!-- Sword (blade + handle) on right -->
+  <rect x="24" y="9" width="1" height="3" fill="#cfd8dc" />
+  <rect x="23" y="11" width="1" height="1" fill="#6b4a2a" />
+  <rect x="24" y="12" width="1" height="1" fill="#6b4a2a" />
+  <rect x="23" y="9" width="1" height="1" fill="#cfd8dc" />
+
+  <!-- Skin (face) -->
+  <rect x="12" y="8" width="2" height="1" fill="#f1c27d" />
+  <rect x="15" y="8" width="2" height="1" fill="#f1c27d" />
+
+  <!-- Eyes -->
+  <rect x="13" y="8" width="1" height="1" fill="#000" />
+  <rect x="16" y="8" width="1" height="1" fill="#000" />
+
+  <!-- Legs (pants) -->
+  <rect x="11" y="19" width="3" height="3" fill="#3b3b3b" />
+  <rect x="14" y="19" width="3" height="3" fill="#3b3b3b" />
+
+  <!-- Boots -->
+  <rect x="12" y="22" width="1" height="1" fill="#000" />
+  <rect x="16" y="22" width="1" height="1" fill="#000" />
+
+  <!-- Small accents / shadow -->
+  <rect x="11" y="11" width="1" height="1" fill="#56707a" />
+  <rect x="17" y="11" width="1" height="1" fill="#56707a" />
+  <rect x="12" y="14" width="4" height="1" fill="#5a2f2f" />
+
+</svg>
