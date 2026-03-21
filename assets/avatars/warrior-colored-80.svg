@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 80 80" shape-rendering="crispEdges">
+  <!-- Palette tokens: skin=#F2C9A6, armor=#4B6B8F, cloth=#8A2B2B, metal=#BFC9D6, accent=#FFD166, shadow=#2E2E2E -->
+  <!-- Grid: 16x16, pixel size = 5 -->
+  <!-- Helmet -->
+  <rect x="10" y="0" width="60" height="5" fill="#4B6B8F"/>
+  <rect x="5" y="5" width="70" height="5" fill="#4B6B8F"/>
+  <rect x="7" y="10" width="66" height="5" fill="#4B6B8F"/>
+  <!-- Face -->
+  <rect x="25" y="10" width="12" height="20" fill="#F2C9A6"/>
+  <!-- Eyes -->
+  <rect x="30" y="15" width="4" height="4" fill="#2E2E2E"/>
+  <rect x="36" y="15" width="4" height="4" fill="#2E2E2E"/>
+  <!-- Body/Armor -->
+  <rect x="20" y="30" width="40" height="20" fill="#4B6B8F"/>
+  <rect x="22" y="50" width="36" height="20" fill="#8A2B2B"/>
+  <!-- Accent / Belt -->
+  <rect x="24" y="62" width="32" height="4" fill="#FFD166"/>
+  <!-- Shield (left) -->
+  <rect x="0" y="30" width="12" height="30" fill="#BFC9D6"/>
+  <rect x="4" y="34" width="4" height="22" fill="#4B6B8F"/>
+  <!-- Sword (right) -->
+  <rect x="72" y="22" width="8" height="36" fill="#BFC9D6"/>
+  <rect x="68" y="18" width="12" height="4" fill="#BFC9D6"/>
+  <!-- Shadow details -->
+  <rect x="20" y="38" width="10" height="8" fill="#2E2E2E"/>
+  <rect x="50" y="38" width="10" height="8" fill="#2E2E2E"/>
+</svg>
