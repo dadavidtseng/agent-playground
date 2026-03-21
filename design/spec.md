@@ -8,11 +8,15 @@ Overview
 --------
 This document defines tokens, responsive rules, component anatomy, spacing, color palette (with WCAG guidance), interaction states, accessibility notes, and sample markup for the Game Character Profile Card component system. The spec is self-contained and copy/paste-ready.
 
+Design tokens for Game Character Profile Card
+--------------------------------------------
+This file documents the design tokens used by the demo. Tokens are exported as CSS variables in design/tokens.css. Do not hardcode values in demo styles; use the CSS variables defined below and in design/tokens.css.
+
 Tokens (CSS variables)
 ----------------------
-All tokens are prefixed with --kadi- to avoid collisions. Use :root for global tokens; components may override within their scopes.
+All tokens are prefixed with --kadi- to avoid collisions in the component library examples. The demo also exposes higher-level/generic token names in design/tokens.css (e.g., --color-bg, --space-1) which map to the component-prefixed tokens. Use :root for global tokens; components may override within their scopes.
 
-:root token examples (copy into your CSS):
+:root token examples (copy into your CSS or reference design/tokens.css):
 
 ```css
 :root {
@@ -74,6 +78,36 @@ All tokens are prefixed with --kadi- to avoid collisions. Use :root for global t
 }
 ```
 
+Generic/demo token names exported in design/tokens.css
+-----------------------------------------------------
+The demo additionally provides generic token names to simplify integration with other systems. These are defined in design/tokens.css and map to the --kadi- tokens above. Do not hardcode values in demo styles; reference these variables.
+
+- Color tokens (examples):
+  - --color-bg: background color for the page and card background (maps to --kadi-bg)
+  - --color-surface: card surface color (maps to --kadi-surface-2)
+  - --color-accent: accent / primary color used for highlights and stat bars (maps to --kadi-accent)
+  - --color-muted: subdued text / secondary color (maps to --kadi-muted or --kadi-text-secondary)
+  - --color-success: used for health-like stats (maps to --kadi-success)
+  - --color-text: primary text color (maps to --kadi-text-primary)
+
+- Spacing & sizing:
+  - --space-1 .. --space-6: spacing scale (map to --kadi-space-1 .. --kadi-space-6)
+  - --radius-1: border-radius for cards and buttons (map to --kadi-radius-md or -sm)
+  - --card-width: preferred card max width (optional token in design/tokens.css)
+
+- Typography:
+  - --font-sans: system UI stack for headings and body (maps to --kadi-font-sans)
+  - --font-mono: monospace font for stat numbers (maps to --kadi-font-mono)
+  - --font-size-base: base font-size (maps to --kadi-type-md)
+  - --font-size-sm: small font-size (maps to --kadi-type-sm)
+  - --line-height-base: base line height
+
+- Motion:
+  - --motion-fast: short animation duration (maps to --kadi-duration-fast)
+  - --motion-medium: medium animation duration (maps to --kadi-duration-medium)
+
+Token values are defined in design/tokens.css and consumed by demo/styles.css. The component examples in this spec use the --kadi- prefix to show clear semantic intent and avoid collisions; map or alias these as needed at build time or in a theme layer.
+
 Responsive breakpoints
 ----------------------
 Use these breakpoints to control layout and sizing.
@@ -107,7 +141,7 @@ Anatomy (top to bottom / left to right):
   - Actions row: primary action (e.g., "View"), secondary (e.g., "Equip")
 
 Spacing and layout tokens used inside the component:
-- padding: var(--kadi-space-4)
+- padding: var(--kadi-space-4) (or --space-4 via demo token)
 - gap between elements: var(--kadi-space-3)
 - avatar size: small 48px / medium 64px / large 96px (responsive)
 
@@ -277,12 +311,14 @@ Design tokens usage examples
 - Use var(--kadi-type-md) for body copy inside cards.
 - Use var(--kadi-space-4) for main padding and var(--kadi-space-3) for gaps between rows.
 - Use var(--kadi-elev-2) for floating card shadows; reduce to elev-1 for smaller elements.
+- For demo-level integration, use the generic names from design/tokens.css (e.g., --color-accent, --space-4) which are aliased to the --kadi- tokens.
 
 Developer handoff notes
 -----------------------
 - Provide exported SVG portraits with accessible titles/desc when they convey additional meaning.
 - Offer both light and dark themes by mapping tokens to light equivalents in a .theme-light selector.
 - Keep interactions CSS-only; complex interactions should degrade gracefully when CSS not available.
+- Token values live in design/tokens.css — consume those variables in demo/styles.css and avoid hardcoding color/spacing values in component styles.
 
 Example light theme token overrides (optional):
 
@@ -292,15 +328,16 @@ Example light theme token overrides (optional):
 
 Versioning and maintenance
 --------------------------
-- Update tokens centrally in :root.
+- Update tokens centrally in :root or in design/tokens.css.
 - When adding new semantic colors, map to neutral base colors and provide WCAG pairings.
+- Keep token aliases in design/tokens.css up-to-date to ensure other projects can consume generic token names (--color-*, --space-*) while the component library maintains its --kadi- namespace.
 
 Appendix: Example token map (summary)
 ------------------------------------
-- Typography: --kadi-font-sans, --kadi-type-md
-- Spacing: --kadi-space-1..8
-- Color: --kadi-bg, --kadi-surface-2, --kadi-text-primary, --kadi-accent
-- Motion: --kadi-duration-fast/medium/slow, --kadi-ease
+- Typography: --kadi-font-sans, --kadi-type-md (alias: --font-sans, --font-size-base)
+- Spacing: --kadi-space-1..8 (alias: --space-1..6)
+- Color: --kadi-bg, --kadi-surface-2, --kadi-text-primary, --kadi-accent (alias: --color-bg, --color-surface, --color-text, --color-accent)
+- Motion: --kadi-duration-fast/medium/slow, --kadi-ease (alias: --motion-fast, --motion-medium)
 - Elevation: --kadi-elev-0/1/2/3
 
 End of specification.
