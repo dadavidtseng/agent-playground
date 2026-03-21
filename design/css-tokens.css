@@ -1,0 +1,144 @@
+/* CSS Tokens for Character Profile Card
+   Usable as a standalone file. Include via <link rel="stylesheet" href="/design/css-tokens.css"> or @import.
+   All variables use the --cc- prefix.
+*/
+:root{
+  /* Breakpoints */
+  --cc-breakpoint-xs: 360px;
+  --cc-breakpoint-sm: 600px;
+  --cc-breakpoint-md: 900px;
+  --cc-breakpoint-lg: 1200px;
+  --cc-breakpoint-xl: 1440px;
+
+  /* Typography */
+  --cc-font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --cc-font-weight-regular: 400;
+  --cc-font-weight-medium: 500;
+  --cc-font-weight-bold: 700;
+
+  --cc-font-size-xxs: 0.75rem; /*12px*/
+  --cc-font-size-xs: 0.875rem; /*14px*/
+  --cc-font-size-sm: 1rem; /*16px*/
+  --cc-font-size-md: 1.125rem; /*18px*/
+  --cc-font-size-lg: 1.25rem; /*20px*/
+  --cc-font-size-xl: 1.5rem; /*24px*/
+  --cc-font-size-xxl: 2rem; /*32px*/
+
+  --cc-line-height-tight: 1.1;
+  --cc-line-height-default: 1.4;
+  --cc-line-height-loose: 1.6;
+
+  /* Colors */
+  --cc-color-bg: #ffffff; /* card background */
+  --cc-color-surface: #f8fafc;
+  --cc-color-border: #e6edf3;
+  --cc-color-text: #0f172a; /* primary text; contrast vs white: 15.8:1 */
+  --cc-color-text-muted: #475569; /* muted text: contrast vs white: 7.4:1 */
+  --cc-color-accent: #4f46e5; /* primary accent */
+  --cc-color-accent-foreground: #ffffff; /* text on accent */
+  --cc-color-success: #16a34a;
+  --cc-color-warning: #f59e0b;
+  --cc-color-danger: #dc2626;
+  --cc-color-focus: #2563eb; /* focus ring */
+  --cc-color-overlay: rgba(2,6,23,0.6);
+
+  /* Card states */
+  --cc-card-bg: var(--cc-color-bg);
+  --cc-card-bg-hover: #fbfdff;
+  --cc-card-bg-active: #f1f5f9;
+  --cc-card-border: var(--cc-color-border);
+  --cc-card-border-hover: #d9e8f7;
+
+  /* Buttons */
+  --cc-btn-bg: var(--cc-color-accent);
+  --cc-btn-bg-hover: #4338ca;
+  --cc-btn-bg-active: #3730a3;
+  --cc-btn-foreground: var(--cc-color-accent-foreground);
+  --cc-btn-outline: rgba(79,70,229,0.12);
+
+  /* Spacing (4px scale) */
+  --cc-space-0: 0px;
+  --cc-space-1: 4px;
+  --cc-space-2: 8px;
+  --cc-space-3: 12px;
+  --cc-space-4: 16px;
+  --cc-space-5: 24px;
+  --cc-space-6: 32px;
+  --cc-space-7: 40px;
+  --cc-space-8: 64px;
+
+  /* Sizing */
+  --cc-avatar-size-sm: 40px;
+  --cc-avatar-size-md: 64px;
+  --cc-avatar-size-lg: 96px;
+  --cc-border-radius: 12px;
+  --cc-border-radius-sm: 8px;
+
+  /* Elevation */
+  --cc-elevation-none: none;
+  --cc-elevation-low: 0 1px 2px rgba(2,6,23,0.06);
+  --cc-elevation-medium: 0 4px 12px rgba(2,6,23,0.08);
+  --cc-elevation-high: 0 12px 30px rgba(2,6,23,0.12);
+
+  /* Motion */
+  --cc-transition-fast: 150ms;
+  --cc-transition-default: 240ms;
+  --cc-transition-ease: cubic-bezier(.2,.8,.2,1);
+}
+
+/* Accessibility helpers */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --cc-transition-fast: 0ms;
+    --cc-transition-default: 0ms;
+  }
+}
+
+/* Basic utility examples for implementers (optional) */
+.cc-card{
+  background: var(--cc-card-bg);
+  border: 1px solid var(--cc-card-border);
+  border-radius: var(--cc-border-radius);
+  padding: var(--cc-space-4);
+  display: grid;
+  gap: var(--cc-space-3);
+  box-shadow: var(--cc-elevation-low);
+  color: var(--cc-color-text);
+  font-family: var(--cc-font-family);
+  transition: background var(--cc-transition-default) var(--cc-transition-ease), box-shadow var(--cc-transition-default) var(--cc-transition-ease), border-color var(--cc-transition-default) var(--cc-transition-ease);
+}
+
+.cc-card:hover{ background: var(--cc-card-bg-hover); border-color: var(--cc-card-border-hover); box-shadow: var(--cc-elevation-medium); }
+.cc-card:active{ background: var(--cc-card-bg-active); }
+
+.cc-avatar{ width: var(--cc-avatar-size-md); height: var(--cc-avatar-size-md); border-radius: 999px; object-fit: cover; display:block; margin-inline: auto; }
+
+.cc-content{ display: flex; flex-direction: column; gap: var(--cc-space-2); }
+.cc-name{ font-size: var(--cc-font-size-lg); font-weight: var(--cc-font-weight-bold); line-height: var(--cc-line-height-tight); margin:0; }
+.cc-role{ font-size: var(--cc-font-size-sm); color: var(--cc-color-text-muted); margin:0; }
+.cc-bio{ font-size: var(--cc-font-size-sm); line-height: var(--cc-line-height-default); color: var(--cc-color-text); margin:0; }
+
+.cc-meta{ font-size: var(--cc-font-size-xs); color: var(--cc-color-text-muted); }
+
+.cc-actions{ display:flex; gap: var(--cc-space-2); align-items:center; }
+
+.cc-btn-primary{ background: var(--cc-btn-bg); color: var(--cc-btn-foreground); padding: calc(var(--cc-space-2)) calc(var(--cc-space-4)); border-radius: var(--cc-border-radius-sm); border: 1px solid transparent; font-weight: var(--cc-font-weight-medium); cursor:pointer; }
+.cc-btn-primary:hover{ background: var(--cc-btn-bg-hover); }
+.cc-btn-primary:active{ background: var(--cc-btn-bg-active); }
+.cc-btn-primary:focus-visible{ outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.18); }
+
+.cc-btn-icon{ background: transparent; border: 1px solid transparent; padding: var(--cc-space-2); border-radius: 8px; cursor: pointer; }
+.cc-btn-icon:focus-visible{ outline: none; box-shadow: 0 0 0 3px rgba(37,99,235,0.18); }
+
+/* Responsive layout examples */
+@media (min-width: var(--cc-breakpoint-sm)){
+  .cc-card{ grid-template-columns: auto 1fr; align-items: center; }
+  .cc-avatar{ margin:0; }
+  .cc-content{ align-items: flex-start; }
+}
+
+@media (min-width: var(--cc-breakpoint-md)){
+  .cc-card{ padding: var(--cc-space-5); gap: var(--cc-space-4); }
+  .cc-avatar{ width: var(--cc-avatar-size-lg); height: var(--cc-avatar-size-lg); }
+  .cc-name{ font-size: var(--cc-font-size-xl); }
+}
