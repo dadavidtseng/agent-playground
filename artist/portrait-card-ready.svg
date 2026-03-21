@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 280 200" role="img" aria-label="Portrait card-ready SVG" shape-rendering="crispEdges" style="image-rendering:pixelated; image-rendering:crisp-edges;">
+  <!-- Optimized pixel art card-ready portrait. Transparent background. Grid-based construction with <rect> for crisp pixels. Limited palette <=16 colors. -->
+  <g id="portrait" data-role="portrait" transform="translate(60,12)">
+    <!-- Use 128-grid scaled down to fit card. Each pixel represented by 1.5 units to keep crispness on integer coordinates -->
+    <g id="hair" data-role="hair">
+      <rect x="8" y="4" width="96" height="8" fill="#2b1b0e"/>
+      <rect x="6" y="12" width="104" height="8" fill="#2b1b0e"/>
+      <rect x="4" y="24" width="12" height="32" fill="#2b1b0e"/>
+      <rect x="120" y="24" width="12" height="32" fill="#2b1b0e"/>
+    </g>
+
+    <g id="body" data-role="body">
+      <rect x="24" y="36" width="96" height="64" fill="#f1c27d" class="fill-skin"/>
+      <g id="eyes" data-role="eyes">
+        <rect x="48" y="52" width="6" height="6" fill="#000" class="fill-eye"/>
+        <rect x="88" y="52" width="6" height="6" fill="#000" class="fill-eye"/>
+        <rect x="56" y="48" width="6" height="6" fill="#ffffff" opacity="0.9" class="fill-highlight"/>
+      </g>
+      <rect x="64" y="80" width="18" height="6" fill="#6f3f2a"/>
+    </g>
+
+    <g id="armor" data-role="armor">
+      <rect x="20" y="100" width="104" height="40" fill="#9fb2c6" class="fill-armor"/>
+      <rect x="32" y="100" width="80" height="8" fill="#6f8590" class="fill-armor-dark"/>
+      <rect x="10" y="100" width="12" height="24" fill="#4c75a3" class="fill-shirt"/>
+      <rect x="132" y="100" width="12" height="24" fill="#4c75a3" class="fill-shirt"/>
+    </g>
+
+    <g id="weapon" data-role="weapon">
+      <rect x="0" y="76" width="8" height="48" fill="#6f8590"/>
+      <rect x="-8" y="68" width="8" height="8" fill="#cfd8dc"/>
+      <rect x="8" y="68" width="8" height="8" fill="#6f8590"/>
+      <rect x="-8" y="116" width="24" height="8" fill="#2b1b0e"/>
+    </g>
+  </g>
+
+  <!-- Suggested CSS classes for theming (for inline embedding, authors can use these classes) -->
+  <defs>
+    <style>{/* .fill-armor { fill: #9fb2c6; } */}</style>
+  </defs>
+</svg>
