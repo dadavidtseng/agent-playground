@@ -2,6 +2,8 @@
    CSS design tokens for Card component
    Tokens use semantic names: --color-*, --space-*, --type-*, --radius-*, --shadow-*, --breakpoint-*
 */
+
+/* Design tokens - do not hardcode these values elsewhere. */
 :root{
   /* Typography scale (sizes and line-heights as tokens)
      Naming convention: --type-scale-{n}-size and --type-scale-{n}-line
@@ -33,15 +35,29 @@
   --space-5: 24px;
   --space-6: 32px;
 
+  /* Additional spacing aliases (from other token set) */
+  --space-xxs: 4px;
+  --space-xs: 8px;
+  --space-s: 12px;
+  --space-m: 16px;
+  --space-l: 24px;
+  --space-xl: 32px;
+
   /* Radii */
   --radius-1: 6px;
   --radius-2: 12px;
   --radius-pill: 9999px;
 
+  /* Compatibility radius */
+  --radius: var(--radius-1);
+
   /* Shadows */
   --shadow-0: none;
   --shadow-1: 0 1px 2px rgba(15,23,42,0.04), 0 1px 3px rgba(15,23,42,0.06);
   --shadow-2: 0 6px 18px rgba(2,6,23,0.12);
+
+  /* Compatibility shadow from other token set */
+  --shadow: 0 6px 18px rgba(2,6,23,0.6);
 
   /* Breakpoints */
   --breakpoint-sm: 640px;
@@ -123,6 +139,10 @@
 
   --card-border-radius: var(--radius-1);
   --card-elevation: var(--shadow-1);
+
+  /* Additional sizing tokens from other token set */
+  --card-width: 320px;
+  --avatar-size: 96px;
 }
 
 /* Contrast guidance (documented as comments for maintainers)
@@ -192,3 +212,50 @@ Inline SVG recommended structure:
 }
 
 */
+
+/* Additional token set (from agent-playground-programmer)
+   These provide alternate variable names and some extra tokens that other parts of the app expect.
+*/
+:root{
+  /* Colors (alternate names) */
+  --bg: #0f1720;
+  --surface: #0b1220;
+  --muted: #9aa4b2;
+  --text: #e6eef6;
+  --accent-1: #6ee7b7;
+  --accent-2: #60a5fa;
+  --danger: #fb7185;
+  --hp-color: #10b981;
+  --atk-color: #f59e0b;
+  --def-color: #6366f1;
+  --spd-color: #06b6d4;
+
+  /* Sizing / Typography (alternate names) */
+  --font-family: Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  --font-size-lg: 18px;
+  --font-size-md: 14px;
+  --font-size-sm: 12px;
+
+  /* Radii (alternate) */
+  --radius: 12px;
+
+  /* Elevation (alternate) */
+  --shadow: 0 6px 18px rgba(2,6,23,0.6);
+}
+
+/* Light theme override for the alternate token set */
+@media (prefers-color-scheme: light){
+  :root{
+    --bg: #f7fafc;
+    --surface: #ffffff;
+    --muted: #475569;
+    --text: #0f1720;
+  }
+}
+
+/* Reduced motion */
+@media (prefers-reduced-motion: reduce){
+  :root{
+    --reduced-motion: 1;
+  }
+}
