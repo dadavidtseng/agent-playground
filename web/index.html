@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Character Cards — KĀDI UI</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="wrap">
+    <h1 class="sr-only">Character cards demo</h1>
+
+    <!-- Default variant -->
+    <article class="card" data-variant="default" tabindex="0" aria-labelledby="char-1-name" role="group">
+      <div class="card-row">
+        <div class="avatar" data-src="assets/avatar-hero.svg" aria-hidden="true">
+          <!-- Inline fallback SVG (used if external can't be loaded) -->
+          <svg viewBox="0 0 64 64" class="avatar-fallback" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+            <rect width="64" height="64" rx="10" fill="var(--token-color-surface)" />
+            <circle cx="32" cy="26" r="12" fill="var(--token-color-accent)" />
+            <rect x="12" y="44" width="40" height="10" rx="3" fill="var(--token-color-muted)" />
+          </svg>
+        </div>
+
+        <div class="meta">
+          <h2 id="char-1-name">Asha the Wanderer</h2>
+          <p class="sub">Rogue Explorer</p>
+        </div>
+
+        <button class="expand-btn" aria-expanded="false" aria-controls="char-1-details">Details</button>
+      </div>
+
+      <div id="char-1-details" class="details" hidden>
+        <ul class="stats" aria-hidden="false">
+          <li class="stat">
+            <div class="stat-label">Strength</div>
+            <div class="stat-bar" data-value="72" aria-valuemin="0" aria-valuemax="100" role="progressbar" aria-valuenow="0">
+              <div class="stat-fill" style="width:0%"></div>
+            </div>
+            <div class="stat-value">72</div>
+          </li>
+
+          <li class="stat">
+            <div class="stat-label">Agility</div>
+            <div class="stat-bar" data-value="88" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="stat-fill" style="width:0%"></div>
+            </div>
+            <div class="stat-value">88</div>
+          </li>
+
+          <li class="stat">
+            <div class="stat-label">Wisdom</div>
+            <div class="stat-bar" data-value="55" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="stat-fill" style="width:0%"></div>
+            </div>
+            <div class="stat-value">55</div>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+    <!-- Compact variant -->
+    <article class="card" data-variant="compact" tabindex="0" aria-labelledby="char-2-name" role="group">
+      <div class="card-row compact-row">
+        <div class="avatar small" data-src="assets/avatar-rogue.svg">
+          <svg viewBox="0 0 64 64" class="avatar-fallback" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+            <rect width="64" height="64" rx="10" fill="var(--token-color-surface)" />
+            <circle cx="32" cy="26" r="10" fill="var(--token-color-accent-2)" />
+          </svg>
+        </div>
+
+        <div class="meta compact">
+          <h2 id="char-2-name">Miro</h2>
+          <p class="sub">Scout</p>
+        </div>
+
+        <div class="mini-stats" aria-hidden="true">
+          <div class="mini-stat">STR 45</div>
+          <div class="mini-stat">AGI 77</div>
+        </div>
+      </div>
+    </article>
+
+    <!-- Expanded variant (starts expanded) -->
+    <article class="card expanded" data-variant="expanded" tabindex="0" aria-labelledby="char-3-name" role="group">
+      <div class="card-row">
+        <div class="avatar large" data-src="assets/avatar-mage.svg">
+          <svg viewBox="0 0 64 64" class="avatar-fallback" xmlns="http://www.w3.org/2000/svg" focusable="false" aria-hidden="true">
+            <rect width="64" height="64" rx="10" fill="var(--token-color-surface)" />
+            <circle cx="32" cy="22" r="14" fill="var(--token-color-accent-3)" />
+            <rect x="8" y="42" width="48" height="10" rx="3" fill="var(--token-color-muted)" />
+          </svg>
+        </div>
+
+        <div class="meta">
+          <h2 id="char-3-name">Eldon the Sage</h2>
+          <p class="sub">Arcane Scholar</p>
+        </div>
+
+        <button class="expand-btn" aria-expanded="true" aria-controls="char-3-details">Details</button>
+      </div>
+
+      <div id="char-3-details" class="details">
+        <ul class="stats">
+          <li class="stat">
+            <div class="stat-label">Mana</div>
+            <div class="stat-bar" data-value="94" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="stat-fill" style="width:0%"></div>
+            </div>
+            <div class="stat-value">94</div>
+          </li>
+
+          <li class="stat">
+            <div class="stat-label">Intellect</div>
+            <div class="stat-bar" data-value="91" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0">
+              <div class="stat-fill" style="width:0%"></div>
+            </div>
+            <div class="stat-value">91</div>
+          </li>
+        </ul>
+      </div>
+    </article>
+
+  </main>
+
+<script src="script.js"></script>
+</body>
+</html>
