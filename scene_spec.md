@@ -16,13 +16,26 @@ objects:
       scale:    [1.0, 0.2, 1.0]     # X, Y, Z scale
     color_role: "secondary"
     material:
+      # Design ranges and recommended defaults
       metallic_range: [0.1, 0.3]    # allowed range; engine should pick a value in this interval
       roughness_range: [0.4, 0.6]
       default_metallic: 0.15        # recommended default (within range)
       default_roughness: 0.5       # recommended default (within range)
+      # Example runtime assignment consistent with design guidance
+      example_assignment:
+        baseColorHex: "#777777"
+        metallic: 0.15
+        roughness: 0.5
+      # Alternate/proposed assignment from an integration variant (preserved for reference)
+      alternate_assignment:
+        baseColorHex: "#777777"
+        metallic: 0.0
+        roughness: 0.9
 
   - name: "cube"
-    type: "box"                    # cube represented as a unit box scaled equally
+    type: "box"                    # cube represented as a unit box scaled equally; "cube" primitive alias preserved below
+    primitive_aliases:
+      - "cube"
     description: "Primary object placed on top of the pedestal."
     transform:
       position: [0.0, 0.0, 0.0]
@@ -34,7 +47,11 @@ objects:
       roughness_range: [0.4, 0.6]
       default_metallic: 0.2
       default_roughness: 0.45
-
+      # Example runtime assignment (from an integration variant) preserved
+      example_assignment:
+        baseColorHex: "#FF5733"  # primary hex for verification (alternate to the design palette)
+        metallic: 0.1
+        roughness: 0.5
 
 colors:
   # Palette - hex codes are required for deterministic verification. Usage notes indicate intended application.
@@ -55,7 +72,6 @@ materials:
   roughness:
     allowed_range: [0.4, 0.6]
     guidance: "A mid-range roughness produces soft speculars that read well in neutral lighting."
-
 
 fallback_daemonagent_parameters:
   # Common aliases to support various DaemonAgent APIs. These are engine-agnostic parameter/command names the integrator may implement.
@@ -89,7 +105,6 @@ fallback_daemonagent_parameters:
     - "spawn"                # generic spawn command
     - "create"               # generic create command
     - "set_property"         # generic property setter
-
 
 verification:
   # Explicit instructions for the programmer/integrator to verify the scene is correct.
@@ -125,9 +140,9 @@ notes_and_constraints:
   - "This specification is intentionally engine-agnostic: do not include engine-specific code or binary assets."
   - "When implementing, prefer exact numeric values for transforms to avoid ambiguity."
   - "If a renderer does not support per-object metallic/roughness ranges, choose values close to the recommended defaults but inside the allowed ranges."
+  - "This file is engine-agnostic. Positions are in meters. Colors are hex."
 
 ---
 
 Prepared by: Designer Agent (KĀDI multi-agent system)
 Task ID: 3460cb96-5db4-45ee-a9cd-4a962ccfd2fd
-
