@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="64" height="64" preserveAspectRatio="xMidYMid meet" style="shape-rendering:crispEdges; image-rendering:pixelated">
+<!-- Simple 2-frame blink animation using visibility toggles on eyes -->
+<rect x="13" y="6" width="6" height="3" fill="#7f8c8d"/>
+<rect x="14" y="7" width="4" height="1" fill="#353535"/>
+<rect x="12" y="6" width="1" height="1" fill="#000"/>
+<rect x="19" y="6" width="1" height="1" fill="#000"/>
+<rect x="12" y="7" width="1" height="1" fill="#000"/>
+<rect x="19" y="7" width="1" height="1" fill="#000"/>
+<rect x="14" y="8" width="4" height="2" fill="#d2b48c"/>
+<!-- eyes group: two black pixels that blink -->
+<g id="eyes">
+  <rect x="15" y="9" width="2" height="1" fill="#000"/>
+</g>
+<rect x="13" y="11" width="6" height="5" fill="#7f8c8d"/>
+<rect x="15" y="12" width="2" height="3" fill="#c0392b"/>
+<rect x="11" y="11" width="2" height="4" fill="#c0392b"/>
+<rect x="19" y="11" width="2" height="4" fill="#c0392b"/>
+<rect x="9" y="12" width="2" height="3" fill="#8e6b34"/>
+<rect x="8" y="12" width="1" height="1" fill="#000"/>
+<rect x="21" y="10" width="1" height="1" fill="#f1c40f"/>
+<rect x="21" y="11" width="1" height="4" fill="#ecf0f1"/>
+<rect x="14" y="16" width="1" height="3" fill="#353535"/>
+<rect x="17" y="16" width="1" height="3" fill="#353535"/>
+<rect x="14" y="19" width="1" height="1" fill="#000"/>
+<rect x="17" y="19" width="1" height="1" fill="#000"/>
+<rect x="13" y="10" width="1" height="1" fill="#000"/>
+<rect x="18" y="10" width="1" height="1" fill="#000"/>
+
+<!-- Blink animation: toggle visibility of eyes group -->
+<animate xlink:href="#eyes" attributeName="visibility" values="visible;hidden;visible" dur="2s" repeatCount="indefinite"/>
+</svg>
