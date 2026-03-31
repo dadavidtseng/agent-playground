@@ -2,6 +2,7 @@
    - Provides CharacterCard.init API
    - Auto-initializes when data-init attribute is present on #character-root
    - Progressive enhancement: if JS disabled, nothing breaks
+   - Uses optimized inline SVG snippets for characters
 */
 
 (function(global){
@@ -19,33 +20,71 @@
     return node;
   }
 
-  // Inline placeholder SVG generator (simple avatar shapes)
-  function placeholderSVG(title){
-    var svg = '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="'+(title||'avatar')+'">'
-      + '<rect width="120" height="120" rx="16" fill="rgba(255,255,255,0.04)" />'
-      + '<g transform="translate(20,20)" fill="none" stroke="white" stroke-opacity="0.7" stroke-width="6">'
-      + '<circle cx="40" cy="28" r="20" stroke-linecap="round" />'
-      + '<path d="M6 98c6-18 28-26 34-26s28 8 34 26" stroke-linecap="round" />'
+  // Optimized inline SVG snippets for characters. Kept minimal and accessible.
+  var SVG_ASSETS = {
+    Ranger: '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">'
+      + '<rect width="120" height="120" rx="16" fill="none" />'
+      + '<g fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" transform="translate(12,10)">'
+      + '<path d="M36 10c-6 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10z" fill="currentColor" opacity="0.12"/>'
+      + '<path d="M36 36c-14 0-26 8-26 18v8h52v-8c0-10-12-18-26-18z" fill="currentColor" opacity="0.06"/>'
+      + '<path d="M8 70c10-8 28-12 44-12s34 4 44 12" stroke="currentColor" opacity="0.14" />'
       + '</g>'
-      + '</svg>';
-    return svg;
+      + '</svg>',
+
+    Warrior: '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">'
+      + '<rect width="120" height="120" rx="16" fill="none" />'
+      + '<g transform="translate(10,8)" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round">'
+      + '<circle cx="44" cy="24" r="12" fill="currentColor" opacity="0.14"/>'
+      + '<path d="M10 70c8-14 30-20 44-20s36 6 44 20" stroke="currentColor" opacity="0.12"/>'
+      + '<rect x="24" y="42" width="40" height="10" rx="4" fill="currentColor" opacity="0.06" />'
+      + '</g>'
+      + '</svg>',
+
+    Mage: '<svg viewBox="0 0 120 120" xmlns="http://www.w3.org/2000/svg" role="img" aria-hidden="false">'
+      + '<rect width="120" height="120" rx="16" fill="none" />'
+      + '<g transform="translate(14,12)" fill="none" stroke="currentColor" stroke-width="2.5">'
+      + '<path d="M36 14c-6 0-10 4-10 10s4 10 10 10 10-4 10-10-4-10-10-10z" fill="currentColor" opacity="0.12"/>'
+      + '<path d="M18 58c8-10 20-16 36-16s28 6 36 16" stroke="currentColor" opacity="0.14"/>'
+      + '<path d="M36 36c-6 4-12 8-18 12" stroke="currentColor" opacity="0.08"/>'
+      + '</g>'
+      + '</svg>'
+  };
+
+  // Choose appropriate SVG based on class or name heuristics
+  function chooseSVG(data){
+    var cls = (data.class || '').toLowerCase();
+    if(cls.indexOf('ranger') !== -1) return SVG_ASSETS.Ranger;
+    if(cls.indexOf('warrior') !== -1) return SVG_ASSETS.Warrior;
+    if(cls.indexOf('mage') !== -1) return SVG_ASSETS.Mage;
+    // fallback by name
+    var name = (data.name || '').toLowerCase();
+    if(name.indexOf('mira') !== -1 || name.indexOf('mage') !== -1) return SVG_ASSETS.Mage;
+    if(name.indexOf('kor') !== -1 || name.indexOf('war') !== -1) return SVG_ASSETS.Warrior;
+    return SVG_ASSETS.Ranger;
   }
 
   // Build a single card DOM from data
   function buildCard(data){
-    var card = el('article','character-card');
+    var card = el('article','character-card', { 'tabindex': '0', 'role': 'button', 'aria-expanded': 'false' });
 
     var avatar = el('div','avatar');
-    avatar.innerHTML = placeholderSVG(data.avatarTitle || data.name);
+    var svg = chooseSVG(data);
+    // Provide a descriptive title for screen readers
+    var title = data.avatarTitle || data.name || 'Avatar';
+    // Inject svg and ensure it has aria-label
+    // Some SVGs include aria-hidden; ensure accessible label via aria-label on container
+    avatar.innerHTML = svg;
+    avatar.setAttribute('aria-label', title);
+    avatar.setAttribute('role','img');
     card.appendChild(avatar);
 
     var body = el('div','card-body');
 
     var header = el('div','card-header');
     var titleWrap = el('div');
-    var title = el('div','card-title'); title.textContent = data.name || 'Unnamed';
+    var titleEl = el('div','card-title'); titleEl.textContent = data.name || 'Unnamed';
     var sub = el('div','card-sub'); sub.textContent = (data.class || 'Adventurer') + ' — Lv ' + (data.level || 1);
-    titleWrap.appendChild(title); titleWrap.appendChild(sub);
+    titleWrap.appendChild(titleEl); titleWrap.appendChild(sub);
 
     header.appendChild(titleWrap);
 
@@ -57,6 +96,7 @@
     body.appendChild(header);
 
     var bio = el('div','card-bio'); bio.textContent = data.bio || '';
+    bio.setAttribute('data-hidden','false');
     body.appendChild(bio);
 
     // Stats
@@ -85,7 +125,9 @@
     // Actions
     var actions = el('div','actions');
     var btn1 = el('button','btn'); btn1.textContent = 'Inspect';
+    btn1.setAttribute('aria-label','Inspect ' + (data.name || 'character'));
     var btn2 = el('button','btn'); btn2.textContent = 'Challenge';
+    btn2.setAttribute('aria-label','Challenge ' + (data.name || 'character'));
     actions.appendChild(btn1); actions.appendChild(btn2);
 
     body.appendChild(actions);
@@ -117,7 +159,6 @@
   }
 
   // Normalize numeric stat into a 0-100 percent for the bar.
-  // This uses a soft max to avoid tiny/huge numbers. Adjust as needed.
   function normalizeToPercent(value){
     var max = 140; // placeholder cap representing "max expected stat"
     var pct = Math.max(0, Math.min(100, (value / max) * 100));
@@ -155,7 +196,6 @@
     });
 
     // Trigger animations after it's inserted into DOM
-    // Use requestAnimationFrame for better timing
     requestAnimationFrame(function(){ animateStats(root); });
 
     return { root: root, count: data.length };
@@ -178,7 +218,6 @@
     init: init
   };
 
-  // DOMContentLoaded or defer script will handle it; also attempt immediate auto-init
   if(document.readyState === 'loading'){
     document.addEventListener('DOMContentLoaded', tryAutoInit);
   } else {
