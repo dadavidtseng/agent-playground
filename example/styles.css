@@ -1,0 +1,98 @@
+/* Design tokens via CSS variables */
+:root{
+  --cc-bg: #0f1720;
+  --cc-surface: #111827;
+  --cc-muted: #9ca3af;
+  --cc-accent: #ef4444;
+  --cc-accent-2: #f59e0b;
+  --cc-text: #e6eef6;
+  --cc-radius: 12px;
+  --cc-gap: 12px;
+  --cc-transition: 700ms cubic-bezier(0.22,1,0.36,1);
+  --cc-card-width: 680px;
+}
+
+/* Reset & utilities */
+*{box-sizing:border-box}
+html,body{height:100%}
+body{
+  margin:0;
+  font-family:Inter, ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: linear-gradient(180deg,#071019 0%, #0b1220 100%);
+  color:var(--cc-text);
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+  padding:32px;
+}
+.visually-hidden{
+  position:absolute!important;
+  height:1px;width:1px;overflow:hidden;clip:rect(1px,1px,1px,1px);white-space:nowrap;border:0;padding:0;margin:-1px
+}
+
+.page{max-width:var(--cc-card-width);margin:0 auto;display:grid;gap:24px}
+.note{background:rgba(255,255,255,0.03);padding:12px;border-radius:8px;color:var(--cc-muted)}
+.sample-json{background:#0b1220;padding:12px;border-radius:6px;color:var(--cc-text);overflow:auto}
+
+/* Card base */
+.cc-card{
+  display:flex;flex-direction:column;gap:12px;background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:var(--cc-radius);
+  box-shadow:0 6px 18px rgba(2,6,23,0.6), inset 0 1px 0 rgba(255,255,255,0.02);
+}
+.cc-card__header{display:flex;align-items:center;gap:var(--cc-gap)}
+.cc-card__avatar{width:96px;height:96px;flex:0 0 96px;border-radius:10px;overflow:hidden;border:1px solid rgba(255,255,255,0.04);display:flex;align-items:center;justify-content:center;background:linear-gradient(180deg,#0b1116,#0b0d11)}
+.cc-card__meta{flex:1}
+.cc-card__name{margin:0;font-size:1.15rem}
+.cc-card__tagline{margin:4px 0 0;color:var(--cc-muted);font-size:.9rem}
+.cc-card__actions{display:flex;gap:8px}
+
+.cc-card__body{display:flex;gap:18px;align-items:flex-start}
+.cc-card__bio{flex:1;color:#dbe7f2;margin:0}
+
+.cc-card__footer{display:flex;justify-content:space-between;align-items:center;padding-top:6px}
+.cc-card__footer-actions{display:flex;gap:8px}
+
+/* Buttons */
+.cc-btn{background:linear-gradient(180deg,#1f2937,#111827);border:1px solid rgba(255,255,255,0.04);color:var(--cc-text);padding:8px 12px;border-radius:8px;cursor:pointer}
+.cc-btn:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:2px}
+.cc-btn--ghost{background:transparent;border:1px dashed rgba(255,255,255,0.04)}
+.cc-btn--secondary{background:linear-gradient(180deg,#0f1720,#0b1220);border:1px solid rgba(255,255,255,0.02)}
+
+/* Stats list */
+.cc-stats{list-style:none;margin:0;padding:0;display:grid;gap:10px;min-width:220px}
+.cc-stat{display:grid;grid-template-columns:1fr 120px auto;gap:8px;align-items:center}
+.cc-stat__label{font-size:.88rem;color:var(--cc-muted)}
+.cc-stat__track{height:12px;background:linear-gradient(90deg,rgba(255,255,255,0.03),rgba(255,255,255,0.02));border-radius:999px;position:relative;overflow:hidden;border:1px solid rgba(0,0,0,0.4)}
+.cc-stat__fill{position:absolute;left:0;top:0;bottom:0;background:linear-gradient(90deg,var(--cc-accent),var(--cc-accent-2));width:var(--stat-value,50%);border-radius:999px;transform-origin:left center}
+.cc-stat__value{text-align:right;color:var(--cc-text);font-variant-numeric:tabular-nums}
+
+/* Accessibility: focus styles for progressbar */
+.cc-stat__track:focus{outline:3px solid rgba(99,102,241,0.18);outline-offset:3px}
+
+/* Responsive variants: mobile compact vs desktop expanded */
+@media (max-width:720px){
+  .cc-card{padding:14px}
+  .cc-card__body{flex-direction:column}
+  .cc-card__avatar{width:64px;height:64px;flex:0 0 64px}
+  .cc-card__header{align-items:center}
+  /* compact: show summarized stats only */
+  .cc-stats{display:flex;gap:8px}
+  .cc-stat{grid-template-columns:1fr;min-width:0;align-items:center}
+  .cc-stat__label{display:none}
+  .cc-stat__value{font-size:.9rem}
+}
+
+/* Animation: on initial load, if JS not present we already set final widths via inline style (--stat-value)
+   When JS runs we'll animate from 0 to target by toggling a class on the container. */
+.cc-card--animate .cc-stat__fill{
+  transition:width var(--cc-transition),transform var(--cc-transition);
+}
+
+/* Reduced motion preference: disable transitions/animations */
+@media (prefers-reduced-motion: reduce){
+  .cc-card--animate .cc-stat__fill{transition:none}
+}
+
+/* Small helpers */
+@media (min-width:721px){
+  .cc-card{flex-direction:column}
+}
