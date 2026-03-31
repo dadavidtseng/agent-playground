@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Simple animated SVG: subtle idle breathing achieved by translating the body group by +/-0.25px (using viewBox units). Uses discrete steps to stay pixel-crisp. 32x32 base grid. -->
+<svg xmlns="http://www.w3.org/2000/svg" width="128" height="128" viewBox="0 0 32 32" shape-rendering="crispEdges" preserveAspectRatio="xMidYMid meet">
+  <g id="warrior" transform="translate(0,0)">
+    <rect x="13" y="6" width="6" height="3" fill="#7f8c8d" />
+    <rect x="14" y="7" width="4" height="1" fill="#353535" />
+    <rect x="14" y="8" width="4" height="2" fill="#d2b48c" />
+    <rect x="15" y="9" width="2" height="1" fill="#000" />
+    <rect x="13" y="11" width="6" height="5" fill="#7f8c8d" />
+    <rect x="15" y="12" width="2" height="3" fill="#c0392b" />
+    <rect x="11" y="11" width="2" height="4" fill="#c0392b" />
+    <rect x="19" y="11" width="2" height="4" fill="#c0392b" />
+    <rect x="9" y="12" width="2" height="3" fill="#8e6b34" />
+    <rect x="21" y="10" width="1" height="1" fill="#f1c40f" />
+    <rect x="21" y="11" width="1" height="4" fill="#ecf0f1" />
+    <rect x="14" y="16" width="1" height="3" fill="#353535" />
+    <rect x="17" y="16" width="1" height="3" fill="#353535" />
+  </g>
+  <!-- Animate via small integer translations to keep pixels aligned to grid. 3-step loop -->
+  <animateTransform xlink:href="#warrior" attributeName="transform" type="translate" values="0 0; 0 0.5; 0 0;" dur="1.2s" repeatCount="indefinite" calcMode="discrete" />
+</svg>
