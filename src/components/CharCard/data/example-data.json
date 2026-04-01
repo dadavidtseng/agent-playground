@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Aria Nightwind",
+    "level": 12,
+    "role": "Ranger",
+    "badges": ["Sharpshooter", "Beastfriend"],
+    "stats": [
+      {"label": "HP", "value": 84, "max": 120},
+      {"label": "ATK", "value": 58, "max": 80},
+      {"label": "DEF", "value": 41, "max": 60}
+    ],
+    "bio": "Aria is a scout from the highlands, known for her keen eyes and companionship with a hawk named Soot. She left home at a young age to pursue the sky and the secrets it holds."
+  },
+  {
+    "name": "Kiro Emberfist",
+    "level": 18,
+    "role": "Berserker",
+    "badges": ["Ironhide"],
+    "stats": [
+      {"label": "HP", "value": 132, "max": 150},
+      {"label": "ATK", "value": 92, "max": 100},
+      {"label": "DEF", "value": 60, "max": 80}
+    ],
+    "bio": "Kiro is a wandering fighter with a temper matched only by his loyalty. His years at the frontier have forged him into a reliable companion in battle."
+  },
+  {
+    "name": "Lumi Vale",
+    "level": 9,
+    "role": "Mage",
+    "badges": ["Arcane"],
+    "stats": [
+      {"label": "HP", "value": 56, "max": 70},
+      {"label": "ATK", "value": 72, "max": 90},
+      {"label": "DEF", "value": 24, "max": 40}
+    ],
+    "bio": "Lumi studies at the glass towers, always chasing ephemeral light. Her spells are bright — and sometimes distractingly loud."
+  }
+]

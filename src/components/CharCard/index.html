@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>CharCard Demo</title>
+  <style>
+    body{ background:#071027; color:#dbeafe; font-family:Inter, system-ui, -apple-system, 'Segoe UI', Roboto, Arial; padding:28px }
+    h1{ font-size:1.25rem }
+    .grid{ display:flex; gap:20px; flex-wrap:wrap }
+    .demo-wrap{ background:rgba(255,255,255,0.02); padding:16px; border-radius:12px }
+  </style>
+</head>
+<body>
+  <h1>CharCard Component — Demo</h1>
+  <p>Shows compact, default, and expanded variants. Use keyboard to toggle bio (Tab to button, Enter/Space to toggle).</p>
+  <div class="grid demo-wrap" id="demo-root">
+    <!-- components mount here -->
+  </div>
+
+  <script type="module">
+    import './char-card.js';
+
+    // Example data import (bundlers not used — fetch local JSON via relative path allowed in demo)
+    const data = await fetch('./data/example-data.json').then(r=>r.json()).catch(()=>[]);
+    const root = document.getElementById('demo-root');
+
+    // create three variants
+    const items = [ Object.assign({}, data[0], {variant:'compact'}), data[1], Object.assign({}, data[2], {variant:'expanded'}) ];
+    window.CharCardMount(root, items);
+
+    // simulate stats update after 1.2s to demonstrate animation
+    setTimeout(()=>{
+      items[0].stats[0].value = Math.min(items[0].stats[0].max, items[0].stats[0].value + 12);
+      items[1].stats[1].value = Math.min(items[1].stats[1].max, items[1].stats[1].value + 8);
+      // re-assign data to trigger animation
+      const cards = root.querySelectorAll('char-card');
+      cards.forEach((c,i)=> c.data = items[i]);
+    }, 1200);
+  </script>
+</body>
+</html>
