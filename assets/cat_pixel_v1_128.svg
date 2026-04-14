@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 128 128" width="128" height="128" role="img" aria-labelledby="title-desc">
+  <title id="title">Pixel Cat v1 (128x128)</title>
+  <desc id="desc">A 16x16 pixel-art cat rendered on a 128x128 viewBox (each pixel is 8x8 units). Transparent background.</desc>
+  <!-- Palette: dark #6B3E1B, light #F5D6B4, pink #F7A6B0, white #FFFFFF, black #000000, nose #FF6B6B -->
+  <!-- Ears -->
+  <rect x="8" y="16" width="24" height="16" fill="#6B3E1B" />
+  <rect x="88" y="16" width="24" height="16" fill="#6B3E1B" />
+  <rect x="24" y="24" width="8" height="8" fill="#F7A6B0" />
+  <rect x="96" y="24" width="8" height="8" fill="#F7A6B0" />
+
+  <!-- Head outline -->
+  <rect x="24" y="24" width="80" height="88" fill="#6B3E1B" />
+
+  <!-- Head inner (light fur) -->
+  <rect x="32" y="32" width="64" height="72" fill="#F5D6B4" />
+
+  <!-- Eyes (white + pupil) -->
+  <rect x="40" y="48" width="16" height="16" fill="#FFFFFF" />
+  <rect x="72" y="48" width="16" height="16" fill="#FFFFFF" />
+  <rect x="48" y="56" width="8" height="8" fill="#000000" />
+  <rect x="72" y="56" width="8" height="8" fill="#000000" />
+
+  <!-- Nose -->
+  <rect x="56" y="72" width="16" height="8" fill="#FF6B6B" />
+
+  <!-- Mouth (small dark) -->
+  <rect x="60" y="80" width="8" height="4" fill="#6B3E1B" />
+
+  <!-- Cheeks / blush -->
+  <rect x="36" y="72" width="8" height="6" fill="#F7A6B0" />
+  <rect x="84" y="72" width="8" height="6" fill="#F7A6B0" />
+</svg>

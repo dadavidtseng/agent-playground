@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="768" height="1024" viewBox="0 0 768 1024" xmlns="http://www.w3.org/2000/svg">
+  <rect width="768" height="1024" fill="#F7F8FA"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="768" height="72" fill="#0A84FF"/>
+  <text x="32" y="44" font-family="Arial, Helvetica, sans-serif" font-size="20" fill="#FFFFFF">App Header</text>
+
+  <!-- Two-column layout -->
+  <rect x="32" y="96" width="480" height="160" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <rect x="528" y="96" width="208" height="160" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+
+  <!-- Cards grid -->
+  <rect x="32" y="276" width="320" height="120" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <rect x="368" y="276" width="320" height="120" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <rect x="32" y="416" width="320" height="120" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <rect x="368" y="416" width="320" height="120" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+
+  <!-- Action area -->
+  <rect x="32" y="940" width="704" height="64" rx="8" fill="#0A84FF" />
+  <text x="384" y="981" font-family="Arial" font-size="18" fill="#FFFFFF" text-anchor="middle">Primary Action</text>
+
+  <text x="32" y="190" font-family="Arial" font-size="12" fill="#6B7280">Gutter: 24px · Grid: 2 columns (primary + sidebar)</text>
+</svg>
