@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="375" height="812" viewBox="0 0 375 812" xmlns="http://www.w3.org/2000/svg">
+  <rect width="375" height="812" fill="#F7F8FA"/>
+  <!-- Header -->
+  <rect x="0" y="0" width="375" height="64" fill="#0A84FF" rx="0"/>
+  <text x="24" y="40" font-family="Arial, Helvetica, sans-serif" font-size="18" fill="#FFFFFF">App Header</text>
+
+  <!-- Primary card -->
+  <rect x="16" y="88" width="343" height="120" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <text x="32" y="120" font-family="Arial" font-size="16" fill="#0B1220">Primary Card Title</text>
+  <text x="32" y="140" font-family="Arial" font-size="12" fill="#6B7280">Secondary text and description go here.</text>
+
+  <!-- List cards -->
+  <rect x="16" y="224" width="343" height="88" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+  <rect x="16" y="324" width="343" height="88" rx="12" fill="#FFFFFF" stroke="#E6E7EB"/>
+
+  <!-- Action area -->
+  <rect x="16" y="724" width="343" height="56" rx="8" fill="#0A84FF" />
+  <text x="192" y="760" font-family="Arial" font-size="16" fill="#FFFFFF" text-anchor="middle">Primary Action</text>
+
+  <!-- Annotations -->
+  <text x="16" y="200" font-family="Arial" font-size="10" fill="#6B7280">Spacing: 16px gutters · Card radius: 12px</text>
+</svg>
