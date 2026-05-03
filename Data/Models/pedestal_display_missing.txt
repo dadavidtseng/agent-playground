@@ -1,0 +1,9 @@
+pedestal_display.obj not found in quest artifacts.
+
+Expected action:
+- Retrieve 'pedestal_display.obj' and associated .mtl and texture files from the SCP path provided in quest artifacts.
+- Place them into Data/Models/ (this directory).
+
+Notes:
+- No SCP path was accessible from this environment. If you provide the SCP path and credentials or upload the files to the workspace, I will copy them into Data/Models and attempt to load into the engine.
+- I did not create or modify any .obj/.mtl files.
