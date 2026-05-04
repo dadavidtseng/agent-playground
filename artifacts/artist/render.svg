@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Pixel-art style preview (1280x720) produced as SVG using <rect> elements.
+     Represents a dark-gray plane (#2f2f2f) and an orange sphere (#ff8c00) sitting above it.
+     Created as an SVG because binary image files are disallowed in this environment.
+-->
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <!-- Background sky -->
+  <rect x="0" y="0" width="1280" height="720" fill="#bfe7ff" />
+
+  <!-- Plane: dark gray #2f2f2f -->
+  <rect x="0" y="480" width="1280" height="240" fill="#2f2f2f" />
+  <!-- Slight top rim to suggest contact -->
+  <rect x="0" y="472" width="1280" height="8" fill="#3a3a3a" opacity="0.9" />
+
+  <!-- Pixel-art sphere built from 20x20 cells centered at (640, 356) -->
+  <g fill="#ff8c00">
+    <!-- Manually placed rects approximate a circle -->
+    <rect x="640" y="236" width="20" height="20" />
+
+    <rect x="620" y="256" width="20" height="20" />
+    <rect x="640" y="256" width="20" height="20" />
+    <rect x="660" y="256" width="20" height="20" />
+
+    <rect x="600" y="276" width="20" height="20" />
+    <rect x="620" y="276" width="20" height="20" />
+    <rect x="640" y="276" width="20" height="20" />
+    <rect x="660" y="276" width="20" height="20" />
+    <rect x="680" y="276" width="20" height="20" />
+
+    <rect x="580" y="296" width="20" height="20" />
+    <rect x="600" y="296" width="20" height="20" />
+    <rect x="620" y="296" width="20" height="20" />
+    <rect x="640" y="296" width="20" height="20" />
+    <rect x="660" y="296" width="20" height="20" />
+    <rect x="680" y="296" width="20" height="20" />
+    <rect x="700" y="296" width="20" height="20" />
+
+    <rect x="560" y="316" width="20" height="20" />
+    <rect x="580" y="316" width="20" height="20" />
+    <rect x="600" y="316" width="20" height="20" />
+    <rect x="620" y="316" width="20" height="20" />
+    <rect x="640" y="316" width="20" height="20" />
+    <rect x="660" y="316" width="20" height="20" />
+    <rect x="680" y="316" width="20" height="20" />
+    <rect x="700" y="316" width="20" height="20" />
+    <rect x="720" y="316" width="20" height="20" />
+
+    <rect x="540" y="336" width="20" height="20" />
+    <rect x="560" y="336" width="20" height="20" />
+    <rect x="580" y="336" width="20" height="20" />
+    <rect x="600" y="336" width="20" height="20" />
+    <rect x="620" y="336" width="20" height="20" />
+    <rect x="640" y="336" width="20" height="20" />
+    <rect x="660" y="336" width="20" height="20" />
+    <rect x="680" y="336" width="20" height="20" />
+    <rect x="700" y="336" width="20" height="20" />
+    <rect x="720" y="336" width="20" height="20" />
+    <rect x="740" y="336" width="20" height="20" />
+
+    <rect x="520" y="356" width="20" height="20" />
+    <rect x="540" y="356" width="20" height="20" />
+    <rect x="560" y="356" width="20" height="20" />
+    <rect x="580" y="356" width="20" height="20" />
+    <rect x="600" y="356" width="20" height="20" />
+    <rect x="620" y="356" width="20" height="20" />
+    <rect x="640" y="356" width="20" height="20" />
+    <rect x="660" y="356" width="20" height="20" />
+    <rect x="680" y="356" width="20" height="20" />
+    <rect x="700" y="356" width="20" height="20" />
+    <rect x="720" y="356" width="20" height="20" />
+    <rect x="740" y="356" width="20" height="20" />
+    <rect x="760" y="356" width="20" height="20" />
+
+    <rect x="520" y="376" width="20" height="20" />
+    <rect x="540" y="376" width="20" height="20" />
+    <rect x="560" y="376" width="20" height="20" />
+    <rect x="580" y="376" width="20" height="20" />
+    <rect x="600" y="376" width="20" height="20" />
+    <rect x="620" y="376" width="20" height="20" />
+    <rect x="640" y="376" width="20" height="20" />
+    <rect x="660" y="376" width="20" height="20" />
+    <rect x="680" y="376" width="20" height="20" />
+    <rect x="700" y="376" width="20" height="20" />
+    <rect x="720" y="376" width="20" height="20" />
+    <rect x="740" y="376" width="20" height="20" />
+    <rect x="760" y="376" width="20" height="20" />
+  </g>
+
+  <!-- Soft shadow -->
+  <ellipse cx="640" cy="475" rx="140" ry="22" fill="#000" opacity="0.15" />
+
+  <text x="16" y="700" font-family="monospace" font-size="14" fill="#1a1a1a">Preview (SVG pixel-art) — plane: #2f2f2f | sphere: #ff8c00 | 1280x720</text>
+</svg>
